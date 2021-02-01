@@ -10,7 +10,12 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-
+.category {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border: 1px solid black;
+}
 /* from Bulma */
 .icon {
     align-items: center;
@@ -24,11 +29,6 @@ body {
 .main-logo-font {
     font-family: 'Press Start 2P', cursive;
 }
-
-/* .logo-font {
-    text-transform: uppercase;
-}
- */
 
 .main-logo-link {
     width: fit-content;
