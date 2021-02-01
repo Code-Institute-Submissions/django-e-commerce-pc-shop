@@ -1,0 +1,103 @@
+html {
+    height: 100%;
+}
+
+body {
+    /* background-color: yellow; */ /* ADD BACKGROUND */
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/*  Press Start 2P Google font  */
+.main-logo-font {
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* .logo-font {
+    text-transform: uppercase;
+}
+ */
+
+.main-logo-link {
+    width: fit-content;
+}
+
+/* Buttons style */
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+}
+
+/* Button dark */
+.btn-dark {
+    background: #343a40;
+    color: #ffc107;
+}
+
+/* Button black */
+.btn-black {
+    background: black;
+    color: white;
+}
+
+/* Buttons Style */
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-dark:hover,
+.btn-dark:active,
+.btn-dark:focus {
+    background: #ffc107;
+    color: #343a40;
+}
+
+/* Text colour */
+.text-black {
+    color: #000 !important;
+}
+
+/* Borders */
+.border-black {
+    border: 1px solid black !important;
+}
+
+.border-white {
+    border: 2px solid white !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
