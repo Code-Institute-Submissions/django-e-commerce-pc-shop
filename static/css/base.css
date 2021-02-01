@@ -13,9 +13,10 @@ body {
 .category {
     height: 100px;
     width: 100px;
-    background-color: red;
+    background-color: #343a40;
     border: 1px solid black;
 }
+
 /* from Bulma */
 .icon {
     align-items: center;
