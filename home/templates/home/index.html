@@ -11,7 +11,7 @@
 
 {% block content %}
 
-    <div class="container h-100">
+    <div class="container h-100 mt-5">
         <div class="row h-100">
             <div class="col-7 col-md-6 my-auto">
                 <h1 class="display-4 text-dark">
@@ -30,24 +30,25 @@
     </div>
     <hr class="mb-3 w-75">
     <h2 class="col-12 text-center font-weight-bold mb-3">Categories</h2>
-    <hr class="mb-3 w-75">
-    <div class="container-fluid">
+    <hr class="mb-5 w-75">
+    {% include 'includes/mobile-category.html' %}
+    <div class="container-fluid d-none d-md-block">
         <div class="row justify-content-center">
             {% for category in categories %}
                 {% if category.image %}
-                    <div class="col-sm-4 col-md-3 col-lg-3 text-center h-25 mt-3 mb-3 home-categories">
-                        <img class="h-25 w-25 mb-2 rounded-circle shadow" src=" {{ category.image.url }} " alt="">
-                        <!-- <img src="" alt="..." class="img-thumbnail"> -->
+                    <div class="col-6 col-md-3 col-lg-3 text-center h-25 mt-3 mb-3">
+                        <img class="h-25 w-25 mb-2 rounded-circle home-categories" src=" {{ category.image.url }} " alt="">
                         <h5>{{ category.friendly_name }}</h5>
                     </div>
                 {% else %}
-                <div class="col-sm-4 col-md-3 col-lg-3 text-center h-25 mt-3 mb-3 home-categories">
-                    <img class="h-25 w-25 mb-2 rounded-circle shadow" src=" {{ MEDIA_URL }}media/noimage.png " alt="">
+                <div class="col-6 col-md-3 col-lg-3 text-center h-25 mt-3 mb-3">
+                    <img class="h-25 w-25 mb-2 rounded-circle home-categories" src=" {{ MEDIA_URL }}media/noimage.png " alt="">
                     <h5 class="text-center">{{ category.friendly_name }}</h5>
                 </div>
                 {% endif %}
             {% endfor %}
         </div>
     </div>
+    
 {% endblock %}
 

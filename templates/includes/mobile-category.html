@@ -1,0 +1,20 @@
+
+
+<!-- Mobile Categories -->
+<div class="container-fluid  d-sm-block d-md-none">
+    <div class="row justify-content-center">
+        {% for category in categories %}
+            {% if category.image %}
+                <div class="col-6 col-md-3 col-lg-3 text-center h-25 mt-3 mb-3">
+                    <img class="h-50 w-50 mb-2 rounded-circle home-categories" src=" {{ category.image.url }} " alt="">
+                    <h5>{{ category.friendly_name }}</h5>
+                </div>
+            {% else %}
+                <div class="col-6 col-md-3 col-lg-3 text-center h-25 mt-3 mb-3">
+                    <img class="h-50 w-50 mb-2 rounded-circle home-categories" src=" {{ MEDIA_URL }}media/noimage.png " alt="">
+                    <h5 class="text-center">{{ category.friendly_name }}</h5>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
