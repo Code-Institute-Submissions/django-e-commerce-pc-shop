@@ -39,6 +39,7 @@
     {% endblock %}
 
     {% block extra_js %}
+        <script src="{% static 'js/category_display.js' %}"></script>
     {% endblock %}
 
     <title>Tech Cloud {% block extra_title %}{% endblock %}</title>
@@ -50,7 +51,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="main-logo-font text-warning my-0">Tech</h2>
-                    <h2 class="main-logo my-0 ml-5 pl-5 text-info font-weight-bold">Cloud<i class="fas fa-cloud ml-3"></i></h2>
+                    <h2 class="my-0 ml-5 pl-5 text-info font-weight-bold">Cloud<i class="fas fa-cloud ml-3"></i></h2>
                 </a>
             </div>
             <!-- Search Bar -->
@@ -87,7 +88,7 @@
                                 <p class="my-0 text-info">My Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <a href="" class="dropdown-item">Product Management</a>
@@ -118,6 +119,7 @@
                 </ul>
             </div>
         </div>
+        <!-- Mobile Header -->
         <div class="row bg-dark">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,6 +129,7 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
+        <!-- Delivery banner -->
         <div id="delivery-banner" class="row text-center shadow">
             <div class="col bg-warning text-dark">
                 <h4 class="my-1 font-weight-bold">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>

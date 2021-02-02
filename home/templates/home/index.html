@@ -10,29 +10,44 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="container h-100">
-      <div class="row h-75">
-        <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-black">
-                New Stuff is here!
-            </h1>
-            <div class="my-5">
-                <h4>
-                    <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                    <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Read More</a>
-                </h4>
-            </div>
-        </div>
-      </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                {% for category in categories %}
-                    <div class="col-4 text-center h-25 mt-3 home-categories">
-                        {{ category.friendly_name }}
-                    </div>
-                {% endfor %}
+        <div class="row h-100">
+            <div class="col-7 col-md-6 my-auto">
+                <h1 class="display-4 text-dark">
+    
+                    New Stuff is here!
+    
+                </h1>
+                <div class="my-5">
+                    <h4>
+                        <a href="" class="shop-now-button btn btn-lg text-uppercase py-3">Shop Now</a>
+                        <a href="" class="shop-now-button btn btn-lg text-uppercase py-3">Read More</a>
+                    </h4>
+                </div>
             </div>
         </div>
     </div>
-
+    <hr class="mb-3 w-75">
+    <h2 class="col-12 text-center font-weight-bold mb-3">Categories</h2>
+    <hr class="mb-3 w-75">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            {% for category in categories %}
+                {% if category.image %}
+                    <div class="col-sm-4 col-md-3 col-lg-3 text-center h-25 mt-3 mb-3 home-categories">
+                        <img class="h-25 w-25 mb-2 rounded-circle shadow" src=" {{ category.image.url }} " alt="">
+                        <!-- <img src="" alt="..." class="img-thumbnail"> -->
+                        <h5>{{ category.friendly_name }}</h5>
+                    </div>
+                {% else %}
+                <div class="col-sm-4 col-md-3 col-lg-3 text-center h-25 mt-3 mb-3 home-categories">
+                    <img class="h-25 w-25 mb-2 shadow" src=" {{ MEDIA_URL }}noimage.png " alt="">
+                    <h5 class="text-center">{{ category.friendly_name }}</h5>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
+
