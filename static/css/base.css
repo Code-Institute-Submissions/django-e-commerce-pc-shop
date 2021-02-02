@@ -10,6 +10,14 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+/* Homepage Categories  */
+
+/* .home-categories {
+    height: 50px;
+    background-color: brown;
+} */
+
+
 .category {
     height: 100px;
     width: 100px;
