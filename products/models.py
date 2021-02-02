@@ -21,9 +21,11 @@ class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=False,
                                  on_delete=models.SET_NULL)
     brand = models.ForeignKey(
-        'setup.Brand', related_name="brands", null=True, blank=False, on_delete=models.SET_NULL)
+        'setup.Brand', related_name="brands",
+        null=True, blank=False, on_delete=models.SET_NULL)
     key_feature = models.ForeignKey(
-        'setup.KeyFeatures', related_name="key_features", null=True, blank=False, on_delete=models.SET_NULL)
+        'setup.KeyFeatures', related_name="key_features",
+        null=True, blank=False, on_delete=models.SET_NULL)
     chipset_logo = models.ForeignKey(
         'setup.Brand', related_name='chipset_logos',
         null=True, blank=True, on_delete=models.SET_NULL)

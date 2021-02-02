@@ -28,21 +28,6 @@ class Brand(models.Model):
         return self.friendly_name """
 
 
-class Memory(models.Model):
-
-    class Meta:
-        verbose_name_plural = 'Memorys'
-
-    name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-    def get_friendly_name(self):
-        return self.friendly_name
-
-
 class KeyFeatures(models.Model):
 
     class Meta:
@@ -126,7 +111,7 @@ class Specification(models.Model):
 
     spec_1 = models.CharField(
       max_length=254, blank=False,
-      default="Unfortunately we do not have any specification for this product. ")
+      default="Unfortunately we do not have any specification for this product.")
 
     spec_2_name = models.ForeignKey(
       'Spec', related_name='spec_2_names', null=True, blank=True,

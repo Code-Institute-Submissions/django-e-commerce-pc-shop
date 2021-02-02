@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (
-  Brand, Memory, KeyFeatures, Feature, Specification, Spec)
+  Brand, KeyFeatures, Feature, Specification, Spec)
 
 from django.db.models.functions import Lower
 
@@ -52,7 +52,6 @@ class SpecAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Brand, BrandAdmin)
-admin.site.register(Memory, MemoryAdmin)
 admin.site.register(KeyFeatures, KeyFeaturesAdmin)
 admin.site.register(Feature, FeatureAdmin)
 admin.site.register(Specification, SpecificationAdmin)
