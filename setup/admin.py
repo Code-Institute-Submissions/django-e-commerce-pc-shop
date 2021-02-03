@@ -2,20 +2,24 @@ from django.contrib import admin
 from .models import (
   Brand, KeyFeatures, Feature, Specification, Spec, Category)
 
-from django.db.models.functions import Lower
-
 # Register your models here.
 
+
 class CategoryAdmin(admin.ModelAdmin):
+    readonly_fields = ('image_preview',)
     list_display = (
         'friendly_name',
         'name',
+        'image_preview',
     )
 
+
 class BrandAdmin(admin.ModelAdmin):
+    readonly_fields = ('logo_preview',)
     list_display = (
         'friendly_name',
         'name',
+        'logo_preview',
     )
 
 
