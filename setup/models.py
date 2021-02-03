@@ -5,6 +5,21 @@ from django.db import models
 # Create your models here.
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'Category'
+
+    def __str__(self):
+        return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
+
+
 class Brand(models.Model):
 
     name = models.CharField(max_length=254)
@@ -15,7 +30,7 @@ class Brand(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name_plural = 'Brands'
+        verbose_name_plural = 'Brand'
 
     def __str__(self):
         return self.friendly_name
@@ -81,7 +96,7 @@ class KeyFeatures(models.Model):
 class Feature(models.Model):
 
     class Meta:
-        verbose_name_plural = 'Features'
+        verbose_name_plural = 'Feature'
 
     name = models.CharField(default='FeatureName', max_length=254)
 
@@ -92,7 +107,7 @@ class Feature(models.Model):
 class Specification(models.Model):
 
     class Meta:
-        verbose_name_plural = 'Specification'
+        verbose_name_plural = 'Specifications'
 
     name = models.CharField(
       default='of Specification!', max_length=254)

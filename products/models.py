@@ -3,24 +3,13 @@ from django.db import models
 # Create your models here.
 
 
-class Category(models.Model):
-    name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-    def get_friendly_name(self):
-        return self.friendly_name
-
-
 class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=False)
     name = models.CharField(max_length=254, blank=False)
     available = models.BooleanField(default=True, null=True, blank=False)
-    category = models.ForeignKey('Category', null=True, blank=False,
-                                 on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'setup.Category', related_name="brands",
+        null=True, blank=False, on_delete=models.SET_NULL)
     brand = models.ForeignKey(
         'setup.Brand', related_name="brands",
         null=True, blank=False, on_delete=models.SET_NULL)

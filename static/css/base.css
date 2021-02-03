@@ -17,11 +17,14 @@ body {
   --bootstrap-info: #17a2b8;
 }
 
-/* Homepage Categories  */
-.home-categories {
+.shadow {
     box-shadow: 0px 0px 0px var(--main-color);
 }
-
+/* Homepage Categories  */
+/* .home-categories {
+    box-shadow: 0px 0px 0px var(--main-color);
+}
+ */
 /* Categories zoom in out*/
 .home-categories:hover {
     -webkit-transform: scale(1.3);

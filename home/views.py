@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from products.models import Category
+from setup.models import Category
 
 # Create your views here.
 

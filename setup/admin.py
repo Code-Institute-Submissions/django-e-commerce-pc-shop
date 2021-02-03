@@ -1,11 +1,16 @@
 from django.contrib import admin
 from .models import (
-  Brand, KeyFeatures, Feature, Specification, Spec)
+  Brand, KeyFeatures, Feature, Specification, Spec, Category)
 
 from django.db.models.functions import Lower
 
 # Register your models here.
 
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = (
+        'friendly_name',
+        'name',
+    )
 
 class BrandAdmin(admin.ModelAdmin):
     list_display = (
@@ -56,3 +61,4 @@ admin.site.register(KeyFeatures, KeyFeaturesAdmin)
 admin.site.register(Feature, FeatureAdmin)
 admin.site.register(Specification, SpecificationAdmin)
 admin.site.register(Spec, SpecAdmin)
+admin.site.register(Category, CategoryAdmin)
