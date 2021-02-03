@@ -22,6 +22,9 @@ class Category(models.Model):
             return '(No image)'
 
     def __str__(self):
+        return self.name
+
+    def __str__(self):
         return self.friendly_name
 
 
