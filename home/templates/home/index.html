@@ -15,9 +15,7 @@
         <div class="row h-100">
             <div class="col-7 col-md-6 my-auto">
                 <h1 class="display-4 text-dark">
-    
                     New Stuff is here!
-    
                 </h1>
                 <div class="my-5">
                     <h4>
@@ -28,23 +26,31 @@
             </div>
         </div>
     </div>
+
     <hr class="mb-3 w-75">
     <h2 class="col-12 text-center font-weight-bold mb-3">Categories</h2>
     <hr class="mb-5 w-75">
+
+    <!-- Mobile Categories -->
     {% include 'includes/mobile-category.html' %}
+
     <div class="container-fluid d-none d-md-block">
         <div class="row justify-content-center">
             {% for category in categories %}
                 {% if category.image %}
-                    <div class="col-6 col-md-3 col-lg-3 text-center h-25 mt-3 mb-3">
-                        <img class="h-25 w-25 mb-2 rounded-circle home-categories" src=" {{ category.image.url }} " alt="">
-                        <h5>{{ category.friendly_name }}</h5>
+                    <div class="col-6 col-md-4 col-lg-3 text-center h-25 mt-3 mb-3">
+                        <a class="text-decoration-none text-secondary" href="">
+                            <img class="h-25 w-25 mb-2 rounded-circle home-categories sticker" src=" {{ category.image.url }} " alt="">
+                            <h5>{{ category.friendly_name }}</h5>
+                        </a>
                     </div>
                 {% else %}
-                <div class="col-6 col-md-3 col-lg-3 text-center h-25 mt-3 mb-3">
-                    <img class="h-25 w-25 mb-2 rounded-circle home-categories" src=" {{ MEDIA_URL }}media/noimage.png " alt="">
-                    <h5 class="text-center">{{ category.friendly_name }}</h5>
-                </div>
+                    <div class="col-6 col-md-4 col-lg-3 text-center h-25 mt-3 mb-3">
+                        <a class="text-decoration-none text-secondary" href="">
+                            <img class="h-25 w-25 mb-2 rounded-circle home-categories" src=" {{ MEDIA_URL }}media/noimage.png " alt="">
+                            <h5 class="text-center">{{ category.friendly_name }}</h5>
+                        </a>
+                    </div>
                 {% endif %}
             {% endfor %}
         </div>
