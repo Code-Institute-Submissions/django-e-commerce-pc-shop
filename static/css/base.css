@@ -17,31 +17,6 @@ body {
   --bootstrap-info: #17a2b8;
 }
 
-.shadow {
-    box-shadow: 0px 0px 0px var(--main-color);
-}
-/* Homepage Categories  */
-/* .home-categories {
-    box-shadow: 0px 0px 0px var(--main-color);
-}
- */
- /* Index categories animation:
-    IF transform is uncommented
-    animation will be zoom and breath!!
- */
-/* Categories zoom in out*/
-.home-categories:hover {
-    /* -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3); */
-    box-shadow: 0px 0px 10px var(--main-color);
-    animation: spin 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes spin {
-  100% {transform: rotate(1turn); }
-}
-
 /* from Bulma */
 .icon {
     align-items: center;
