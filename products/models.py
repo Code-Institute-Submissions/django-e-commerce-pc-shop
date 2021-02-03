@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.utils.safestring import mark_safe
+
 # Create your models here.
 
 
@@ -34,6 +36,12 @@ class Product(models.Model):
     promo_side_banner_bottom = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    def image_preview(self):
+        if self.image:
+            return mark_safe('<img src="{0}" width="50" height="50" />'.format(self.image.url))
+        else:
+            return '(No image)'
 
     def __str__(self):
         return self.name

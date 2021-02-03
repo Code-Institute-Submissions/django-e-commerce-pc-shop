@@ -20,7 +20,6 @@ class BrandAdmin(admin.ModelAdmin):
         'friendly_name',
         'name',
         'logo_preview',
-        'logo_preview'
     )
 
 
