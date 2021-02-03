@@ -1,6 +1,8 @@
 
 from django.db import models
 
+from django.utils.safestring import mark_safe
+
 
 # Create your models here.
 
@@ -12,6 +14,12 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Category'
+
+    def image_preview(self):
+        if self.image:
+            return mark_safe('<img src="{0}" width="50" height="50" />'.format(self.image.url))
+        else:
+            return '(No image)'
 
     def __str__(self):
         return self.name
@@ -31,6 +39,12 @@ class Brand(models.Model):
     class Meta:
         ordering = ['name']
         verbose_name_plural = 'Brand'
+
+    def logo_preview(self):
+        if self.brand_logo:
+            return mark_safe('<img src="{0}" width="50" height="50" />'.format(self.brand_logo.url))
+        else:
+            return '(No image)'
 
     def __str__(self):
         return self.friendly_name
