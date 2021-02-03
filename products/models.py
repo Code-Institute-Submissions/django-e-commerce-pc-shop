@@ -10,7 +10,7 @@ class Product(models.Model):
     name = models.CharField(max_length=254, blank=False)
     available = models.BooleanField(default=True, null=True, blank=False)
     category = models.ForeignKey(
-        'setup.Category', related_name="brands",
+        'setup.Category', related_name="categories",
         null=True, blank=False, on_delete=models.SET_NULL)
     brand = models.ForeignKey(
         'setup.Brand', related_name="brands",

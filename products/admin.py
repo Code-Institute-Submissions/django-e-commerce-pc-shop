@@ -8,8 +8,15 @@ class ProductAdmin(admin.ModelAdmin):
     readonly_fields = ('image_preview',)
     list_display = (
         'name',
+        'sku',
+        'category',
+        'available',
+        'price',
+        'rating',
         'image_preview',
     )
+
+    ordering = ('name',)
 
 
 admin.site.register(Product, ProductAdmin)

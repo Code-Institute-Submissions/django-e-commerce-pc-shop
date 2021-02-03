@@ -13,6 +13,8 @@ class CategoryAdmin(admin.ModelAdmin):
         'image_preview',
     )
 
+    ordering = ('name',)
+
 
 class BrandAdmin(admin.ModelAdmin):
     readonly_fields = ('logo_preview',)
@@ -22,12 +24,7 @@ class BrandAdmin(admin.ModelAdmin):
         'logo_preview',
     )
 
-
-class MemoryAdmin(admin.ModelAdmin):
-    list_display = (
-        'friendly_name',
-        'name',
-    )
+    ordering = ('name',)
 
 
 class KeyFeaturesAdmin(admin.ModelAdmin):
@@ -41,23 +38,32 @@ class KeyFeaturesAdmin(admin.ModelAdmin):
         'feature_5_name',
     )
 
+    ordering = ('name',)
+
 
 class FeatureAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
 
+    ordering = ('name',)
+
 
 class SpecificationAdmin(admin.ModelAdmin):
     list_display = (
         'name',
+        'specification_for',
     )
+
+    ordering = ('name', 'specification_for')
 
 
 class SpecAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
+
+    ordering = ('name',)
 
 
 admin.site.register(Brand, BrandAdmin)
