@@ -1,0 +1,96 @@
+
+/* Carousel style */
+
+
+/* Size of home-page container */
+.home-container {
+    height: 550px;
+}
+
+
+/* Carousel size */
+.carousel {
+    height: 500px;
+    top: 25px;
+}
+
+
+/* Carousel item size */
+.carousel-item {
+  width: 80%;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: contain;
+ /*  border: 1px solid red; */
+}
+
+
+/* Carousel item position */
+.carousel-item {
+    position: relative;
+    display: none;
+    float: none;
+    margin-right: -100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: -webkit-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
+    transition: transform .6s ease-in-out,-webkit-transform .6s ease-in-out;
+}
+
+
+/* Carousel indicators colour */
+.carousel-indicators li {
+    background-color: var(--main-color);
+}
+.carousel-indicators .active {
+    background-color: red;
+}
+
+
+/* Carousel prev and next icon color and size */
+.carousel-control-prev-icon { 
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231f1c2e' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"); 
+    width: 30px;
+    height: 48px;
+}
+.carousel-control-next-icon { 
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231f1c2e' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    width: 30px;
+    height: 48px;
+}
+
+
+/* Carousel prev and next icons position */
+.carousel-control-next {
+    right: -40px;
+}
+.carousel-control-prev {
+    left: -40px;
+}
+
+
+/* Mobile */
+@media (max-width: 992px) {
+
+    .carousel {
+        height: 330px;
+        top: 25px;
+    }
+
+    .carousel-item {
+        width: 100%;
+        height: 430px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        /*  border: 1px solid red; */
+    }
+
+    .home-container {
+        height: 450px;
+    }
+
+
+}
+
+
