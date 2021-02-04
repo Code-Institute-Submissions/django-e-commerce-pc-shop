@@ -12,5 +12,5 @@ def index(request):
     context = {
         'categories': categories,
     }
-    print(categories)
+
     return render(request, 'home/index.html', context)
