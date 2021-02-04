@@ -2,20 +2,91 @@ html {
     height: 100%;
 }
 
+
 body {
-    /* background-color: yellow; */ /* ADD BACKGROUND */
     background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
+    height: calc(100vh - 168px);
+    background-color: var(--app-color);
     font-family: 'Noto Sans JP', sans-serif;
 }
 
 /* Site Colours */
 :root {
-  --main-color: #343a40;
-  --second-color: #ffc107;
-  --bootstrap-info: #17a2b8;
+    /* Main bg light blue */
+    --app-color: #f3f6fd;
+    /* Main dark bg and text color */
+    --main-color: #1f1c2e;
+    /* Container color white  */
+    --container-bg: #fff;
 }
+
+/* Font size */
+h1 {
+    font-size: 2rem;
+}
+
+/*  Main Font  */
+.main-logo-font {
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+.main-logo-link {
+    width: fit-content;
+}
+
+
+/* Custom class to apply dark color on text */
+.text-main {
+    color: var(--main-color);
+}
+
+
+/* Custom class to apply app-color */
+.app-color {
+    background-color: var(--app-color);
+}
+
+
+/* Custom class to apply bg main dark color */
+.main-color {
+    background-color: var(--main-color);
+}
+
+
+/* To apply color on main-nav links */
+.nav-link {
+    color: var(--main-color)!important;
+}
+
+
+.search-input {
+    border: none;
+    flex: 1;
+    outline: none;
+    height: 100%;
+    padding: 0 20px;
+    font-size: 16px;
+    background-color: var(--input-area-bg);
+    color: var(--main-color);
+}
+
+
+.search-wrapper {
+    border-radius: 20px;
+    background-color: var(--container-bg);
+    padding-right: 12px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    color: var(--light-font);
+    box-shadow: 0 2px 6px 0 rgb(136 148 171 / 20%), 0 24px 20px -24px rgb(71 82 107 / 10%);
+    overflow: hidden;
+}
+
 
 /* from Bulma */
 .icon {
@@ -26,38 +97,46 @@ body {
     width: 1.5rem;
 }
 
-/*  Press Start 2P Google font  */
-.main-logo-font {
-    font-family: 'Press Start 2P', cursive;
+
+/* https://codepen.io/aybukeceylan/pen/OJRNbZp */
+
+:root {
+/*   --app-container: #f3f6fd;
+  --main-color: #1f1c2e;
+  --secondary-color: #4A4A4A;
+  --link-color: #1f1c2e; */
+  /* --link-color-hover: #c3cff4;
+  --link-color-active: #fff;
+  --link-color-active-bg: #1f1c2e;
+  --projects-section: #fff;
+  --message-box-hover: #fafcff;
+  --message-box-border: #e9ebf0;
+  --more-list-bg: #fff;
+  --more-list-bg-hover:  #f6fbff;
+  --more-list-shadow: rgba(209, 209, 209, 0.4);
+  --button-bg: #1f1c24;
+  --search-area-bg: #fff;
+  --star: #1ff1c2e;
+  --message-btn: #fff; */
 }
 
-.main-logo-link {
-    width: fit-content;
-}
 
 /* Buttons style */
 .shop-now-button {
     background: var(--main-color);
-    color: var(--second-color);
-    min-width: 260px;
+    color: var(--app-color);
 }
 
-/* Button dark */
-.btn-dark {
-    background: var(--main-color);
-    color: var(--second-color);
-}
 
 /* Buttons Style */
 .shop-now-button:hover,
 .shop-now-button:active,
-.shop-now-button:focus,
-.btn-dark:hover,
-.btn-dark:active,
-.btn-dark:focus {
-    background: var(--second-color);
+.shop-now-button:focus {
+    background: var(--app-color);
     color:  var(--main-color);
+    box-shadow: 0px 0px 10px 0px rgb(23 162 184), 0 24px 20px -24px rgb(23 162 184 / 78%);
 }
+
 
 
 /* -------------------------------- Media Queries */
@@ -80,8 +159,21 @@ body {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 210px;
     }
 }
+
+/* Mobile */
+@media (max-width: 992px) {
+
+    .header-container {
+        padding-top: 215px;
+    }
+
+    .rounded-main {
+        border-radius: 20px !important;
+    }
+}
+
 
 
