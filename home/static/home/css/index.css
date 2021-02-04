@@ -1,17 +1,10 @@
-/* Categories Animations */
 
-.shadow {
-    box-shadow: 0px 0px 0px var(--main-color);
-}
-/* Homepage Categories  */
-/* .home-categories {
-    box-shadow: 0px 0px 0px var(--main-color);
-}
- */
+
  /* Index categories animation:
     IF transform is uncommented
     animation will be zoom and breath!!
  */
+ 
 /* Categories zoom in out*/
 .home-categories:hover {
     /* -webkit-transform: scale(1.3);
