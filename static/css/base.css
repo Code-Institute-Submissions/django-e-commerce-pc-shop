@@ -17,7 +17,7 @@ body {
     /* Main dark bg and text color */
     --main-color: #1f1c2e;
     /* Container color white  */
-    --container-bg: #fff;
+    --main-white: #fff;
 }
 
 /* Font size */
@@ -37,7 +37,7 @@ h1 {
 
 
 /* Custom class to apply dark color on text */
-.text-main {
+.main-text {
     color: var(--main-color);
 }
 
@@ -61,7 +61,7 @@ h1 {
 
 
 .main-white {
-    background-color: var(--container-bg)!important;
+    background-color: var(--main-white)!important;
 }
 
 
@@ -85,7 +85,7 @@ h1 {
 
 .search-wrapper {
     border-radius: 20px;
-    background-color: var(--container-bg);
+    background-color: var(--main-white);
     padding-right: 12px;
     height: 40px;
     display: flex;
@@ -107,6 +107,19 @@ h1 {
     height: 1.5rem;
     width: 1.5rem;
 }
+
+.nav-link:hover {
+    background-color: var(--main-white);
+    border-radius: 20px;
+    box-shadow: 0 2px 6px 0 rgb(136 148 171 / 20%), 0 24px 20px -24px rgb(71 82 107 / 10%);
+}
+
+.cat-hover:hover > a > h5 {
+    background-color: var(--app-color);
+    box-shadow: 0 2px 0px 0px rgb(136 148 171 / 20%), 0 24px 20px -24px rgb(71 82 107 / 10%);
+    color: var(--main-color);
+}
+
 
 /* INSPIRATION */
 /* https://uxplanet.org/top-ui-ux-design-inspiration-138-90703cf88472 */
@@ -202,7 +215,7 @@ h1 {
         padding-top: 215px;
     }
 
-    .rounded-main {
+    .main-rounded {
         border-radius: 20px !important;
     }
 }
