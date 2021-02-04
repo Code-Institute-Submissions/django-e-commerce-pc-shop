@@ -15,31 +15,38 @@
 
 {% block content %}
     <!-- Buy now and Read now btn -->
-    <div class="container h-100 mt-5">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 text-dark">
-                    New Stuff is here!
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="" class="shop-now-button btn btn-lg text-uppercase py-3">Shop Now</a>
-                        <a href="" class="shop-now-button btn btn-lg text-uppercase py-3">Read More</a>
-                    </h4>
+    <div class="container mt-5 ">
+        <div class="container h-75 rounded-main ">
+            <div class="row h-75">
+                <div class="col-12 mt-5 mb-5  text-center">
+                    <h1 class="text-center font-weight-bold">
+                        All you need on one place!
+                    </h1>
                 </div>
+                <div class="row h-50 text-center mx-auto">
+                    <div class="col-lg-10 mx-auto">
+                        <img class="col-12" src=" {{ MEDIA_URL }}media/bg-test62.png " alt="">
+                        <div class="col-lg-12">
+                            <h4 class="mt-5">
+                                <a href="" class="shop-now-button btn btn-lg text-uppercase mb-3">Shop Now</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12"></div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col mb-5">
+                <hr class="mt-5 mb-5 w-75">
             </div>
         </div>
     </div>
-
-    <hr class="mb-3 w-75">
-    <h2 class="col-12 text-center font-weight-bold mb-3">Categories</h2>
-    <hr class="mb-5 w-75">
-
-    <!-- Mobile Categories -->
-    {% include 'includes/mobile-category.html' %}
-
+    <h2 class="col-12 text-center w-75 mx-auto rounded-main font-weight-bold mb-5 p-4">Categories</h2>
     <!-- Detskop Categories -->
-    <div class="container-fluid d-none d-md-block">
+    <div class="container rounded-main d-none d-md-block">
         <div class="row justify-content-center">
             {% for category in categories %}
                 {% if category.image %}
@@ -63,3 +70,17 @@
     
 {% endblock %}
 
+
+<!-- Mobile Categories -->
+{% block categories %}
+    {% include 'includes/mobile-category.html' %}
+{% endblock %}
+
+
+{% block page_bottom %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
