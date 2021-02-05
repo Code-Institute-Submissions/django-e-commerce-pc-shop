@@ -56,11 +56,11 @@ class KeyFeatures(models.Model):
         verbose_name_plural = 'Key Features'
 
     name = models.CharField(
-      default='ProductCategory Features', max_length=254)
+      default='ProductCategoryName', max_length=254)
 
     feature_for = models.CharField(
-      max_length=254, blank=True,
-      default='Motherboard, Graphic Card etc. ')
+      max_length=254, blank=False,
+      default='ProductName')
 
     feature_1_name = models.ForeignKey(
       'Feature', related_name='feature_1_names', null=True,
@@ -121,11 +121,11 @@ class Specification(models.Model):
         verbose_name_plural = 'Specifications'
 
     name = models.CharField(
-      default='of Specification!', max_length=254)
+      default='ProductName', max_length=254)
 
     specification_for = models.CharField(
       max_length=254, null=True, blank=False,
-      default='Motherboard, Graphic Card, etc. ')
+      default='ProductCategory')
 
     spec_1_name = models.ForeignKey(
       'Spec', related_name='spec_1_names', null=True, blank=False,
