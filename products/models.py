@@ -39,7 +39,7 @@ class Product(models.Model):
 
     def image_preview(self):
         if self.image:
-            return mark_safe('<img src="{0}" width="50" height="50" />'.format(self.image.url))
+            return mark_safe('<img src="{0}" width="120" height="80" />'.format(self.image.url))
         else:
             return '(No image)'
 
