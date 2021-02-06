@@ -25,11 +25,13 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to show product detail """
     product = get_object_or_404(Product, pk=product_id)
+    categories = Category.objects.all()
 
     context = {
         'product': product,
+        'categories': categories,
     }
 
     print(product)
 
-    return render(request, 'products/products_detail.html', context)
+    return render(request, 'products/product_detail.html', context)
