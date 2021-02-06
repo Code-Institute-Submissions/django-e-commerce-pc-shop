@@ -1,0 +1,25 @@
+
+<!-- Key Features -->
+
+<p class="lead mt-3 mb-3 font-weight-bold">Key Features :</p>
+{% if product.key_feature %}
+        <li class="mt-0 font-weight-bold">{{ product.key_feature.feature_1_name }} - {{ product.key_feature.feature_1 }}</li>
+    
+    {% if product.key_feature.feature_2 %}
+        <li class="mt-1 font-weight-bold">{{ product.key_feature.feature_2_name  }} - {{ product.key_feature.feature_2 }}</li>
+    {% endif %}
+
+    {% if product.key_feature.feature_3 %}
+        <li class="mt-1 font-weight-bold">{{ product.key_feature.feature_3_name }} - {{ product.key_feature.feature_3 }}</li>
+    {% endif %}
+
+    {% if product.key_feature.feature_4 %}
+        <li class="mt-1 mb-2 font-weight-bold">{{ product.key_feature.feature_4_name }} - {{ product.key_feature.feature_4 }}</li>
+    {% endif %}
+
+    {% if product.key_feature.feature_5 %}
+        <li class="mt-1 mb-2 font-weight-bold">{{ product.key_feature.feature_5_name }} - {{ product.key_feature.feature_5 }}</li>
+    {% endif %}
+
+{% endif %}
+
