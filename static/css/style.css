@@ -86,6 +86,13 @@
     box-shadow: var(--main-shadow);
 }
 
+/* https://www.digitalocean.com/community/tutorials/css-position-sticky */
+.main-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 10rem;
+    align-self: flex-end;
+}
 
 /* HOVER BTN EFFECTS */
 
