@@ -2,7 +2,6 @@ html {
     height: 100%;
 }
 
-
 body {
     background-size: cover;
     height: calc(100vh - 168px);
@@ -10,72 +9,10 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-/* Site Colours */
-:root {
-    /* Main bg light blue */
-    --app-color: #f3f6fd;
-    /* Main dark bg and text color */
-    --main-color: #1f1c2e;
-    /* Container color white  */
-    --main-white: #fff;
-    /* Main hover btn */
-    --main-btn-hover-red: #fee4cb;
-    /* Main shadow */
-    --main-shadow:  0 2px 6px 0 rgb(136 148 171 / 20%), 0 24px 20px -24px rgb(71 82 107 / 10%);
-    /* Second-shadow for elements on hover */
-    --second-shadow: 0 2px 6px 0 rgb(0 0 0), 0 24px 20px -24px rgb(71 82 107 / 10%);
-}
-
 /* Font size */
 h1 {
     font-size: 2rem;
 }
-
-/*  Main Font  */
-.main-logo-font {
-    font-family: 'Press Start 2P', cursive;
-}
-
-
-.main-logo-link {
-    width: fit-content;
-}
-
-
-/* Custom class to apply dark color on text */
-.main-text {
-    color: var(--main-color);
-}
-
-
-/* Custom class to apply app-color */
-.app-color {
-    background-color: var(--app-color);
-}
-
-
-/* Custom class to apply bg main dark color */
-.main-color {
-    background-color: var(--main-color);
-}
-
-
-/* To apply color on main-nav links */
-.nav-link {
-    color: var(--main-color);
-}
-
-
-.main-white {
-    background-color: var(--main-white)!important;
-}
-
-
-/* To add shadow to elements */
-.main-shadow {
-    box-shadow: var(--main-shadow);
-}
-
 
 .search-input {
     border: none;
@@ -87,7 +24,6 @@ h1 {
     background-color: var(--input-area-bg);
     color: var(--main-color);
 }
-
 
 .search-wrapper {
     border-radius: 20px;
@@ -103,7 +39,6 @@ h1 {
     overflow: hidden;
 }
 
-
 /* from Bulma */
 .icon {
     align-items: center;
@@ -113,118 +48,11 @@ h1 {
     width: 1.5rem;
 }
 
-
-.search-icon:hover {
-    background-color: var(--main-color);
-    color: var(--main-white);
-    box-shadow: var(--second-shadow);
-}
-
-/* Logo and account hover */
-.nav-link:hover {
-    background-color: var(--main-color);
-    color: var(--main-white)!important;
-    border-radius: 20px;
-    box-shadow: var(--second-shadow);
-}
-
-.nav-link:hover > h2 {
-    background-color: var(--main-color);
-    color: var(--main-white)!important;
-    border-radius: 20px;
-}
-    
-
-/* Icons inverted on hover */
-.nav-link:hover  .main-text  {
-    color: var(--main-white);
-}
-
-
-/* Categories hover */
-.cat-hover:hover > a > h5 {
-    background-color: var(--main-color);
-    box-shadow: var(--second-shadow);
-    color: var(--main-white);
-}
-
-
-/* Main nav hover */
-.dropdown:hover > .font-weight-bold {
-    background-color: var(--main-color);
-    color: var(--main-white);
-    box-shadow: var(--second-shadow);
-}
-
-/* Dropdown items on hover */
-.dropdown-item:focus, .dropdown-item:hover {
-    color: var(--main-white);
-    text-decoration: none;
-    background-color: var(--main-color);
-}
-
-/* Product image on hover */
-.card:hover > .card-body > .text-center {
-    background-color: var(--main-color);
-    box-shadow: var(--second-shadow);
-    color: var(--main-white);
-    border-radius: 1rem;
-}
-
 /* Toggler icon */
 .navbar-toggler .navbar-toggler-icon {
      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(31, 28, 46)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* .main-logo-link:hover {
-    background-color: var(--app-color);
-    color: var(--main-color)!important;
-    box-shadow: none;
-} */
-
-
-/* INSPIRATION */
-/* https://uxplanet.org/top-ui-ux-design-inspiration-138-90703cf88472 */
-
-/* COLORS AND CHUNKS OF CODE */
-/* https://codepen.io/aybukeceylan/pen/OJRNbZp */
-
-:root {
-/*   --app-container: #f3f6fd;
-  --main-color: #1f1c2e;
-  --secondary-color: #4A4A4A;
-  --link-color: #1f1c2e; */
-  /* --link-color-hover: #c3cff4;
-  --link-color-active: #fff;
-  --link-color-active-bg: #1f1c2e;
-  --projects-section: #fff;
-  --message-box-hover: #fafcff;
-  --message-box-border: #e9ebf0;
-  --more-list-bg: #fff;
-  --more-list-bg-hover:  #f6fbff;
-  --more-list-shadow: rgba(209, 209, 209, 0.4);
-  --button-bg: #1f1c24;
-  --search-area-bg: #fff;
-  --star: #1ff1c2e;
-  --message-btn: #fff; */
-}
-
-
-/* Buttons style */
-.shop-now-button {
-    background: var(--main-color);
-    color: var(--app-color);
-}
-
-
-/* Buttons Style */
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus {
-    background: var(--app-color);
-    color:  var(--main-color);
-    box-shadow: var(--second-shadow);
-}
 
  /* Index categories animation:
     IF transform is uncommented
@@ -240,15 +68,48 @@ h1 {
     animation: spin 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-
 @keyframes spin {
   100% {transform: rotate(1turn); }
 }
 
-/* To control product image size */
+
+/* To control product image size on all-products */
 .product-image {
     height: 220px;
 }
+
+/* Brand Logo image size on product-detail */
+.brand-logo {
+    height: 130px;
+}
+
+/* Breadcrumb color overwrite */
+.breadcrumb {
+   background-color: var(--main-white);
+}
+
+
+/* Rounded table icons left right */
+/* .table-striped tr td:first-of-type {
+    border-radius: 2.5rem 0px 0px 2.5rem;
+}
+
+
+.table-striped tr td:last-of-type {
+    border-radius: 0px 2.5rem 2.5rem 0px;
+}
+ */
+
+/* Table custom style */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--main-white);
+}
+
+/* To remove borders from table items */
+.table td, .table th {
+    border-top: none;
+}
+
 
 /* Media Queries */
 
