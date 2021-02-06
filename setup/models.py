@@ -9,7 +9,7 @@ from django.utils.safestring import mark_safe
 
 class Category(models.Model):
     name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    friendly_name = models.CharField(max_length=254, null=True, blank=False)
     image = models.ImageField(null=True, blank=True)
 
     class Meta:
