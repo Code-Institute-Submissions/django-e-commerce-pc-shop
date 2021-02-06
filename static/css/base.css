@@ -113,8 +113,20 @@ h1 {
 
 /* Media Queries */
 
+
+/* Custom margin-top class for small devices
+    Bootstrap is not working ? */
+@media (max-width: 576px) {
+
+    .mt-sm-4, .my-sm-4 {
+    margin-top: 2.5rem!important;
+  }
+}
+
+
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
+
   .container {
     max-width: 80%;
   }
