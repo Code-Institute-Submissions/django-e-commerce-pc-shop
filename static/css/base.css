@@ -80,7 +80,7 @@ h1 {
 
 /* Brand Logo image size on product-detail */
 .brand-logo {
-    height: 130px;
+    height: 90px;
 }
 
 /* Breadcrumb color overwrite */
@@ -113,26 +113,40 @@ h1 {
 
 /* Media Queries */
 
+/* To control logo size on small screens and nav items */
+@media (max-width: 320px) {
+
+    .brand-logo {
+        height: 70px;
+  }
+
+    .nav-link {
+        padding: 0px;
+  }
+}
+
 
 /* Custom margin-top class for small devices
     Bootstrap is not working ? */
 @media (max-width: 576px) {
 
     .mt-sm-4, .my-sm-4 {
-    margin-top: 2.5rem!important;
-  }
+        margin-top: 2.5rem!important;
+    }
+
+    .nav-link {
+        padding: 0px;
+   }
+}
+
+@media (max-width: 768px) {
+    .main-sticky {
+        bottom: 19rem!important;
+    }
 }
 
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-
-  .container {
-    max-width: 80%;
-  }
-}
-
-/* fixed top navbar only on medium and up */
+/* Fixed top navbar only on medium and up */
 @media (min-width: 992px) {
 
     .fixed-top-desktop-only {
@@ -152,11 +166,12 @@ h1 {
     }
 }
 
+
 /* Mobile */
 @media (max-width: 992px) {
 
     .header-container {
-        padding-top: 215px;
+        padding-top: 175px;
     }
 
     .bottom-container {
@@ -168,5 +183,40 @@ h1 {
     }
 }
 
+
+/* Media Queries to control element push and size of banner on laptops screens */
+@media (min-width: 1024px) {
+
+    .banners {
+        max-width: 90%;
+    }
+
+    .main-sticky {
+        bottom: 16rem!important;
+    }
+}
+
+
+@media (min-width: 1440px) {
+
+    .main-sticky {
+        bottom: 11rem!important;
+    }
+}
+
+@media (min-width: 1630px) {
+
+    .main-sticky {
+        bottom: 15rem!important;
+    }
+}
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+
+  .container {
+    max-width: 80%;
+  }
+}
 
 
