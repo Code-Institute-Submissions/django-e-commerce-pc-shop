@@ -154,7 +154,13 @@ h1 {
     background-color: var(--main-color);
     color: var(--main-white);
     box-shadow: var(--second-shadow);
-    border-radius: 1rem;
+}
+
+/* Dropdown items on hover */
+.dropdown-item:focus, .dropdown-item:hover {
+    color: var(--main-white);
+    text-decoration: none;
+    background-color: var(--main-color);
 }
 
 /* Product image on hover */
