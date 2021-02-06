@@ -1,0 +1,10 @@
+
+<!-- Side Banner -->
+
+{% if product.promo_side_banner_left %}
+        <img src="{{ product.promo_side_banner_left.url }}" class=" banners main-rounded mt-3 mb-3" alt="brand side banner">
+{% else %}
+    {% if product.brand.side_banner %}
+        <img src="{{ product.brand.side_banner.url }}" class="banners main-rounded mt-3 mb-3" alt="brand side banner">
+    {% endif %}
+{% endif %}
