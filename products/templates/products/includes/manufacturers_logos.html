@@ -1,0 +1,28 @@
+
+<!-- Manufacturers Logos  -->
+
+{% if product.brand.brand_logo %}
+    <div class="col-4 mx-auto text-center">
+        <a href="{{ product.brand.website }}" target="_blank" data-toggle="tooltip" title="Visit {{ product.brand.friendly_name }} website">
+            <img src="{{ product.brand.brand_logo.url }}" class=" brand-logo rounded-3" alt="{{ product.brand.friendly_name }} logo">
+        </a>
+    </div>
+  {% if product.chipset_logo %}
+      <div class="col-4 mx-auto text-center">
+          <a href="{{ product.chipset_logo.website }}" target="_blank" data-toggle="tooltip" title="Visit {{ product.chipset_logo.friendly_name }} website">
+              <img src="{{ product.chipset_logo.brand_logo.url }}" class=" brand-logo rounded-3" alt="{{ product.chipset_logo.friendly_name }} logo">
+          </a>
+      </div>
+  {% endif %}
+  {% if product.additional_logo %}
+      <div class="col-4 mx-auto text-center">
+          <a href="{{ product.additional_logo.website }}" target="_blank" data-toggle="tooltip" title="Visit {{ product.additional_logo.friendly_name }} website">
+              <img src="{{ product.additional_logo.brand_logo.url }}" class=" brand-logo rounded-3" alt="{{ product.additional_logo.friendly_name }} logo">
+          </a>
+      </div>
+  {% endif %}
+  {% else %}
+      <div class="col-12">
+          <p class="text-left font-weight-bold mt-3">Brand : {{product.brand.friendly_name}}</p>
+      </div>
+{% endif %}
