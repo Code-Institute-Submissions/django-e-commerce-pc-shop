@@ -7,14 +7,18 @@ from setup.models import Category
 
 
 def all_products(request):
-    """ A view to return show all products, including sorting and search
-        And to return all categories names to use on dropdown menu
-     """
+    """ A view to show all products, including sorting and search queries """
+
     products = Product.objects.all()
-    categories = Category.objects.all()
     query = None
+    categories = None
 
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -26,13 +30,9 @@ def all_products(request):
 
     context = {
         'products': products,
-
-        'categories': categories,
         'search_term': query,
+        'current_categories': categories,
     }
-
-    print(products)
-    print(categories)
 
     return render(request, 'products/products.html', context)
 
@@ -40,11 +40,9 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to show product detail """
     product = get_object_or_404(Product, pk=product_id)
-    categories = Category.objects.all()
 
     context = {
         'product': product,
-        'categories': categories,
     }
 
     print(product)
