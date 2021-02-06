@@ -18,17 +18,27 @@
                 Categories
             </a>
             <div class="dropdown-menu" aria-labelledby="clothing-link">
-                {% for category in categories %}
-                    {% if category %}
-                         <a href="" class="dropdown-item text-center">{{ category.friendly_name  }}</a>
-                    {% endif %}
-                {% endfor %}
+                <a href="{% url 'products' %}?category=motherboard" class="dropdown-item text-center">Motherboards</a>
+                <a href="{% url 'products' %}?category=processor" class="dropdown-item text-center">Processor</a>
+                <a href="{% url 'products' %}?category=graphic_card" class="dropdown-item text-center">Graphic Card</a>
+                <a href="{% url 'products' %}?category=memory" class="dropdown-item text-center">Memory</a>
+                <a href="{% url 'products' %}?category=storage" class="dropdown-item text-center">Storage</a>
+                <a href="{% url 'products' %}?category=power_supply" class="dropdown-item text-center">Power Supply</a>
+                <a href="{% url 'products' %}?category=case" class="dropdown-item text-center">Cases</a>
+                <a href="{% url 'products' %}?category=monitor" class="dropdown-item text-center">Monitors</a>
+                <a href="{% url 'products' %}?category=mouse" class="dropdown-item text-center">Mouses</a>
+                <a href="{% url 'products' %}?category=keyboard" class="dropdown-item text-center">Keyboards</a>
+                <a href="{% url 'products' %}?category=cooler" class="dropdown-item text-center">Coolers</a>
             </div>
         </li>
         <li class="nav-item dropdown mr-3">
-            <a class="font-weight-bold nav-link text-center" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Deals
+            <a class="font-weight-bold nav-link text-center" href="" id="deals-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Special Offers
             </a>
+            <div class="dropdown-menu" aria-labelledby="clothing-link">
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item text-center">Deals</a>
+                
+            </div>
         </li>
         <li class="nav-item dropdown mr-3">
             <a class="font-weight-bold nav-link text-center" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,4 +47,3 @@
         </li>
     </ul>
 </div>
-
