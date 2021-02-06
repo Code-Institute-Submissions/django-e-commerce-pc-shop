@@ -90,8 +90,8 @@
 .main-sticky {
     position: -webkit-sticky;
     position: sticky;
-    bottom: 10rem;
     align-self: flex-end;
+    bottom: 15rem;
 }
 
 /* HOVER BTN EFFECTS */
