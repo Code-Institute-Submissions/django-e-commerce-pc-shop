@@ -110,6 +110,17 @@ h1 {
     border-top: none;
 }
 
+.scroll-button {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+}
+
+.scroll-link {
+    cursor: pointer;
+}
 
 /* Media Queries */
 
