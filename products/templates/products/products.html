@@ -18,8 +18,38 @@
     
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center mt-5">
-                <h2 class="col-12 text-center w-75 mx-auto main-rounded font-weight-bold mb-5 p-3">Products</h2>
+            <div class="col text-center mt-3">
+                <h2 class="col-12 text-center w-75 mx-auto main-rounded font-weight-bold mb-3 p-3">Products</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-1 mb-2">
+                <div class="col-12 col-md-2">
+                    <div class="count-wrapper  mx-auto justify-content-sm-center justify-content-md-start">
+                        <p class="text-muted mt-3 text-center">
+                            {% if search_term or current_categories or current_sorting != 'None_None' %}
+                                <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                            {% endif %}
+                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                        <hr class="d-sm-block d-md-none w-50">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 my-auto d-flex justify-content-center justify-content-md-end offset-md-4">
+                    <div class="sort-select-wrapper w-75 mb-3">
+                        <select id="sort-selector" class=" main-rounded custom-select custom-select-sm border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                            <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                            <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                            <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                            <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -50,6 +80,13 @@
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
+                                            {% endif %}
+                                            {% if product.category %}
+                                            <p class="small mt-3 mb-0">
+                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                                </a>
+                                            </p>
                                             {% endif %}
                                         </div>
                                     </div>
