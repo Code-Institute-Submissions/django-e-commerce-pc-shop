@@ -118,6 +118,8 @@ h1 {
     right: 40px;
 }
 
+.update-link,
+.remove-item,
 .scroll-link {
     cursor: pointer;
 }
