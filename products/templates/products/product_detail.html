@@ -22,7 +22,7 @@
                     <ol class="breadcrumb main-rounded">
                         <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'products' %}">Products</a></li>
-                        <li class="breadcrumb-item"><a href="#">{{ product.category.friendly_name}}</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name}}</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{ product.brand.name }}</li>
                     </ol>
                 </nav>
