@@ -150,7 +150,7 @@
 }
 
 /* Product image on hover */
-.card:hover > .card-body > .text-center {
+.card:hover > .card-body > a > p {
     background-color: var(--main-color);
     box-shadow: var(--second-shadow);
     color: var(--main-white);
