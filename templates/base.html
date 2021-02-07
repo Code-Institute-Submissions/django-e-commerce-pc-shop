@@ -105,7 +105,7 @@
                     </li>
                     <!-- Shooping Bag -->
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-warning{% endif %} nav-link" href="">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-warning{% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center main-text">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0 main-text">
