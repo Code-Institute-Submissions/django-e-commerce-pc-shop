@@ -110,6 +110,7 @@ h1 {
     border-top: none;
 }
 
+/* Scroll to top button */
 .scroll-button {
     height: 50px;
     width: 50px;
@@ -118,11 +119,30 @@ h1 {
     right: 40px;
 }
 
+/* Cursor pointer on links */
 .update-link,
 .remove-item,
 .scroll-link {
     cursor: pointer;
 }
+
+
+/* Bootstrap toasts */
+.message-container {
+    position: fixed;
+    top: 123px;
+    right: 15px;
+    z-index: 9000;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 5px;
+}
+
 
 /* Media Queries */
 

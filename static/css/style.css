@@ -36,7 +36,7 @@
     /* Main shadow */
     --main-shadow:  0 2px 6px 0 rgb(136 148 171 / 20%), 0 24px 20px -24px rgb(71 82 107 / 10%);
     /* Second-shadow for elements on hover */
-    --second-shadow: 0 2px 6px 0 rgb(0 0 0), 0 24px 20px -24px rgb(71 82 107 / 10%);
+    --second-shadow: 0 0px 6px 0 rgb(0 0 0), 0 24px 20px -24px rgb(71 82 107 / 10%);
 }
 
 
@@ -82,6 +82,10 @@
 /* To add shadow to elements */
 .main-shadow {
     box-shadow: var(--main-shadow);
+}
+
+.second-shadow {
+    box-shadow: var(--second-shadow);
 }
 
 /* https://www.digitalocean.com/community/tutorials/css-position-sticky */
@@ -192,20 +196,25 @@
 
 /* Increment btn radius */
 .increment-qty {
-    border-top-right-radius: 25px!important;
-    border-bottom-right-radius: 25px!important;
+    border-top-right-radius: 2rem!important;
+    border-bottom-right-radius: 2rem!important;
 }
 
 /* Decrement btn radius */
 .decrement-qty {
-    border-top-left-radius: 25px!important;
-    border-bottom-left-radius: 25px!important;
+    border-top-left-radius: 2rem!important;
+    border-bottom-left-radius: 2rem!important;
 }
 
-/* To add bottom radius left and right on container */
+/* To add top and bottom radius left and right on container */
 .main-radius-bottom {
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.main-radius-top {
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
 }
 
 .banners {
