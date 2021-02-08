@@ -101,6 +101,7 @@
 /* To override my styles because icon is comming from white background */
 .search-icon {
     color: #1f1c2e!important;
+    background-color: var(--main-white)!important;
 }
 
 .search-icon:hover {
