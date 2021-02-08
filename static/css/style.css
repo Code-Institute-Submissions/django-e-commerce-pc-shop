@@ -62,7 +62,7 @@
 
 /* Custom class to apply app-color */
 .app-color {
-    background-color: var(--app-color);
+    background-color: var(--app-color)!important;
 }
 
 /* Custom class to apply bg main dark color */
