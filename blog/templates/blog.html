@@ -15,9 +15,9 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mb-2 mt-3">
+    <div class="container mb-2 mt-4">
         <div class="row">
-            <div class="col main-rounded mx-3 my-3">
+            <div class="col main-rounded mx-3 p-3">
                 <h2 class="main-text text-center font-weight-bold">Welcome to our Blog!</h2>
             </div>
         </div>
@@ -45,8 +45,8 @@
         </div>
     </div>
     {% for post in object_list %}
-        <div class="container main-rounded text-center my-4 p-3">
-            <div class="row p-4">
+        <div class="container text-center my-4 p-3">
+            <div class="row main-rounded p-4 m-3">
                 <div class="col-sm-10 col-lg-12 mx-auto">
                     <h4 class="font-weight-bold mx-3 my-3 text-danger">
                         {{ post.title }}
@@ -76,6 +76,11 @@
             </div>
         </div>
     {% endfor %}
+    <div class="scroll-button btn btn-rounded border border-black">
+        <a class="scroll-link d-flex h-100">
+            <i class="fas fa-arrow-up mx-auto my-auto"></i>
+        </a>	
+    </div>
 {% endblock %}
 
 {% block page_bottom %}
@@ -84,4 +89,14 @@
             <div class="col"></div>
         </div>
     </div>
+{% endblock %}
+
+<!-- Scroll Button -->
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.scroll-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
 {% endblock %}
