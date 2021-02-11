@@ -2,18 +2,18 @@
 
 <div class="collapse navbar-collapse main-rounded" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item dropdown mr-3">
+        <li class="nav-item dropdown my-1">
             <a class="font-weight-bold nav-link text-center" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
-            <div class="dropdown-menu mr-3" aria-labelledby="all-products-link">
+            <div class="dropdown-menu my-1" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                 <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
-        <li class="nav-item dropdown mr-3">
+        <li class="nav-item dropdown my-1">
             <a class="font-weight-bold nav-link text-center" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Categories
             </a>
@@ -31,7 +31,7 @@
                 <a href="{% url 'products' %}?category=cooler" class="dropdown-item text-center">Coolers</a>
             </div>
         </li>
-        <li class="nav-item dropdown mr-3">
+        <li class="nav-item dropdown my-1">
             <a class="font-weight-bold nav-link text-center" href="" id="deals-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Special Offers
             </a>
@@ -40,7 +40,7 @@
                 
             </div>
         </li>
-        <a class="font-weight-bold nav-link text-center" href="{% url 'blog' %}">
+        <a class="font-weight-bold nav-link text-center my-1" href="{% url 'blog' %}">
             Blog
         </a>
     </ul>

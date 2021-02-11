@@ -39,11 +39,11 @@
                 <div class="image-container main-rounded mx-auto mb-5 mt-md-3 p-4 text-center">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid mt-5" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid mt-5 mx-auto" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </a>
                     {% else %}
                         <a href="">
-                            <img class="card-img-top img-fluid mt-5" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid mt-5 mx-auto" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         </a>
                     {% endif %}
                 </div>

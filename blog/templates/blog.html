@@ -21,7 +21,7 @@
                 <h2 class="main-text text-center font-weight-bold">Welcome to our Blog!</h2>
             </div>
         </div>
-    <div class="container-fluid">
+    <div class="container-fluid mt-3">
         <div id="#top" class="row">
                 {% if user.is_authenticated %}
                     <a href="{% url 'add_post' %}" class="col-sm-4 col-md-4 col-lg-2  mx-auto text-center btn btn-rounded font-weight-bold my-4">Add Post</a>
@@ -31,7 +31,7 @@
                             <div class="col-6 mx-auto">
                                 <p class="text-center font-weight-bold my-3 mr-2">To Add a Post</p>
                             </div>
-                            <div class="col-sm-12 col-lg-6 mx-auto"> 
+                            <div class="col-sm-12 col-lg-6 mx-auto mb-3"> 
                                 <a href="{% url 'account_login' %}"
                                     class="btn btn-rounded font-weight-bold mr-2"><strong>Login</strong></a>
                                     or
