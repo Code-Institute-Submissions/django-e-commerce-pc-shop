@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
+            <div class="container mb-2">
+                <div class="row">
+                    <div class="col main-rounded mt-3">
+                        <h2 class="main-text text-center font-weight-bold">Delete Post</h2>
+                    </div>
+                </div>
+                <div class="row main-rounded m-4">
+                    <div class="col mx-auto font-weight-bold text-center m-3">
+                         <h4>Delete: {{ post.title }}</h4>
+                    </div>
+                </div>
+                <div class="row mx-auto text-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <strong>Are you sure?</strong><br>
+                                <button class="btn btn-rounded font-weight-bold mr-3 my-3">Delete</button>
+                                <a href="{% url 'blog' %}"
+                                    class="btn btn-rounded font-weight-bold ml-3">Back</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <h4>To delete post you need to be logged in</h4>
+        {% endif %}
+    {% else %}
+        <h4>To delete post you need to be logged in</h4>
+    {% endif %}
+{% endblock %}

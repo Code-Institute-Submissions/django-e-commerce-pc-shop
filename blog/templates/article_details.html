@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container mb-2">
+        <div class="row">
+            <div class="col main-rounded mt-3 m-3">
+                <h2 class="main-text text-center text-uppercase font-weight-bold">{{ post.title }}</h2>
+            </div>
+        </div>
+        <div class="row main-rounded m-3 p-3">
+            <div class="col-12">
+                <p class="font-italic"> {{ post.body|safe }}</p>
+                <div class="row mx-auto text-center mx-3">
+                    <i class="col-12 fa fa-thumbs-up text-center mx-auto">&nbsp;&nbsp;{{ post.total_likes }}</i>
+                    <div class="col-sm-12 col-lg-6 my-3">
+                        <i class="fas fa-user-edit"></i> {{ post.author}}
+                    </div>
+                    <div class="col-sm-12 col-lg-6 my-3">
+                        <i class="fas fa-clock"></i> {{ post.date_added }}
+                    </div>
+                </div>
+                {% if user.is_authenticated %}
+                    {% if user.id == post.author.id %}
+                    <div class="row mx-auto text-center mt-3">
+                        <div class="col">
+                            <a href="{% url 'update_post' post.pk %}"
+                        class="btn btn-sm font-weight-bold btn-rounded">Edit</a>
+                        </div>
+                        <div class="col">
+                            <a href="{% url 'delete_post' post.pk %}"
+                        class="btn btn-sm font-weight-bold btn-rounded">Delete</a>
+                        </div>
+                        <div class="col">
+                            <a href="{% url 'blog' %}"
+                        class="btn btn-sm font-weight-bold btn-rounded">Back</a>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endif %}
+                <div class="row mx-auto text-center">
+                    <div class="col">
+                        <form action="{% url 'like_post' post.pk %}" method="POST">
+                            {% csrf_token %}
+                            {% if user.is_authenticated %}
+                                {% if user.id != post.author.id %}
+                                <button type="submit" name="post_id" value="{{ post.id }}"
+                                    class="btn btn-sm font-weight-bold btn-rounded mr-3">Like</button>
+                                <a href="{% url 'blog' %}"
+                                    class="btn btn-sm font-weight-bold btn-rounded ml-3">Back</a>
+                                {% endif %}
+                            {% else %}
+                                <a href="{% url 'account_login' %}"
+                                    class="btn btn-sm font-weight-bold btn-rounded mr-3">Login</a>To Like
+                                <a href="{% url 'blog' %}"
+                                    class="btn btn-sm font-weight-bold btn-rounded ml-3">Back</a>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_bottom %}
+    <div class="container bottom-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
