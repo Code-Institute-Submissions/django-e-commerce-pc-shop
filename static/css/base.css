@@ -74,8 +74,12 @@ h1 {
 
 
 /* To control product image size on all-products */
-.product-image {
+/* .product-image {
     height: 220px;
+} */
+.card-img-top {
+    height: 250px;
+    width: 350px;
 }
 
 /* Brand Logo image size on product-detail */
@@ -251,7 +255,6 @@ h1 {
 
 
 /* Product Form */
-
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -307,12 +310,6 @@ h1 {
    }
 }
 
-@media (max-width: 768px) {
-    .main-sticky {
-        bottom: 19rem!important;
-    }
-}
-
 
 /* Fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -359,24 +356,6 @@ h1 {
         max-width: 90%;
     }
 
-    .main-sticky {
-        bottom: 16rem!important;
-    }
-}
-
-
-@media (min-width: 1440px) {
-
-    .main-sticky {
-        bottom: 11rem!important;
-    }
-}
-
-@media (min-width: 1630px) {
-
-    .main-sticky {
-        bottom: 15rem!important;
-    }
 }
 
 /* Slightly larger container on xl screens */
@@ -386,5 +365,4 @@ h1 {
     max-width: 80%;
   }
 }
-
 
