@@ -13,20 +13,28 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="row">
-                    <div class="col text-center mt-3">
-                        <h2 class="col-12 text-center w-75 mx-auto main-rounded font-weight-bold mb-3 p-3">Products</h2>
+                <div class="row mt-5">
+                    <div class="col text-center mt-4">
+                        <h2 class="col-12 text-center w-75 mx-auto main-rounded font-weight-bold mb-3 p-3">Add Product</h2>
                     </div>
                 </div>
-                <h5 class="text-muted text-center mt-3">Add a Product</h5>
             </div>
         </div>
-
         <div class="row main-rounded mx-auto mt-3">
-            <div class="col-lg-10 mx-auto mt-3">
+            <div class="col-sm-10 col-md-8 mx-auto mt-3">
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
+                        {% if field.name == 'key_feature' %}
+                            <div class="row justify-content-center">
+                                <div class="mb-5 mx-3">
+                                    <a class="btn btn-rounded " href="{% url 'add_brand' %}">Add Brand</a>
+                                </div>
+                                <div class="mb-5 mx-3">
+                                    <a class="btn btn-rounded" href="{% url 'brands' %}">View All Brands</a>
+                                </div>
+                            </div> 
+                        {% endif %}
                         {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
                         {% else %}
