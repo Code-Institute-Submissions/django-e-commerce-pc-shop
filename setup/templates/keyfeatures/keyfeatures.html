@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/brands.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col text-center mt-4">
+                <h2 class="col-12 text-center w-75 mx-auto main-rounded font-weight-bold mb-3 p-3">Key Features</h2>
+            </div>
+        </div>
+        <div class="row mx-auto mt-1 mb-3">
+            <div class="col-6 mx-auto">
+                <div class="text-center">
+                    <div class="row justify-content-around">
+                        <a href="{% url 'add_keyfeatures' %}" class="col-sm-6 col-lg-3 my-3 btn btn-rounded mb-3" >Add Key Features</a>
+                        <a href="{% url 'add_feature' %}" class="col-sm-6 col-lg-3 my-3 btn btn-rounded mb-3" >Add Feature</a>
+                        <a href="{% url 'add_product' %}" class="col-sm-6 col-lg-3 my-3 btn btn-rounded mb-3">Product Management</a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="container">
+           <div class="row justify-content-center">
+            {% for feature in keyfeatures %}
+                {% if feature %}
+                <div class="col-sm-12 col-lg-4 mx-auto my-3">
+                    <div class="card main-rounded border-0">
+                    <div class="card-body text-center">
+                        <h5 class="card-text text-center mt-3">{{ feature.name }}</h5>
+                        <p class="card-text text-center mt-3"><small class="text-muted">{{ feature.feature_1_name }} - {{ feature.feature_1 }}</small></p>
+                        <p class="card-text text-center mt-3"><small class="text-muted">{{ feature.feature_2_name }} - {{ feature.feature_2 }}</small></p>
+                        <p class="card-text text-center mt-3"><small class="text-muted">{{ feature.feature_3_name }} - {{ feature.feature_3 }}</small></p>
+                        <p class="card-text text-center mt-3"><small class="text-muted">{{ feature.feature_4_name }} - {{ feature.feature_4 }}</small></p>
+                        <p class="card-text text-center mt-3"><small class="text-muted">{{ feature.feature_5_name }} - {{ feature.feature_5 }}</small></p>
+                    
+                    </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="scroll-button btn btn-rounded border border-black">
+        <a class="scroll-link d-flex h-100">
+            <i class="fas fa-arrow-up mx-auto my-auto"></i>
+        </a>	
+    </div>
+{% endblock %}
+
+
+{% block page_bottom %}
+    <div class="container bottom-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+<!-- Scroll Button -->
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.scroll-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+{% endblock %}
+

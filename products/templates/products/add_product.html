@@ -35,6 +35,19 @@
                                 </div>
                             </div> 
                         {% endif %}
+                        {% if field.name == 'chipset_logo' %}
+                            <div class="row justify-content-center">
+                                <div class="mb-5 mx-3">
+                                    <a class="btn btn-rounded " href="{% url 'add_keyfeatures' %}">Add Key Feature</a>
+                                </div>
+                                <div class="mb-5 mx-3">
+                                    <a class="btn btn-rounded" href="{% url 'add_feature' %}">Add Feature</a>
+                                </div>
+                                <div class="mb-5 mx-3">
+                                    <a class="btn btn-rounded" href="{% url 'keyfeatures' %}">View All Key Features</a>
+                                </div>
+                            </div> 
+                        {% endif %}
                         {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
                         {% else %}

@@ -1,6 +1,6 @@
 from django import forms
 from products.widgets import CustomClearableFileInput
-from .models import Brand
+from .models import Brand, KeyFeatures, Feature
 
 
 class BrandForm(forms.ModelForm):
@@ -21,3 +21,36 @@ class BrandForm(forms.ModelForm):
         """ self.fields['brands'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black' """
+
+
+class KeyFeaturesForm(forms.ModelForm):
+
+    class Meta:
+        model = KeyFeatures
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        keyfeatures = KeyFeatures.objects.all()
+
+        """ self.fields['brands'].choices = friendly_names
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'border-black' """
+
+class FeatureForm(forms.ModelForm):
+
+    class Meta:
+        model = Feature
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        feature = Feature.objects.all()
+
+
+        """ self.fields['brands'].choices = friendly_names
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'border-black' """
+
+
+

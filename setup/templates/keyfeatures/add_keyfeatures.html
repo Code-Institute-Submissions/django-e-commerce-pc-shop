@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/brands.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col text-center mt-4">
+                <h2 class="col-12 text-center w-75 mx-auto main-rounded font-weight-bold mb-3 p-3">Add Key Features</h2>
+            </div>
+        </div>
+        <div class="row mx-auto mt-1 mb-3">
+            <div class="col-6 mx-auto">
+                <div class="text-center">
+                    <div class="row justify-content-around">
+                        <a href="{% url 'add_feature' %}" class="col-sm-6 col-lg-4 my-3 btn btn-rounded mb-3" >Add Feature</a>
+                        <a href="{% url 'add_product' %}" class="col-sm-6 col-lg-4 my-3 btn btn-rounded mb-3">Product Management</a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="row main-rounded mx-auto mt-3">
+            <div class="col-sm-10 col-md-8 mx-auto mt-3">
+                <form method="POST" action="{% url 'add_keyfeatures' %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right">
+                        <a class="btn btn-rounded" href="{% url 'keyfeatures' %}">Cancel</a>
+                        <button class="btn btn-rounded" type="submit">Add Key Features</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_bottom %}
+    <div class="container bottom-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}

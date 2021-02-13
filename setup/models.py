@@ -56,6 +56,7 @@ class Brand(models.Model):
 class KeyFeatures(models.Model):
 
     class Meta:
+        ordering = ['-id']
         verbose_name_plural = 'Key Features'
 
     name = models.CharField(
@@ -110,6 +111,7 @@ class KeyFeatures(models.Model):
 class Feature(models.Model):
 
     class Meta:
+        ordering = ['-id']
         verbose_name_plural = 'Feature'
 
     name = models.CharField(default='FeatureName', max_length=254)
