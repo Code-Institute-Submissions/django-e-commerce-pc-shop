@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col text-center mt-4">
+                <h2 class="col-12 text-center w-75 mx-auto main-rounded font-weight-bold mb-3 p-3">{{ brand.name }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row mx-auto mt-1 mb-3">
+            <div class="col-6 mx-auto">
+                <div class="text-center">
+                    <div class="row justify-content-around">
+                        <a href="{% url 'brands' %}" class="col-sm-6 col-lg-3 my-3 btn btn-rounded" >Brands</a>
+                        <a href="{% url 'add_product' %}" class="col-sm-6 col-lg-3 my-3 btn btn-rounded">Add Product</a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    <div class="container">
+        <div class="row justify-content-center main-rounded m-2">
+            <!-- Side Banner -->
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <p class="card-text text-center mt-3"><small class="text-muted">Side Banner</small></p>
+                <hr>
+                <div class="card mx-auto my-3 border-0">
+                    {% if brand.side_banner %}
+                        <img src="{{ brand.side_banner.url }}" class="banner img-fluid mx-auto" alt="...">
+                    {% else %}
+                        <img class="thumb-img img-fluid mx-auto" src="{{ MEDIA_URL }}noimage.png" alt="{{ brand.name }}">
+                    {% endif %}
+                </div>
+            </div>
+            <!-- Brand Logo -->
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <p class="card-text text-center mt-3"><small class="text-muted">Brand Logo</small></p>
+                <hr>
+                <div class="card mx-auto my-3 border-0">
+                    {% if brand.brand_logo %}
+                        <img src="{{ brand.brand_logo.url }}" class="thumb-img img-fluid mx-auto" alt="...">
+                    {% else %}
+                        <img class="thumb-img img-fluid mx-auto" src="{{ MEDIA_URL }}noimage.png" alt="{{ brand.name }}">
+                    {% endif %}
+                <!-- Brand Website -->
+                <div class="col-12 mt-5">
+                    <p class="card-text text-center mt-3"><small class="text-muted">Brand Webpage</small></p>
+                    <hr>
+                    <p class="card-text text-center mt-3"><small class="text-muted">{{ brand.website }}</small></p>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-7">
+                <hr>
+                <div class="row justify-content-between">
+                    <button type="button" class="btn col-sm-6 col-md-4 col-lg-3 mx-5 my-3 text-danger btn-rounded" data-toggle="modal" data-target="#delete-modal_{{ brand.id }}">
+                        Delete
+                    </button>
+                    <a href="{% url 'edit_brand' brand.id %}" class="col-sm-6 col-md-4 col-lg-3 mx-5 my-3 btn text-warning btn-rounded">Edit</a>
+                    <div class="modal fade" id="delete-modal_{{ brand.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title mx-auto" id="exampleModalCenterTitle">
+                                    <p class="text-center">Are you sure you want to delete this brand?</p>
+                                    <p class="text-danger font-weight-bold text-center ml-4">{{ brand.name }}</p>
+                                </h5>
+                                <button type="button" class="close btn-rounded ml-0" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-center">
+                                {% if brand.brand_logo %}
+                                    <img src="{{ brand.brand_logo.url }}" class="h-50 w-50" alt="{{ brand.friendly_name }}">
+                                {% else %}
+                                    <img class="thumb-img img-fluid my-auto" src="{{ MEDIA_URL }}noimage.png" alt="noimage.png">
+                                {% endif %}
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <a type="button" href="{% url 'delete_brand' brand.id %}" class="btn text-danger btn-rounded">Delete</a>
+                                <button type="button" class="btn btn-rounded" data-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-button btn btn-rounded border border-black">
+        <a class="scroll-link d-flex h-100">
+            <i class="fas fa-arrow-up mx-auto my-auto"></i>
+        </a>	
+    </div>
+{% endblock %}
+
+
+{% block page_bottom %}
+    <div class="container bottom-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+<!-- Scroll Button -->
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.scroll-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+{% endblock %}
+
