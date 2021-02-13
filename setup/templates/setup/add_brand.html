@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/brands.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col text-center mt-4">
+                <h2 class="col-12 text-center w-75 mx-auto main-rounded font-weight-bold mb-3 p-3">Add Brand</h2>
+            </div>
+        </div>
+        <div class="row main-rounded mx-auto mt-3">
+            <div class="col-sm-10 col-md-8 mx-auto mt-3">
+                <form method="POST" action="{% url 'add_brand' %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right">
+                        <a class="btn btn-rounded" href="{% url 'brands' %}">Cancel</a>
+                        <button class="btn btn-rounded" type="submit">Add Brand</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_bottom %}
+    <div class="container bottom-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
