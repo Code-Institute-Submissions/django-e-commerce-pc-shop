@@ -1,3 +1,6 @@
+
+
+
 /* INSPIRATION */
 /* https://uxplanet.org/top-ui-ux-design-inspiration-138-90703cf88472 */
 
@@ -181,8 +184,10 @@
 /* To add rounded borders and bg color to container */
 .main-rounded {
     background-color: var(--main-white);
-    box-shadow: var(--main-shadow);
-    border-radius: 2rem;
+    box-shadow: var(--main-shadow)!important;
+    border-radius: 2rem!important;
+    border: none!important;
+    border-color: none!important;
 }
 
 /* Used because search bar  */
