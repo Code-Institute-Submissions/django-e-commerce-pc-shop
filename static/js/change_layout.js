@@ -18,7 +18,7 @@ function gridLayout() {
   setDisplay("listLayout", "none");
 }
 
-//  To hide all elements with listLayout classes
+//  To hide all elements with gridLayout classes
 function listLayout() {
   setDisplay("gridLayout", "none");
   setDisplay("listLayout", "block");
