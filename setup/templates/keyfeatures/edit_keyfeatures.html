@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/brands.css' %}">
+    <link rel="stylesheet" href="{% static 'css/setup.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -14,25 +14,28 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col text-center mt-4">
-                <h2 class="col-12 text-center w-75 mx-auto main-rounded font-weight-bold mb-3 p-3">Edit Key Features</h2>
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-10 text-center mt-4 mx-auto">
+                <h2 class="text-center main-rounded font-weight-bold p-3">Edit Key Feature</h2>
             </div>
         </div>
+        <!-- Button row -->
         <div class="row mx-auto mt-1 mb-3">
-            <div class="col-6 mx-auto">
+            <div class="col-sm-8 col-md-10 mx-auto">
                 <div class="text-center">
                     <div class="row justify-content-around">
-                        <a href="{% url 'add_feature' %}" class="col-sm-6 col-lg-4 my-3 btn btn-rounded mb-3" >Add Feature</a>
-                        <a href="{% url 'add_product' %}" class="col-sm-6 col-lg-4 my-3 btn btn-rounded mb-3">Product Management</a>
+                        <a href="{% url 'keyfeatures' %}" class="btn-link-setup col-sm-6 col-md-3 col-lg-3 my-3 mx-3 btn btn-rounded mb-3" >Key Features</a>
+                        <a href="{% url 'add_feature' %}" class="btn-link-setup col-sm-6 col-md-3 col-lg-3 my-3 mx-3 btn btn-rounded mb-3" >Add Feature</a>
+                        <a href="{% url 'add_product' %}" class="btn-link-setup col-sm-6 col-md-2 col-lg-3 my-3 mx-3 btn btn-rounded mb-3">Product Management</a>
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
-         <div class="row main-rounded mx-auto mt-3">
-            <div class="col-sm-10 col-md-8 mx-auto mt-3">
-                <form method="POST" action="" class="form mb-2" enctype="multipart/form-data">
+        <!-- Update Key Feature -->
+        <div class="row mx-auto mt-3">
+            <div class="main-rounded col-sm-10 col-md-8 mx-auto mt-3">
+                <form method="POST" action="" class="form p-3" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
                         {% if field.name != 'image' %}
@@ -41,9 +44,9 @@
                             {{ field }}
                         {% endif %}
                     {% endfor %}
-                    <div class="text-right">
-                        <a class="btn btn-rounded" href="">Cancel</a>
-                        <button class="btn btn-rounded" type="submit">Update Key Features</button>
+                    <div class="text-center">
+                        <button class="btn btn-rounded m-3" type="submit">Update Key Features</button>
+                        <a class="btn btn-rounded m-3" href="{% url 'keyfeatures_detail' keyfeatures.id %}">Cancel</a>
                     </div>
                 </form>
             </div>            
