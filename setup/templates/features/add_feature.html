@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/brands.css' %}">
+    <link rel="stylesheet" href="{% static 'css/setup.css' %}">
 {% endblock %}
+
 
 {% block page_header %}
     <div class="container header-container">
@@ -13,20 +15,34 @@
     </div>
 {% endblock %}
 
+
 {% block content %}
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col text-center mt-4">
-                <h2 class="col-12 text-center w-75 mx-auto main-rounded font-weight-bold mb-3 p-3">Add Brand</h2>
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-10 text-center mt-4 mx-auto">
+                <h2 class="text-center main-rounded font-weight-bold p-3">Add Feature</h2>
             </div>
         </div>
-        <div class="row main-rounded mx-auto mt-3">
-            <div class="col-sm-10 col-md-8 mx-auto mt-3">
+        <!-- Button row -->
+        <div class="row mx-auto mt-1 mb-3">
+            <div class="col-sm-8 col-md-10 mx-auto">
+                <div class="text-center">
+                    <div class="row justify-content-around">
+                        <a href="{% url 'keyfeatures' %}" class="btn-link-setup col-sm-6 col-md-3 col-lg-3 my-3 mx-3 btn btn-rounded mb-3" >Key Features</a>
+                        <a href="{% url 'features' %}" class="btn-link-setup col-sm-6 col-md-3 col-lg-3 my-3 mx-3 btn btn-rounded mb-3" >Features</a>
+                        <a href="{% url 'add_product' %}" class="btn-link-setup col-sm-6 col-md-2 col-lg-3 my-3 mx-3 btn btn-rounded mb-3">Product Management</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Feature -->
+        <div class="row mx-auto mt-3">
+            <div class="main-rounded col-sm-10 col-md-8 mx-auto p-3">
                 <form method="POST" action="{% url 'add_feature' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }}
                     <div class="text-right">
-                        <a class="btn btn-rounded" href="{% url 'keyfeatures' %}">Cancel</a>
+                        <a class="btn btn-rounded" href="{% url 'features' %}">Cancel</a>
                         <button class="btn btn-rounded" type="submit">Add Feature</button>
                     </div>
                 </form>
@@ -34,6 +50,7 @@
         </div>
     </div>
 {% endblock %}
+
 
 {% block page_bottom %}
     <div class="container bottom-container">
