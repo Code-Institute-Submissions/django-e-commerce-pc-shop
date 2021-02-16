@@ -1,6 +1,6 @@
 from django import forms
 from products.widgets import CustomClearableFileInput
-from .models import Brand, KeyFeatures, Feature
+from .models import Brand, KeyFeatures, Feature, Specification, Spec
 
 
 class BrandForm(forms.ModelForm):
@@ -40,3 +40,24 @@ class FeatureForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         feature = Feature.objects.all()
 
+
+class SpecificationForm(forms.ModelForm):
+
+    class Meta:
+        model = Specification
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        specification = Specification.objects.all()
+
+
+class SpecForm(forms.ModelForm):
+
+    class Meta:
+        model = Spec
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        spec = Spec.objects.all()
