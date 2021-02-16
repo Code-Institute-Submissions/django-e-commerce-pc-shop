@@ -60,7 +60,7 @@ class KeyFeatures(models.Model):
         verbose_name_plural = 'Key Features'
 
     name = models.CharField(
-      default='ProductCategoryName', max_length=254)
+      default='KeyFeatureName', max_length=254)
 
     feature_for = models.CharField(
       max_length=254, blank=False,
@@ -102,10 +102,10 @@ class KeyFeatures(models.Model):
       max_length=254, blank=True)
 
     def __str__(self):
-        return self.feature_for
+        return self.name
 
-    """ def get_friendly_name(self):
-        return self.name """
+    def get_friendly_name(self):
+        return self.feature_for
 
 
 class Feature(models.Model):
@@ -126,11 +126,11 @@ class Specification(models.Model):
         verbose_name_plural = 'Specifications'
 
     name = models.CharField(
-      default='ProductName', max_length=254)
+      default='SpecificationName', max_length=254)
 
     specification_for = models.CharField(
       max_length=254, null=True, blank=False,
-      default='ProductCategory')
+      default='ProductName')
 
     spec_1_name = models.ForeignKey(
       'Spec', related_name='spec_1_names', null=True, blank=False,
@@ -236,4 +236,3 @@ class Spec(models.Model):
 
     def __str__(self):
         return self.name
-
