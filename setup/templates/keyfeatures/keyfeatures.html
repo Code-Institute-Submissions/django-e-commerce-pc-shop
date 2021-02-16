@@ -115,11 +115,11 @@
                                         <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_4_name }} - {{ feature.feature_4 }}</small></p>
                                         <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_5_name }} - {{ feature.feature_5 }}</small></p>
                                         <hr>
-                                        <button type="button" class="btn col-sm-6 col-md-4 col-lg-3 my-3 mx-2 text-danger btn-rounded" data-toggle="modal" data-target="#delete-modal_{{ feature.id }}">
+                                        <button type="button" class="btn col-sm-6 col-md-4 col-lg-3 my-3 mx-2 text-danger btn-rounded" data-toggle="modal" data-target="#delete-modal2_{{ feature.id }}">
                                             Delete
                                         </button>
                                         <a href="{% url 'edit_keyfeatures' feature.id %}" class="col-sm-6 col-md-4 col-lg-3 my-3 mx-2 btn text-warning btn-rounded">Edit</a>
-                                        <div class="modal fade" id="delete-modal_{{ feature.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal fade" id="delete-modal2_{{ feature.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content">
                                                 <div class="modal-header">
