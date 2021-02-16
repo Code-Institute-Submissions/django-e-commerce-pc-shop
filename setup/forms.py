@@ -18,10 +18,6 @@ class BrandForm(forms.ModelForm):
         brands = Brand.objects.all()
         friendly_names = [(c.id, c.get_friendly_name()) for c in brands]
 
-        """ self.fields['brands'].choices = friendly_names
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black' """
-
 
 class KeyFeaturesForm(forms.ModelForm):
 
@@ -33,9 +29,6 @@ class KeyFeaturesForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         keyfeatures = KeyFeatures.objects.all()
 
-        """ self.fields['brands'].choices = friendly_names
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black' """
 
 class FeatureForm(forms.ModelForm):
 
@@ -46,11 +39,4 @@ class FeatureForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         feature = Feature.objects.all()
-
-
-        """ self.fields['brands'].choices = friendly_names
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black' """
-
-
 
