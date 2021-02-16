@@ -51,11 +51,7 @@
                         <div class="card main-rounded border-0 gridLayout">
                         <div class="card-body text-center">
                             <h5 class="card-text text-center font-weight-bold mt-3">{{ spec.name }}</h5>
-                            <p class="card-text text-center mt-3"><small class="text-muted">{{ spec.spec_1_name }} - {{ spec.spec_1 }}</small></p>
-                            <p class="card-text text-center mt-3"><small class="text-muted">{{ spec.spec_2_name }} - {{ spec.spec_2 }}</small></p>
-                            <p class="card-text text-center mt-3"><small class="text-muted">{{ spec.spec_3_name }} - {{ spec.spec_3 }}</small></p>
-                            <p class="card-text text-center mt-3"><small class="text-muted">{{ spec.spec_4_name }} - {{ spec.spec_4 }}</small></p>
-                            <p class="card-text text-center mt-3"><small class="text-muted">{{ spec.spec_5_name }} - {{ spec.spec_5 }}</small></p>
+                                {% include 'specifications/includes/specification.html' %}                      
                             <hr>
                             <button type="button" class="btn-delete font-weight-bold btn-rounded btn m-2" data-toggle="modal" data-target="#delete-modal_{{ spec.id }}">
                                 Delete
@@ -109,11 +105,7 @@
                                     </div>
                                     <div id="collapse_{{ spec.id }}" class="collapse" aria-labelledby="heading_{{ spec.id }}" data-parent="#spec{{ spec.id }}">
                                         <div class="card-body text-center">
-                                            <p class="card-text mt-3"><small class="text-muted">{{ spec.spec_1_name }} - {{ spec.spec_1 }}</small></p>
-                                            <p class="card-text mt-3"><small class="text-muted">{{ spec.spec_2_name }} - {{ spec.spec_2 }}</small></p>
-                                            <p class="card-text mt-3"><small class="text-muted">{{ spec.spec_3_name }} - {{ spec.spec_3 }}</small></p>
-                                            <p class="card-text mt-3"><small class="text-muted">{{ spec.spec_4_name }} - {{ spec.spec_4 }}</small></p>
-                                            <p class="card-text mt-3"><small class="text-muted">{{ spec.spec_5_name }} - {{ spec.spec_5 }}</small></p>
+                                                {% include 'specifications/includes/specification.html' %} 
                                             <hr>
                                             <button type="button" class="btn col-sm-6 col-md-4 col-lg-3 my-3 mx-2 text-danger btn-rounded" data-toggle="modal" data-target="#delete-modal2_{{ spec.id }}">
                                                 Delete
