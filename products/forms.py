@@ -12,6 +12,10 @@ class ProductForm(forms.ModelForm):
 
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
+    promo_side_banner_left = forms.ImageField(label='Promo Side Banner Left', required=False, widget=CustomClearableFileInput)
+
+    promo_side_banner_right = forms.ImageField(label='Promo Side Banner Right', required=False, widget=CustomClearableFileInput)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
