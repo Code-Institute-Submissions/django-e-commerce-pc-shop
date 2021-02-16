@@ -4,14 +4,17 @@
 <html lang="en">
   <head>
 
+
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
+
     {% block extra_meta %}
     {% endblock %}
+
 
     {% block corecss %}
         <!-- Font Awesome -->
@@ -29,9 +32,11 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %}
 
+
     <!-- Extra css -->
     {% block extra_css %}
     {% endblock %}
+
 
     <!-- Scripts -->
     {% block corejs %}
@@ -42,8 +47,10 @@
         <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
+
     {% block extra_js %}
     {% endblock %}
+
 
     <title>Tech Cloud {% block extra_title %}{% endblock %}</title>
   </head>
@@ -158,17 +165,22 @@
         </div>
     {% endif %}
 
+
     {% block page_header %}
     {% endblock %}
+
 
     {% block content %}
     {% endblock %}
 
+
     {% block categories %}
     {% endblock %}
 
+
     {% block page_bottom %}
     {% endblock %}
+
 
     {% block postloadjs %}
     <script type="text/javascript">
@@ -176,5 +188,6 @@
     </script>
     {% endblock %}
 
+    
   </body>
 </html>
