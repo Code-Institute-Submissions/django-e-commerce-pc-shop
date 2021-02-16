@@ -2,6 +2,12 @@
 {% load static %}
 {% load bag_tools %}
 
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/setup.css' %}">
+{% endblock %}
+
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -10,27 +16,28 @@
     </div>
 {% endblock %}
 
+
 {% block content %}
     <div class="container mb-2">
-        <div class="row">
-            <div class="col main-rounded mt-3">
-                <h2 class="main-text text-center text-uppercase font-weight-bold">Shopping Bag</h2>
+        <div class="row mt-sm-0 mt-md-3">
+            <div class="col-sm-12 col-md-10 text-center mt-4 mx-auto">
+                <h2 class="text-center main-rounded font-weight-bold p-3 header">Shopping Bag</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col mx-auto text-center">
                 {% if bag_items %}
-                    <div class="table-responsive main-rounded mt-3 pl-4 pr-4">
-                        <table class="table table-sm table-borderless">
+                    <div class="table-responsive main-rounded mt-3">
+                        <table class="table table-sm table-borderless mt-3">
                             <thead class="text-black">
                                 <tr>
+                                    <th scope="col"></th>
                                     <th scope="col">Product Info</th>
                                     <th scope="col">Price</th>
                                     <th scope="col">Qty</th>
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
-
                             {% for item in bag_items %}
                                 <tr>
                                     <td class="p-3 w-25">
@@ -75,8 +82,8 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                        <a class="update-link btn btn-rounded btn-view m-3"><small>Update</small></a>
+                                        <a class="remove-item btn btn-rounded btn-delete m-3" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -97,13 +104,13 @@
                             </tr>
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'products' %}" class="btn btn-rounded btn-lg">
+                                    <a href="{% url 'products' %}" class="btn btn-rounded btn-lg m-3">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-rounded btn-lg">
+                                    <a href="{% url 'checkout' %}" class="btn btn-rounded btn-lg m-3">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
@@ -114,8 +121,8 @@
                         </table>
                     </div>
                 {% else %}
-                    <p class="lead mb-5 mt-5">Your bag is empty.</p>
-                    <a href="{% url 'products' %}" class="btn btn-rounded btn-lg">
+                    <p class="lead m-5 text-center">Your bag is empty.</p>
+                    <a href="{% url 'products' %}" class="btn btn-rounded btn-lg m-3">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
@@ -127,6 +134,7 @@
     </div>
 {% endblock %}
 
+
 {% block page_bottom %}
     <div class="container bottom-container">
         <div class="row">
@@ -134,6 +142,7 @@
         </div>
     </div>
 {% endblock %}
+
 
 {% block postloadjs %}
 {{ block.super }}
