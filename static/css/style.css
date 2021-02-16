@@ -1,32 +1,10 @@
 
 
-
 /* INSPIRATION */
 /* https://uxplanet.org/top-ui-ux-design-inspiration-138-90703cf88472 */
 
 /* COLORS AND CHUNKS OF CODE */
 /* https://codepen.io/aybukeceylan/pen/OJRNbZp */
-
-:root {
-/*   --app-container: #f3f6fd;
-  --main-color: #1f1c2e;
-  --secondary-color: #4A4A4A;
-  --link-color: #1f1c2e; */
-  /* --link-color-hover: #c3cff4;
-  --link-color-active: #fff;
-  --link-color-active-bg: #1f1c2e;
-  --projects-section: #fff;
-  --message-box-hover: #fafcff;
-  --message-box-border: #e9ebf0;
-  --more-list-bg: #fff;
-  --more-list-bg-hover:  #f6fbff;
-  --more-list-shadow: rgba(209, 209, 209, 0.4);
-  --button-bg: #1f1c24;
-  --search-area-bg: #fff;
-  --star: #1ff1c2e;
-  --message-btn: #fff; */
-}
-
 
 /* Site Colours */
 :root {
@@ -42,10 +20,10 @@
     --second-shadow: 0 0px 6px 0 rgb(0 0 0), 0 24px 20px -24px rgb(71 82 107 / 10%);
 }
 
-
 /* MAIN COLORS AND STYLE */
 
 /*  Main Font  */
+
 .main-logo-font {
     font-family: 'Press Start 2P', cursive;
 }
@@ -55,6 +33,7 @@
 }
 
 /* Custom class to apply dark color on text */
+
 .main-text {
     color: var(--main-color);
 }
@@ -64,16 +43,19 @@
 }
 
 /* Custom class to apply app-color */
+
 .app-color {
     background-color: var(--app-color)!important;
 }
 
 /* Custom class to apply bg main dark color */
+
 .main-color {
     background-color: var(--main-color);
 }
 
 /* To apply color on main-nav links */
+
 .nav-link {
     color: var(--main-color);
 }
@@ -83,6 +65,7 @@
 }
 
 /* To add shadow to elements */
+
 .main-shadow {
     box-shadow: var(--main-shadow);
 }
@@ -92,6 +75,7 @@
 }
 
 /* https://www.digitalocean.com/community/tutorials/css-position-sticky */
+
 .main-sticky {
     position: -webkit-sticky;
     position: sticky;
@@ -102,6 +86,7 @@
 /* HOVER BTN EFFECTS */
 
 /* To override my styles because icon is comming from white background */
+
 .search-icon {
     color: #1f1c2e!important;
     background-color: var(--main-white)!important;
@@ -114,6 +99,7 @@
 }
 
 /* Logo and account hover */
+
 .nav-link:hover {
     background-color: var(--main-color);
     color: var(--main-white)!important;
@@ -128,11 +114,13 @@
 }
     
 /* Icons inverted on hover */
+
 .nav-link:hover  .main-text  {
     color: var(--main-white);
 }
 
 /* Categories hover */
+
 .cat-hover:hover > a > h5 {
     background-color: var(--main-color);
     box-shadow: var(--second-shadow);
@@ -140,6 +128,7 @@
 }
 
 /* Main nav hover */
+
 .dropdown:hover > .font-weight-bold {
     background-color: var(--main-color);
     color: var(--main-white);
@@ -147,6 +136,7 @@
 }
 
 /* Dropdown items on hover */
+
 .dropdown-item:focus, .dropdown-item:hover {
     color: var(--main-white);
     text-decoration: none;
@@ -154,6 +144,7 @@
 }
 
 /* Product image on hover */
+
 .card:hover > .card-body > a > p {
     background-color: var(--main-color);
     box-shadow: var(--second-shadow);
@@ -178,10 +169,12 @@
     box-shadow: var(--second-shadow);
 }
 
-
 /* CUSTOM ROUNDED CLASSES */
 
-/* To add rounded borders and bg color to container */
+/* To add rounded corners, shadow and white bg to container,
+    To remove border and border color
+*/
+
 .main-rounded {
     background-color: var(--main-white);
     box-shadow: var(--main-shadow)!important;
@@ -190,7 +183,8 @@
     border-color: none!important;
 }
 
-/* Used because search bar  */
+/* To add radius and white background  */
+
 .main-rounded-ns {
     border-radius: 2rem;
     background-color: var(--main-white);
@@ -201,18 +195,21 @@
 }
 
 /* Increment btn radius */
+
 .increment-qty {
     border-top-right-radius: 2rem!important;
     border-bottom-right-radius: 2rem!important;
 }
 
 /* Decrement btn radius */
+
 .decrement-qty {
     border-top-left-radius: 2rem!important;
     border-bottom-left-radius: 2rem!important;
 }
 
 /* To add top and bottom radius left and right on container */
+
 .main-radius-bottom {
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;

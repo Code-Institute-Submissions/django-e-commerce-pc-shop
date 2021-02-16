@@ -1,3 +1,5 @@
+
+
 html {
     height: 100%;
 }
@@ -10,6 +12,7 @@ body {
 }
 
 /* Font size */
+
 h1 {
     font-size: 2rem;
 }
@@ -40,6 +43,7 @@ h1 {
 }
 
 /* from Bulma */
+
 .icon {
     align-items: center;
     display: inline-flex;
@@ -49,17 +53,18 @@ h1 {
 }
 
 /* Toggler icon */
+
 .navbar-toggler .navbar-toggler-icon {
      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(31, 28, 46)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-
  /* Index categories animation:
     IF transform is uncommented
-    animation will be zoom and breath!!
+    animation will be zoom in out!!
  */
  
 /* Categories zoom in out*/
+
 .home-categories:hover {
     /* -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
@@ -74,47 +79,38 @@ h1 {
 
 
 /* To control product image size on all-products */
-/* .product-image {
-    height: 220px;
-} */
+
 .card-img-top {
     height: 250px;
     width: 350px;
 }
 
 /* Brand Logo image size on product-detail */
+
 .brand-logo {
     height: 90px;
 }
 
 /* Breadcrumb color overwrite */
+
 .breadcrumb {
    background-color: var(--main-white);
 }
 
-
-/* Rounded table icons left right */
-/* .table-striped tr td:first-of-type {
-    border-radius: 2.5rem 0px 0px 2.5rem;
-}
-
-
-.table-striped tr td:last-of-type {
-    border-radius: 0px 2.5rem 2.5rem 0px;
-}
- */
-
 /* Table custom style */
+
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: var(--main-white);
 }
 
 /* To remove borders from table items */
+
 .table td, .table th {
     border-top: none;
 }
 
 /* Scroll to top button */
+
 .scroll-button {
     height: 50px;
     width: 50px;
@@ -124,14 +120,15 @@ h1 {
 }
 
 /* Cursor pointer on links */
+
 .update-link,
 .remove-item,
 .scroll-link {
     cursor: pointer;
 }
 
-
 /* Bootstrap toasts */
+
 .message-container {
     position: fixed;
     top: 123px;
@@ -148,6 +145,7 @@ h1 {
 }
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+
 .arrow-up {
     width: 0;
     height: 0;
@@ -160,6 +158,7 @@ h1 {
 }
 
 /* Convenience classes - colors copied from Bootstrap */
+
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -198,7 +197,6 @@ h1 {
     overflow-y: auto;
 }
 
-
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
@@ -219,42 +217,8 @@ h1 {
     color: #aab7c4;
 }
 
-/* .allauth-form-inner-content button,
-.allauth-form-inner-content input[type='submit'] {
-	
-	display: inline-block;
-    font-weight: 400;
-    color: #fff;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #000;
-    border: 1px solid #000;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0;
-
-    
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-.allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
-    background-color: #222;
-    border-color: #222;
-} */
-
-/* .allauth-form-inner-content a {
-	color: #17a2b8; 
-} */
-
-
 /* Product Form */
+
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -281,10 +245,10 @@ h1 {
     border-radius: 0;
 }
 
-
 /* Media Queries */
 
 /* To control logo size on small screens and nav items */
+
 @media (max-width: 320px) {
 
     .brand-logo {
@@ -296,9 +260,9 @@ h1 {
   }
 }
 
-
 /* Custom margin-top class for small devices
     Bootstrap is not working ? */
+
 @media (max-width: 576px) {
 
     .mt-sm-4, .my-sm-4 {
@@ -312,6 +276,7 @@ h1 {
 
 
 /* Fixed top navbar only on medium and up */
+
 @media (min-width: 992px) {
 
     .fixed-top-desktop-only {
@@ -323,7 +288,7 @@ h1 {
     }
 
     .header-container {
-        padding-top: 235px;
+        padding-top: 250px;
     }
 
     .bottom-container {
@@ -333,10 +298,11 @@ h1 {
 
 
 /* Mobile */
+
 @media (max-width: 992px) {
 
     .header-container {
-        padding-top: 175px;
+        padding-top: 155px;
     }
 
     .bottom-container {
@@ -350,6 +316,7 @@ h1 {
 
 
 /* Media Queries to control element push and size of banner on laptops screens */
+
 @media (min-width: 1024px) {
 
     .banners {
@@ -359,6 +326,7 @@ h1 {
 }
 
 /* Slightly larger container on xl screens */
+
 @media (min-width: 1200px) {
 
   .container {

@@ -1,15 +1,21 @@
 
 
-
 /* SETUP STYLES */
 
-/* Navigation link buttons */
+/* Navigation link buttons
+    Preventing text to wrap in new line on small breakpoints!
+    Check if usable? Bugs ?
+    
+*/
+
+.header,
 .feature-card,
 .btn-link-setup {
     min-width: max-content;
 }
 
 /* Function btn styles */
+
 .active {
     background-color:  #17a2b8!important;
 }
@@ -43,18 +49,20 @@
 .btn-view:hover {
     color: var(--main-color)!important;
     background-color: #17a2b8!important;
+    font-weight: 700;
 }
-
 
 /* BRAND STYLES */
 
 /* Small icons for detail page */
+
 .thumb-img {
     height: 100px;
     width: 100px;
 }
 
 /* Brand logo size */
+
 .brand_thumb {
     height: 80px;
     width: 80px;
@@ -63,19 +71,23 @@
 }
 
 /* Banner size */
+
 .banner {
     width: 80px;
     height: auto;
 }
 
 /* Form control bg color and radius */
+
 .form-control {
     background-color: var(--app-color);
     border-radius: 2rem;
 }
 
 /* BRAND BUTTON */
+
 /* Brand card on hover */
+
 .brand-link:hover > .main-rounded {
     background: var(--main-color);
     color: var(--app-color);
@@ -85,9 +97,8 @@
 }
 
 /* To remove blue color from brand name and underline */
+
 a:hover {
     color: none;
     text-decoration: none;
 }
-
-
