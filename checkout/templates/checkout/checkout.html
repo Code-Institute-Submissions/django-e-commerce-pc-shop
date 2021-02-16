@@ -2,9 +2,11 @@
 {% load static %}
 {% load bag_tools %}
 
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
+
 
 {% block page_header %}
     <div class="container header-container">
@@ -14,16 +16,16 @@
     </div>
 {% endblock %}
 
+
 {% block content %}
-    <div class="container mb-2">
-        <div class="row">
-            <div class="col main-rounded mt-3">
-                <h2 class="main-text text-center text-uppercase font-weight-bold">Checkout</h2>
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-10 text-center mt-4 mx-auto">
+                <h2 class="text-center main-rounded font-weight-bold p-3">Checkout</h2>
             </div>
         </div>
-
-        <div class="row main-rounded mt-3">
-            <div class="col-12 col-lg-6 order-lg-last mb-5 mt-3">
+        <div class="row col-10 main-rounded mt-3 mx-auto">
+            <div class="col-12 col-lg-6 order-lg-last mb-5 mt-3 main-sticky">
                 <p class="text-muted order-summary">Order Summary ({{ product_count }})</p>
                 <div class="row">
                     <div class="col-7 offset-2">
@@ -106,21 +108,20 @@
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
-
-                    <div class="submit-button text-right mt-3 mb-4">
+                    <div class="submit-button text-center mt-4 mb-4">
                         <p class="small text-danger mb-3 font-weight-bold">
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
 							<span>Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></span>
 						</p>                    
-						<a href="{% url 'view_bag' %}" class="btn btn-rounded">
+						<a href="{% url 'view_bag' %}" class="btn btn-rounded m-2">
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
 							</span>
 							<span class="font-weight-bold">Adjust Bag</span>
 						</a>
-						<button id="submit-button" class="btn btn-rounded">
+						<button id="submit-button" class="btn btn-rounded m-2">
 							<span class="font-weight-bold">Complete Order</span>
 							<span class="icon">
 								<i class="fas fa-lock"></i>
@@ -140,6 +141,7 @@
     </div>
 {% endblock %}
 
+
 {% block page_bottom %}
     <div class="container bottom-container">
         <div class="row">
@@ -147,6 +149,7 @@
         </div>
     </div>
 {% endblock %}
+
 
 {% block postloadjs %}
     {{ block.super }}
