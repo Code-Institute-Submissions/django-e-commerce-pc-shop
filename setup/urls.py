@@ -16,4 +16,12 @@ urlpatterns = [
     path('features/', views.all_features, name='features'),
     path('feature/add', views.add_feature, name='add_feature'),
     path('feature/delete/<int:feature_id>/', views.delete_feature, name='delete_feature'),
+    path('specifications/', views.all_specifications, name='specifications'),
+    path('specifications/<int:specification_id>/', views.specification_detail, name='specification_detail'),
+    path('specifications/add/', views.add_specification, name='add_specification'),
+    path('specifications/edit/<int:specification_id>/', views.edit_specification, name='edit_specification'),
+    path('specifications/delete/<int:specification_id>/', views.delete_specification, name='delete_specification'),
+    path('specs/', views.all_specs, name='specs'),
+    path('spec/add', views.add_spec, name='add_spec'),
+    path('spec/delete/<int:spec_id>/', views.delete_spec, name='delete_spec'),
 ]
