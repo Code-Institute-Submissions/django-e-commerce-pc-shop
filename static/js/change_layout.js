@@ -1,10 +1,10 @@
 
 
+//  To loop over all items and select all elements with same class
 
-//  To loop over all items and select all with same class 
 //  https://stackoverflow.com/questions/42416214/how-do-i-change-multiple-elements-with-same-class-name-using-javascript
 
-// To setDisplay on all elements with same className
+//  To setDisplay on all elements with same className
 function setDisplay(className, displayValue) {
   var items = document.getElementsByClassName(className);
   for (var i=0; i < items.length; i++) {
@@ -26,6 +26,7 @@ function listLayout() {
 
 
 //  Layout icons idea
+
 //  https://codepen.io/BraadMartin/pen/NPPzJX
 
 //  To add and remove active on layout click
