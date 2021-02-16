@@ -47,35 +47,9 @@
                                                 <h5 class="card-text text-center font-weight-bold mb-3">{{ specification.name }}</h5>
                                             </div>
                                             <!-- Specifications -->
-                                            <div class="col-6">
-                                                <ul class="list-group">
-                                                    <small class="text-muted text-left ml-2 mb-1">Specification 1</small>
-                                                    <li class="list-group-item"><small class="main-text">{{ specification.spec_1_name }}</small></li>
-                                                    <small class="text-muted text-left ml-2 mb-1">Specification 2</small>
-                                                    <li class="list-group-item"><small class="main-text">{{ specification.spec_2_name }}</small></li>
-                                                    <small class="text-muted text-left ml-2 mb-1">Specification 3</small>
-                                                    <li class="list-group-item"><small class="main-text">{{ specification.spec_3_name }}</small></li>
-                                                    <small class="text-muted text-left ml-2 mb-1">Specification 4</small>
-                                                    <li class="list-group-item"><small class="main-text">{{ specification.spec_4_name }}</small></li>
-                                                    <small class="text-muted text-left ml-2 mb-1">Specification 5</small>
-                                                    <li class="list-group-item"><small class="main-text">{{ specification.spec_5_name }}</small></li>
-                                                </ul>
-                                            </div>
+                                                {% include 'specifications/includes/specification_detail.html' %}
                                             <!-- Specs -->
-                                            <div class="col-6">
-                                                <ul class="list-group">
-                                                    <small class="text-muted text-left ml-2 mb-1">Spec 1</small>
-                                                    <li class="list-group-item"><small class="text-muted">{{ specification.spec_1 }}</small></li>
-                                                    <small class="text-muted text-left ml-2 mb-1">Spec 2</small>
-                                                    <li class="list-group-item"><small class="text-muted">{{ specification.spec_2 }}</small></li>
-                                                    <small class="text-muted text-left ml-2 mb-1">Spec 3</small>
-                                                    <li class="list-group-item"><small class="text-muted">{{ specification.spec_3 }}</small></li>
-                                                    <small class="text-muted text-left ml-2 mb-1">Spec 4</small>
-                                                    <li class="list-group-item"><small class="text-muted">{{ specification.spec_4 }}</small></li>
-                                                    <small class="text-muted text-left ml-2 mb-1">Spec 5</small>
-                                                    <li class="list-group-item"><small class="text-muted">{{ specification.spec_5 }}</small></li>
-                                                </ul>
-                                            </div>
+                                                {% include 'specifications/includes/spec_detail.html' %}
                                             <div class="col-12">
                                                 <hr>
                                                 <button type="button" class="btn-delete font-weight-bold btn-rounded btn m-2" data-toggle="modal" data-target="#delete-modal_{{ specification.id }}">
