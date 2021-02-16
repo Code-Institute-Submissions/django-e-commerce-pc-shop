@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/setup.css' %}">
+{% endblock %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-10 text-center mt-4 mx-auto">
+                <h2 class="text-center main-rounded font-weight-bold p-3">Specifications</h2>
+            </div>
+        </div>
+        <!-- Button row -->
+        <div class="row mx-auto mt-1 mb-3">
+            <div class="col-sm-8 col-md-10 mx-auto">
+                <div class="text-center">
+                    <div class="row justify-content-around">
+                        <a href="{% url 'add_specification' %}" class="btn-link-setup col-sm-6 col-md-3 col-lg-3 my-3 mx-3 btn btn-rounded mb-3" >Add Specification</a>
+                        <a href="{% url 'add_spec' %}" class="btn-link-setup col-sm-6 col-md-3 col-lg-3 my-3 mx-3 btn btn-rounded mb-3" >Add Spec</a>
+                        <a href="{% url 'add_product' %}" class="btn-link-setup col-sm-6 col-md-2 col-lg-3 my-3 mx-3 btn btn-rounded mb-3">Product Management</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Layout switch row -->
+            <div class="col-sm-12 text-center">
+                <div class="switches">
+                    <button onclick="listLayout()" id="list-view" class="btn list-view"><i class="fa fa-bars"></i></button>
+                    <button onclick="gridLayout()" id="grid-view" class="btn grid-view active"><i class="fa fa-th"></i></button>
+                </div>
+            </div>           
+        </div>
+        <!-- Grid Layout -->
+        <div class="container">
+           <div class="row justify-content-center">
+            {% for spec in specifications %}
+                {% if spec %}
+                    <div class="col-sm-12 col-lg-4 mx-auto my-3">
+                        <div class="card main-rounded border-0 gridLayout">
+                        <div class="card-body text-center">
+                            <h5 class="card-text text-center font-weight-bold mt-3">{{ spec.name }}</h5>
+                            <p class="card-text text-center mt-3"><small class="text-muted">{{ spec.spec_1_name }} - {{ spec.spec_1 }}</small></p>
+                            <p class="card-text text-center mt-3"><small class="text-muted">{{ spec.spec_2_name }} - {{ spec.spec_2 }}</small></p>
+                            <p class="card-text text-center mt-3"><small class="text-muted">{{ spec.spec_3_name }} - {{ spec.spec_3 }}</small></p>
+                            <p class="card-text text-center mt-3"><small class="text-muted">{{ spec.spec_4_name }} - {{ spec.spec_4 }}</small></p>
+                            <p class="card-text text-center mt-3"><small class="text-muted">{{ spec.spec_5_name }} - {{ spec.spec_5 }}</small></p>
+                            <hr>
+                            <button type="button" class="btn-delete font-weight-bold btn-rounded btn m-2" data-toggle="modal" data-target="#delete-modal_{{ spec.id }}">
+                                Delete
+                            </button>
+                            <a href="{% url 'edit_specification' spec.id %}" class="btn-edit font-weight-bold btn-rounded btn m-2">Edit</a>
+                            <a class="btn-view font-weight-bold btn-rounded btn m-2" href="{% url 'specification_detail' spec.id %}">View</a>
+                            <div class="modal fade" id="delete-modal_{{ spec.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title mx-auto" id="exampleModalCenterTitle">
+                                            <p class="text-center">Are you sure you want to delete this key specification?</p>
+                                            <p class="text-danger font-weight-bold text-center ml-4">{{ spec.name }}</p>
+                                        </h5>
+                                        <button type="button" class="close btn-rounded ml-0" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <a type="button" href="{% url 'delete_specification' spec.id %}" class="btn text-danger btn-rounded">Delete</a>
+                                        <button type="button" class="btn btn-rounded" data-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+        <!-- List Layout -->
+        <div class="container listLayout hidden">
+           <div class="row justify-content-center">
+                {% for spec in specifications %}
+                    {% if spec %}
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="accordion listLayout" id="spec{{ spec.id }}" role="button">
+                                <div class="card main-rounded m-2 ">
+                                    <div class="card-header" id="heading_{{ spec.id }}">
+                                        <div class="row align-items-center">
+                                            <div class="col-sm-12 col-lg-6 text-center">
+                                                <h5 class="mb-0 font-weight-bold">{{ spec.name }}</h5>
+                                            </div>
+                                            <div class="col-sm-12 col-lg-6 text-center btn-container">
+                                                <button class="btn btn-link btn-view btn-rounded font-weight-bold m-2 px-5 float-lg-right" type="button" data-toggle="collapse" data-target="#collapse_{{ spec.id }}" aria-expanded="true" aria-controls="collapse_{{ spec.id }}">View
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="collapse_{{ spec.id }}" class="collapse" aria-labelledby="heading_{{ spec.id }}" data-parent="#spec{{ spec.id }}">
+                                        <div class="card-body text-center">
+                                            <p class="card-text mt-3"><small class="text-muted">{{ spec.spec_1_name }} - {{ spec.spec_1 }}</small></p>
+                                            <p class="card-text mt-3"><small class="text-muted">{{ spec.spec_2_name }} - {{ spec.spec_2 }}</small></p>
+                                            <p class="card-text mt-3"><small class="text-muted">{{ spec.spec_3_name }} - {{ spec.spec_3 }}</small></p>
+                                            <p class="card-text mt-3"><small class="text-muted">{{ spec.spec_4_name }} - {{ spec.spec_4 }}</small></p>
+                                            <p class="card-text mt-3"><small class="text-muted">{{ spec.spec_5_name }} - {{ spec.spec_5 }}</small></p>
+                                            <hr>
+                                            <button type="button" class="btn col-sm-6 col-md-4 col-lg-3 my-3 mx-2 text-danger btn-rounded" data-toggle="modal" data-target="#delete-modal2_{{ spec.id }}">
+                                                Delete
+                                            </button>
+                                            <a href="{% url 'edit_specification' spec.id %}" class="col-sm-6 col-md-4 col-lg-3 my-3 mx-2 btn text-warning btn-rounded">Edit</a>
+                                            <div class="modal fade" id="delete-modal2_{{ spec.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title mx-auto" id="exampleModalCenterTitle">
+                                                            <p class="text-center">Are you sure you want to delete this specification?</p>
+                                                            <p class="text-danger font-weight-bold text-center ml-4">{{ specification.name }}</p>
+                                                        </h5>
+                                                        <button type="button" class="close btn-rounded ml-0" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <a type="button" href="{% url 'delete_specification' spec.id %}" class="btn text-danger btn-rounded">Delete</a>
+                                                        <button type="button" class="btn btn-rounded" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="scroll-button btn btn-rounded border border-black">
+        <a class="scroll-link d-flex h-100">
+            <i class="fas fa-arrow-up mx-auto my-auto"></i>
+        </a>	
+    </div>
+{% endblock %}
+
+
+{% block page_bottom %}
+    <div class="container bottom-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+<!-- Scroll Button -->
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.scroll-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+    </script>
+    <script src="{% static 'js/change_layout.js' %}"></script>
+{% endblock %}
