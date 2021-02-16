@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Brand, KeyFeatures, Feature
-from .forms import BrandForm, KeyFeaturesForm, FeatureForm
+from .models import Brand, KeyFeatures, Feature, Specification, Spec
+from .forms import (
+    BrandForm, KeyFeaturesForm, FeatureForm, SpecificationForm, SpecForm)
 
 
 # Create your views here.
@@ -22,6 +23,7 @@ def all_brands(request):
 
 def brand_detail(request, brand_id):
     """ A view to show brand details """
+
     brand = get_object_or_404(Brand, pk=brand_id)
 
     context = {
@@ -33,7 +35,8 @@ def brand_detail(request, brand_id):
 
 @login_required
 def add_brand(request):
-    """ Add a brand to the product """
+    """ Add a brand to the brands """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -45,7 +48,7 @@ def add_brand(request):
             messages.success(request, 'Successfully added brand!')
             return redirect(reverse('brand_detail', args=[brand.id]))
         else:
-            messages.error(request, 'Failed to add brand. Please ensure the form is valid.')
+            messages.error(request,'Failed to add brand. Please ensure the form is valid.')
     else:
         form = BrandForm()
 
@@ -60,6 +63,7 @@ def add_brand(request):
 @login_required
 def edit_brand(request, brand_id):
     """ View to edit brand """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -72,7 +76,7 @@ def edit_brand(request, brand_id):
             messages.success(request, 'Successfully updated brand!')
             return redirect(reverse('brand_detail', args=[brand.id]))
         else:
-            messages.error(request, 'Failed to update brand. Please ensure the form is valid.')
+            messages.error(request,'Failed to update brand. Please ensure the form is valid.')
     else:
         form = BrandForm(instance=brand)
         messages.info(request, f'You are editing {brand.name}')
@@ -89,6 +93,7 @@ def edit_brand(request, brand_id):
 @login_required
 def delete_brand(request, brand_id):
     """ Delete a brand from the brands """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -113,6 +118,7 @@ def all_keyfeatures(request):
 
 def keyfeatures_detail(request, keyfeatures_id):
     """ A view to show keyfeature detail """
+
     keyfeatures = get_object_or_404(KeyFeatures, pk=keyfeatures_id)
 
     context = {
@@ -123,7 +129,8 @@ def keyfeatures_detail(request, keyfeatures_id):
 
 
 def add_keyfeatures(request):
-    """ Add a keyfeature to the product """
+    """ Add a keyfeature to the keyfeatures """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -132,7 +139,7 @@ def add_keyfeatures(request):
         form = KeyFeaturesForm(request.POST, request.FILES)
         if form.is_valid():
             keyfeatures = form.save()
-            messages.success(request, 'Successfully added keyfeatures!')
+            messages.success(request, 'Successfully added key features!')
             return redirect(reverse('keyfeatures'))
         else:
             messages.error(request, 'Failed to add key feature. Please ensure the form is valid.')
@@ -149,6 +156,7 @@ def add_keyfeatures(request):
 
 def edit_keyfeatures(request, keyfeatures_id):
     """ View to edit kefeatures """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -158,7 +166,7 @@ def edit_keyfeatures(request, keyfeatures_id):
         form = KeyFeaturesForm(request.POST, request.FILES, instance=keyfeatures)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated brand!')
+            messages.success(request, 'Successfully updated key feature!')
             return redirect(reverse('keyfeatures_detail', args=[keyfeatures.id]))
         else:
             messages.error(request, 'Failed to update key feature. Please ensure the form is valid.')
@@ -177,6 +185,7 @@ def edit_keyfeatures(request, keyfeatures_id):
 
 def delete_keyfeatures(request, keyfeatures_id):
     """ Delete a brand from the brands """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -200,7 +209,8 @@ def all_features(request):
 
 
 def add_feature(request):
-    """ Add a feature to the keyfeatures """
+    """ Add a feature to the features """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -225,7 +235,7 @@ def add_feature(request):
 
 
 def delete_feature(request, feature_id):
-    """ Delete a feature from the keyfeatures """
+    """ Delete a feature from the features """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -234,3 +244,146 @@ def delete_feature(request, feature_id):
     feature.delete()
     messages.success(request, 'Feature deleted!')
     return redirect(reverse('features'))
+
+
+def all_specifications(request):
+    """ A view to show all specifications """
+
+    specifications = Specification.objects.all()
+
+    context = {
+        'specifications': specifications,
+    }
+
+    return render(request, 'specifications/specifications.html', context)
+
+
+def specification_detail(request, specification_id):
+    """ A view to show specification detail """
+
+    specification = get_object_or_404(Specification, pk=specification_id)
+
+    context = {
+        'specification': specification,
+    }
+
+    return render(request, 'specifications/specification_detail.html', context)
+
+
+def add_specification(request):
+    """ Add a specification to the specifications """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = SpecificationForm(request.POST, request.FILES)
+        if form.is_valid():
+            specification = form.save()
+            messages.success(request, 'Successfully added specification!')
+            return redirect(reverse('specifications'))
+        else:
+            messages.error(request, 'Failed to add key feature. Please ensure the form is valid.')
+    else:
+        form = SpecificationForm()
+
+    template = 'specifications/add_specification.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_specification(request, specification_id):
+    """ View to edit specification """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    specification = get_object_or_404(Specification, pk=specification_id)
+    if request.method == 'POST':
+        form = SpecificationForm(request.POST, request.FILES, instance=specification)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated specification!')
+            return redirect(reverse('specification_detail', args=[specification.id]))
+        else:
+            messages.error(request, 'Failed to update key specification. Please ensure the form is valid.')
+    else:
+        form = SpecificationForm(instance=specification)
+        messages.info(request, f'You are editing {specification.name}')
+
+    template = 'specifications/edit_specification.html'
+    context = {
+        'form': form,
+        'specification': specification,
+    }
+
+    return render(request, template, context)
+
+
+def delete_specification(request, specification_id):
+    """ Delete a specification"""
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    specification = get_object_or_404(Specification, pk=specification_id)
+    specification.delete()
+    messages.success(request, 'Specification deleted!')
+    return redirect(reverse('specifications'))
+
+
+def all_specs(request):
+    """ A view to show all features """
+
+    specs = Spec.objects.all()
+
+    context = {
+        'specs': specs,
+    }
+
+    return render(request, 'specs/specs.html', context)
+
+
+def add_spec(request):
+    """ Add a spec to the specs """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = SpecForm(request.POST, request.FILES)
+        if form.is_valid():
+            spec = form.save()
+            messages.success(request, 'Successfully added spec!')
+            return redirect(reverse('specs'))
+        else:
+            messages.error(request, 'Failed to add spec. Please ensure the form is valid.')
+    else:
+        form = SpecForm()
+
+    template = 'specs/add_spec.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def delete_spec(request, spec_id):
+    """ Delete a spec from the specs """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    spec = get_object_or_404(Spec, pk=spec_id)
+    spec.delete()
+    messages.success(request, 'Spec deleted!')
+    return redirect(reverse('specs'))
