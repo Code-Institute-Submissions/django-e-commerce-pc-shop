@@ -52,6 +52,16 @@ h1 {
     width: 1.5rem;
 }
 
+/* Main nav dropdown */
+.dropdown-menu {
+    top: 120%;
+    left: -32px;
+    border: none;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: var(--main-shadow);
+}
+
 /* Toggler icon */
 
 .navbar-toggler .navbar-toggler-icon {
@@ -348,4 +358,3 @@ h1 {
     max-width: 80%;
   }
 }
-
