@@ -43,6 +43,7 @@ h1 {
 }
 
 /* To override dropdown search on mobile screen*/
+
 .search-mobile-dropdown {
     top: 90%!important;
     left: 0px!important;
@@ -59,6 +60,7 @@ h1 {
 }
 
 /* Main nav dropdown */
+
 .dropdown-menu {
     top: 90%;
     left: -32px;
