@@ -132,8 +132,9 @@ h1 {
 .message-container {
     position: fixed;
     top: 123px;
-    right: 15px;
-    z-index: 9000;
+    right: 1rem;
+    z-index: 99999999999;
+    margin-right: calc( 13vw - 9%);
 }
 
 .custom-toast {
@@ -141,54 +142,51 @@ h1 {
 }
 
 .toast-capper {
-    height: 5px;
+    height: 10px;
 }
 
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+/* Empty bag toasts */
 
-.arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 10px solid black;
-    position: absolute;
-    top: -10px;
-    right: 130px;
+.error-empty-bag-toast,
+.warning-empty-bag-toast,
+.success-empty-bag-toast,
+.info-empty-bag-toast {
+    position: relative;
+    top: 265px;
 }
 
-/* Convenience classes - colors copied from Bootstrap */
-
-.arrow-primary {
-    border-bottom-color: #007bff !important;
+.error-toast-empty,
+.warning-toast-empty,
+.success-toast-empty,
+.info-toast-empty {
+    max-width: 800px;
 }
 
-.arrow-secondary {
-    border-bottom-color: #6c757d !important;
+.error-toast-empty-shadow {
+    box-shadow: var(--error-shadow);
 }
 
-.arrow-success {
-    border-bottom-color: #28a745 !important;
+.warning-toast-empty-shadow {
+    box-shadow: var(--warning-shadow);
 }
 
-.arrow-danger {
-    border-bottom-color: #dc3545 !important;
+.success-toast-empty-shadow {
+    box-shadow: var(--success-shadow);
 }
 
-.arrow-warning {
-    border-bottom-color: #ffc107 !important;
+.info-toast-empty-shadow {
+    box-shadow: var(--info-shadow);
 }
 
-.arrow-info {
-    border-bottom-color: #17a2b8 !important;
+.error-toast-empty-header,
+.warning-toast-empty-header,
+.success-toast-empty-header,
+.info-toast-empty-header {
+    font-size: 25px;
 }
 
-.arrow-light {
-    border-bottom-color: #f8f9fa !important;
-}
-
-.arrow-dark {
-    border-bottom-color: #343a40 !important;
+.toast-info {
+    width: 240px;
 }
 
 .bag-notification-wrapper {
@@ -253,15 +251,15 @@ h1 {
 
     .brand-logo {
         height: 70px;
-  }
+   }
 
     .nav-link {
         padding: 0px;
-  }
+   }
 }
 
 /* Custom margin-top class for small devices
-    Bootstrap is not working ? */
+    Bootstrap class is not working ? */
 
 @media (max-width: 576px) {
 
@@ -273,7 +271,6 @@ h1 {
         padding: 0px;
    }
 }
-
 
 /* Fixed top navbar only on medium and up */
 
@@ -296,7 +293,6 @@ h1 {
     }
 }
 
-
 /* Mobile */
 
 @media (max-width: 992px) {
@@ -313,7 +309,6 @@ h1 {
         border-radius: 20px !important;
     }
 }
-
 
 /* Media Queries to control element push and size of banner on laptops screens */
 
