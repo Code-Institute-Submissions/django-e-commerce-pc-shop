@@ -2,45 +2,45 @@
 
 <div class="collapse navbar-collapse main-rounded" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item dropdown my-1">
+        <li class="nav-item dropdown my-3 mx-3">
             <a class="font-weight-bold nav-link text-center" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
-            <div class="dropdown-menu my-1" aria-labelledby="all-products-link">
+            <div class="dropdown-menu my-2 mx-3 text-center" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item my-3">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item my-3">By Category</a>
+                <a href="{% url 'products' %}" class="dropdown-item my-3">All Products</a>
             </div>
         </li>
-        <li class="nav-item dropdown my-1">
+        <li class="nav-item dropdown my-3 mx-3">
             <a class="font-weight-bold nav-link text-center" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Categories
             </a>
             <div class="dropdown-menu" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=motherboard" class="dropdown-item text-center">Motherboards</a>
-                <a href="{% url 'products' %}?category=processor" class="dropdown-item text-center">Processor</a>
-                <a href="{% url 'products' %}?category=graphic_card" class="dropdown-item text-center">Graphic Card</a>
-                <a href="{% url 'products' %}?category=memory" class="dropdown-item text-center">Memory</a>
-                <a href="{% url 'products' %}?category=storage" class="dropdown-item text-center">Storage</a>
-                <a href="{% url 'products' %}?category=power_supply" class="dropdown-item text-center">Power Supply</a>
-                <a href="{% url 'products' %}?category=case" class="dropdown-item text-center">Cases</a>
-                <a href="{% url 'products' %}?category=monitor" class="dropdown-item text-center">Monitors</a>
-                <a href="{% url 'products' %}?category=mouse" class="dropdown-item text-center">Mouses</a>
-                <a href="{% url 'products' %}?category=keyboard" class="dropdown-item text-center">Keyboards</a>
-                <a href="{% url 'products' %}?category=cooler" class="dropdown-item text-center">Coolers</a>
+                <a href="{% url 'products' %}?category=motherboard" class="dropdown-item text-center my-3">Motherboards</a>
+                <a href="{% url 'products' %}?category=processor" class="dropdown-item text-center my-3">Processor</a>
+                <a href="{% url 'products' %}?category=graphic_card" class="dropdown-item text-center my-3">Graphic Card</a>
+                <a href="{% url 'products' %}?category=memory" class="dropdown-item text-center my-3">Memory</a>
+                <a href="{% url 'products' %}?category=storage" class="dropdown-item text-center my-3">Storage</a>
+                <a href="{% url 'products' %}?category=power_supply" class="dropdown-item text-center my-3">Power Supply</a>
+                <a href="{% url 'products' %}?category=case" class="dropdown-item text-center my-3">Cases</a>
+                <a href="{% url 'products' %}?category=monitor" class="dropdown-item text-center my-3">Monitors</a>
+                <a href="{% url 'products' %}?category=mouse" class="dropdown-item text-center my-3">Mouses</a>
+                <a href="{% url 'products' %}?category=keyboard" class="dropdown-item text-center my-3">Keyboards</a>
+                <a href="{% url 'products' %}?category=cooler" class="dropdown-item text-center my-3">Coolers</a>
             </div>
         </li>
-        <li class="nav-item dropdown my-1">
+        <li class="nav-item dropdown my-3 mx-3">
             <a class="font-weight-bold nav-link text-center" href="" id="deals-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Special Offers
             </a>
             <div class="dropdown-menu" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=deals" class="dropdown-item text-center">Deals</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item text-center my-3">Deals</a>
                 
             </div>
         </li>
-        <a class="font-weight-bold nav-link text-center my-1" href="{% url 'blog' %}">
+        <a class="font-weight-bold nav-link text-center my-3 mx-3" href="{% url 'blog' %}">
             Blog
         </a>
     </ul>
