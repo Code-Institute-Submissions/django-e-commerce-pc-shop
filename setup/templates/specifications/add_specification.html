@@ -29,6 +29,7 @@
                 <div class="text-center">
                     <div class="row justify-content-around">
                         <a href="{% url 'specifications' %}" class="btn-link-setup col-sm-6 col-md-3 col-lg-3 my-3 mx-3 btn btn-rounded mb-3">Specifications</a>
+                        <a href="{% url 'add_spec' %}" class="btn-link-setup col-sm-6 col-md-3 col-lg-3 my-3 mx-3 btn btn-rounded mb-3" >Add Spec</a>
                         <a href="{% url 'add_product' %}" class="btn-link-setup col-sm-6 col-md-2 col-lg-3 my-3 mx-3 btn btn-rounded mb-3">Product Management</a>
                     </div>
                 </div>
@@ -41,7 +42,7 @@
                     {% csrf_token %}
                     {{ form | crispy }}
                     <div class="text-center">
-                        <button class="btn btn-rounded m-3" type="submit">Add Key Specification</button>
+                        <button class="btn btn-rounded m-3" type="submit">Add Specification</button>
                         <a class="btn btn-rounded m-3" href="{% url 'specifications' %}">Cancel</a>
                     </div>
                 </form>
