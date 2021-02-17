@@ -33,7 +33,6 @@ class Product(models.Model):
                                  blank=True)
     promo_side_banner_left = models.ImageField(null=True, blank=True)
     promo_side_banner_right = models.ImageField(null=True, blank=True)
-    promo_side_banner_bottom = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
