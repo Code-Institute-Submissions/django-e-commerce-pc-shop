@@ -3,16 +3,16 @@
 
 
 {% block page_header %}
-
     <div class="container header-container">
         <div class="row">
             <div class="col"></div>
         </div>
     </div>
-
 {% endblock %}
 
+
 <!-- Chunk of code taken and modified from Boutiqe Ado Products Template -->
+
 
 {% block content %}
     <div class="container-fluid">
@@ -50,7 +50,6 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-3 p-4 main-rounded">
-                    <!-- Dump 2 -->
                     <h5 class="mb-0 text-center font-weight-bold">{{ product.name }}</h5>
                     <div class="row">
                         {% include 'products/includes/manufacturers_logos.html' %}
@@ -111,7 +110,7 @@
                                                 </span>
                                             </button>
                                         </div>
-                                        <div class="col-sm-12 text-center  mt-sm-4">
+                                        <div class="col-sm-12 text-center mt-4">
                                           <input type="submit" class="btn btn-lg btn-rounded text-uppercase" value="Add to Bag">
                                         </div>
                                       </div>
@@ -146,6 +145,7 @@
     </div>
 {% endblock %}
 
+
 {% block page_bottom %}
     <div class="container bottom-container">
         <div class="row">
@@ -153,6 +153,7 @@
         </div>
     </div>
 {% endblock %}
+
 
 {% block postloadjs %}
 {{ block.super }}

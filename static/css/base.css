@@ -42,6 +42,12 @@ h1 {
     overflow: hidden;
 }
 
+/* To override dropdown search on mobile screen*/
+.search-mobile-dropdown {
+    top: 90%!important;
+    left: 0px!important;
+}
+
 /* from Bulma */
 
 .icon {
@@ -54,7 +60,7 @@ h1 {
 
 /* Main nav dropdown */
 .dropdown-menu {
-    top: 120%;
+    top: 90%;
     left: -32px;
     border: none;
     border-bottom-left-radius: 2rem;

@@ -96,6 +96,14 @@
 
 /* To override my styles because icon is comming from white background */
 
+.bag {
+    color: #17a2b8;
+}
+
+.bag:hover {
+    color: var(--main-white);
+}
+
 .search-icon {
     color: #1f1c2e!important;
     background-color: var(--main-white)!important;
@@ -107,6 +115,9 @@
     box-shadow: var(--second-shadow);
 }
 
+.search-form {
+    background-color: var(--main-white)!important;
+}
 /* Logo and account hover */
 
 .nav-link:hover {
