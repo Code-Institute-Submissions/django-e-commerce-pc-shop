@@ -22,7 +22,6 @@ h1 {
     flex: 1;
     outline: none;
     height: 100%;
-    padding: 0 20px;
     font-size: 16px;
     background-color: var(--main-white)!important;
     color: var(--main-color);
@@ -45,7 +44,7 @@ h1 {
 /* To override dropdown search on mobile screen*/
 
 .search-mobile-dropdown {
-    top: 90%!important;
+    top: 100%!important;
     left: 0px!important;
 }
 
@@ -283,6 +282,13 @@ h1 {
         top: 170px;
         margin: 10px;
     }
+}
+
+@media (max-width: 402px) {
+
+    .nav-link {
+        padding: 0px;
+   }
 }
 
 /* Custom margin-top class for small devices
