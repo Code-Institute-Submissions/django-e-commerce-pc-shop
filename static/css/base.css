@@ -256,20 +256,31 @@ h1 {
     .nav-link {
         padding: 0px;
    }
+
+    .error-empty-bag-toast,
+    .warning-empty-bag-toast,
+    .success-empty-bag-toast,
+    .info-empty-bag-toast {
+        position: relative;
+        top: 170px;
+        margin: 10px;
+    }
 }
 
 /* Custom margin-top class for small devices
     Bootstrap class is not working ? */
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 
-    .mt-sm-4, .my-sm-4 {
-        margin-top: 2.5rem!important;
+    .error-empty-bag-toast,
+    .warning-empty-bag-toast,
+    .success-empty-bag-toast,
+    .info-empty-bag-toast {
+        position: relative;
+        top: 170px;
+        margin: 10px;
     }
 
-    .nav-link {
-        padding: 0px;
-   }
 }
 
 /* Fixed top navbar only on medium and up */
@@ -307,6 +318,15 @@ h1 {
 
     .main-rounded {
         border-radius: 20px !important;
+    }
+
+    .error-empty-bag-toast,
+    .warning-empty-bag-toast,
+    .success-empty-bag-toast,
+    .info-empty-bag-toast {
+        position: relative;
+        top: 170px;
+        margin: 10px;
     }
 }
 
