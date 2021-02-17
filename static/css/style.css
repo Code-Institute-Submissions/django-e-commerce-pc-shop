@@ -89,7 +89,7 @@
     position: -webkit-sticky;
     position: sticky;
     align-self: flex-end;
-    bottom: 16rem;
+    bottom: 14rem;
 }
 
 /* HOVER BTN EFFECTS */
@@ -232,3 +232,4 @@
 .banners {
     box-shadow: var(--second-shadow);
 }
+
