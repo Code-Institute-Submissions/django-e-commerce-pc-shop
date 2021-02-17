@@ -123,6 +123,7 @@ class Feature(models.Model):
 class Specification(models.Model):
 
     class Meta:
+        ordering = ['-id']
         verbose_name_plural = 'Specifications'
 
     name = models.CharField(
@@ -230,6 +231,7 @@ class Specification(models.Model):
 class Spec(models.Model):
 
     class Meta:
+        ordering = ['-id']
         verbose_name_plural = 'Spec'
 
     name = models.CharField(default='SpecName', max_length=254)
