@@ -304,6 +304,8 @@ footer {
     background-color: var(--main-color);
     color: var(--main-white);
     box-shadow: var(--second-shadow);
+    position: absolute;
+    bottom: 0px;
 }
 
 .footer-header {
