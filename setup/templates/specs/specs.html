@@ -40,7 +40,7 @@
            <div class="row justify-content-center">
             {% for spec in specs %}
                 {% if spec %}
-                    <div class="col-sm-12 col-md-4 col-lg-3 mx-auto p-1 feature-card">
+                    <div class="col-sm-12 col-md-4 col-lg-3 mx-auto p-1">
                         <li class="list-group-item main-rounded text-center">
                             <a class="font-weight-bold m-2">{{ spec.name }}</a>
                             <a class="btn-delete font-weight-bold btn-rounded btn m-2" href="{% url 'delete_spec' spec.id %}">Delete</a>
