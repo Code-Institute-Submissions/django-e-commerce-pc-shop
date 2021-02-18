@@ -27,6 +27,11 @@
     --warning-shadow: 0 0px 6px 0 rgb(255 193 7), 0 24px 20px -24px rgb(71 82 107 / 10%);
     /* Error toasts shadow on empty bag */
     --error-shadow: 0 0px 6px 0 rgb(220 53 69), 0 24px 20px -24px rgb(71 82 107 / 10%);
+    /* Bootstrap color */
+    --bs-info: #17a2b8;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-success: #28a745;
 }
 
 /* MAIN COLORS AND STYLE */
@@ -97,7 +102,7 @@
 /* To override my styles because icon is comming from white background */
 
 .bag {
-    color: #17a2b8;
+    color: var(--bs-info);
 }
 
 .bag:hover {
@@ -105,7 +110,7 @@
 }
 
 .search-icon {
-    color: #1f1c2e!important;
+    color: var(--main-color)!important;
     background-color: var(--main-white)!important;
 }
 
@@ -118,6 +123,7 @@
 .search-form {
     background-color: var(--main-white)!important;
 }
+
 /* Logo and account hover */
 
 .nav-link:hover {
@@ -176,7 +182,7 @@
 
 .fa-home {
     font-size: 35px;
-    color: #17a2b8;
+    color: var(--bs-info);
 }
 
 .btn,
@@ -185,6 +191,9 @@
     color: var(--app-color);
 }
 
+/* Changes the main dark color to app color
+    and changes the main light shadow to another
+    darker shadow when hovering */
 .btn:hover,
 .shop-now-button:hover,
 .shop-now-button:active,

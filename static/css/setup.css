@@ -17,7 +17,7 @@
 /* Function btn styles */
 
 .active {
-    background-color:  #17a2b8!important;
+    background-color:  var(--bs-info)!important;
 }
 
 .hidden {
@@ -25,30 +25,30 @@
 }
 
 .btn-view {
-    color: #17a2b8!important;
+    color: var(--bs-info)!important;
 }
 
 .btn-edit {
-    color: #ffc107!important;
+    color: var(--bs-warning)!important;
 }
 
 .btn-delete {
-    color: #dc3545!important;
+    color: var(--bs-danger)!important;
 }
 
 .btn-delete:hover {
     color: var(--main-color)!important;
-    background-color: #dc3545!important;
+    background-color: var(--bs-danger)!important;
 }
 
 .btn-edit:hover {
     color: var(--main-color)!important;
-    background-color: #ffc107!important;
+    background-color: var(--bs-danger)!important;
 }
 
 .btn-view:hover {
     color: var(--main-color)!important;
-    background-color: #17a2b8!important;
+    background-color: var(--bs-danger)!important;
     font-weight: 700;
 }
 
