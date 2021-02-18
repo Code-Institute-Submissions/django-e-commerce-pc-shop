@@ -127,7 +127,7 @@ def keyfeatures_detail(request, keyfeatures_id):
 
     return render(request, 'keyfeatures/keyfeatures_detail.html', context)
 
-
+@login_required
 def add_keyfeatures(request):
     """ Add a keyfeature to the keyfeatures """
 
@@ -154,6 +154,7 @@ def add_keyfeatures(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_keyfeatures(request, keyfeatures_id):
     """ View to edit kefeatures """
 
@@ -183,6 +184,7 @@ def edit_keyfeatures(request, keyfeatures_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_keyfeatures(request, keyfeatures_id):
     """ Delete a brand from the brands """
 
@@ -208,6 +210,7 @@ def all_features(request):
     return render(request, 'features/features.html', context)
 
 
+@login_required
 def add_feature(request):
     """ Add a feature to the features """
 
@@ -234,6 +237,7 @@ def add_feature(request):
     return render(request, template, context)
 
 
+@login_required
 def delete_feature(request, feature_id):
     """ Delete a feature from the features """
     if not request.user.is_superuser:
@@ -270,6 +274,7 @@ def specification_detail(request, specification_id):
     return render(request, 'specifications/specification_detail.html', context)
 
 
+@login_required
 def add_specification(request):
     """ Add a specification to the specifications """
 
@@ -296,6 +301,7 @@ def add_specification(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_specification(request, specification_id):
     """ View to edit specification """
 
@@ -325,6 +331,7 @@ def edit_specification(request, specification_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_specification(request, specification_id):
     """ Delete a specification"""
 
@@ -350,6 +357,7 @@ def all_specs(request):
     return render(request, 'specs/specs.html', context)
 
 
+@login_required
 def add_spec(request):
     """ Add a spec to the specs """
 
@@ -376,6 +384,7 @@ def add_spec(request):
     return render(request, template, context)
 
 
+@login_required
 def delete_spec(request, spec_id):
     """ Delete a spec from the specs """
 
