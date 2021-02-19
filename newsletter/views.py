@@ -21,7 +21,7 @@ def newsletter_subscribe(request):
                 instance.save()
                 messages.success(request, 'Thank You for subscribe to Tech Cloud newletter!')
                 subject = 'Welcome to Tech Cloud!'
-                html_message = render_to_string('newsletter/mail_templates.html', {'context': 'values'})
+                html_message = render_to_string('email/mail_subscribe.html', {'context': 'values'})
                 plain_message = strip_tags(html_message)
                 from_email = 'Tech Cloud'
                 send_mail(subject, plain_message, from_email, [instance.email], html_message=html_message)
