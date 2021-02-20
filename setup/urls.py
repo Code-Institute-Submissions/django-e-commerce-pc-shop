@@ -24,4 +24,6 @@ urlpatterns = [
     path('specs/', views.all_specs, name='specs'),
     path('spec/add', views.add_spec, name='add_spec'),
     path('spec/delete/<int:spec_id>/', views.delete_spec, name='delete_spec'),
+    path('categories/', views.all_categories, name='categories'),
+    path('categories/<int:category_id>/', views.category_detail, name='category_detail'),
 ]
