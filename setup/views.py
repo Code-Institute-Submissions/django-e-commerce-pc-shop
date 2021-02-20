@@ -34,6 +34,77 @@ def category_detail(request, category_id):
     return render(request, 'categories/category_detail.html', context)
 
 
+@login_required
+def add_category(request):
+    """ Add a category to the categories """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, request.FILES)
+        if form.is_valid():
+            category = form.save()
+            messages.success(request, 'Successfully added category!')
+            return redirect(reverse('category_detail', args=[category.id]))
+        else:
+            messages.error(request, 'Failed to add category. Please ensure the form is valid.')
+    else:
+        form = CategoryForm()
+
+    template = 'categories/add_category.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_category(request, category_id):
+    """ View to edit category """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    category = get_object_or_404(Category, pk=category_id)
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, request.FILES, instance=category)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated category!')
+            return redirect(reverse('category_detail', args=[category.id]))
+        else:
+            messages.error(request,'Failed to update category. Please ensure the form is valid.')
+    else:
+        form = CategoryForm(instance=category)
+        messages.info(request, f'You are editing {category.name}')
+
+    template = 'categories/edit_category.html'
+    context = {
+        'form': form,
+        'category': category,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_category(request, category_id):
+    """ Delete a category from the categories """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    category = get_object_or_404(Category, pk=category_id)
+    category.delete()
+    messages.success(request, 'Category deleted!')
+    return redirect(reverse('categories'))
+
+
 # Brands *********************************************************************
 
 
