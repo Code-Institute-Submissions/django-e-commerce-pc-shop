@@ -21,10 +21,11 @@ def newsletter_subscribe(request):
                 instance.save()
                 messages.success(request, 'Successfully added Email!')
                 subject = 'Welcome to Tech Cloud!'
-                html_message = render_to_string('email/mail_subscribe.html', {'context': 'values'})
+                html_message = render_to_string('email/mail_templates.html', {'context': 'values'})
                 plain_message = strip_tags(html_message)
                 from_email = 'Tech Cloud'
                 send_mail(subject, plain_message, from_email, [instance.email], html_message=html_message)
+                """ send_mail('test', 'welcome', 'tech.cloud.e.shop@gmail.com', [instance.email], fail_silently=False) """
                 return redirect(reverse('home'))
     else:
         form = NewsUserForm()
@@ -33,6 +34,3 @@ def newsletter_subscribe(request):
 
     template = "newsletter/subscribe.html"
     return render(request, template, context)
-
-
-
