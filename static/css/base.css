@@ -115,6 +115,10 @@ h1 {
     height: 90px;
 }
 
+.brand-logo:hover {
+    transform: scale(1.7);
+}
+
 /* Breadcrumb color overwrite */
 
 .breadcrumb {
