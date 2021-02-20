@@ -145,6 +145,7 @@ h1 {
     position: fixed;
     bottom: 20px;
     right: 40px;
+    z-index: 1000;
 }
 
 /* Cursor pointer on links */
