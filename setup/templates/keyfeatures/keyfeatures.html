@@ -36,11 +36,13 @@
             </div>
             <!-- Layout switch row -->
             <div class="col-sm-12 text-center">
+                <hr class="w-50">
                 <div class="switches">
                     <button onclick="listLayout()" id="list-view" class="btn list-view"><i class="fa fa-bars"></i></button>
                     <button onclick="gridLayout()" id="grid-view" class="btn grid-view active"><i class="fa fa-th"></i></button>
                 </div>
-            </div>           
+                <hr class="w-50">
+            </div>              
         </div>
         <!-- Grid Layout -->
         <div class="container gridLayout">
@@ -51,16 +53,26 @@
                         <div class="card main-rounded border-0 gridLayout">
                         <div class="card-body text-center">
                             <h5 class="card-text text-center font-weight-bold mt-3">{{ feature.name }}</h5>
-                            <p class="card-text text-center mt-3"><small class="text-muted">{{ feature.feature_1_name }} - {{ feature.feature_1 }}</small></p>
-                            <p class="card-text text-center mt-3"><small class="text-muted">{{ feature.feature_2_name }} - {{ feature.feature_2 }}</small></p>
-                            <p class="card-text text-center mt-3"><small class="text-muted">{{ feature.feature_3_name }} - {{ feature.feature_3 }}</small></p>
-                            <p class="card-text text-center mt-3"><small class="text-muted">{{ feature.feature_4_name }} - {{ feature.feature_4 }}</small></p>
-                            <p class="card-text text-center mt-3"><small class="text-muted">{{ feature.feature_5_name }} - {{ feature.feature_5 }}</small></p>
+                            {% if feature.feature_1_name %}
+                                <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_1_name }} - {{ feature.feature_1 }}</small></p>
+                            {% endif %}
+                            {% if feature.feature_2_name %}
+                                <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_2_name }} - {{ feature.feature_2 }}</small></p>
+                            {% endif %}
+                            {% if feature.feature_3_name %}
+                                <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_3_name }} - {{ feature.feature_3 }}</small></p>
+                            {% endif %}
+                            {% if feature.feature_4_name %}
+                                <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_4_name }} - {{ feature.feature_4 }}</small></p>
+                            {% endif %}
+                            {% if feature.feature_5_name %}
+                                <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_5_name }} - {{ feature.feature_5 }}</small></p>
+                            {% endif %}
                             <hr>
                             <button type="button" class="btn-delete font-weight-bold btn-rounded btn m-2" data-toggle="modal" data-target="#delete-modal_{{ feature.id }}">
                                 Delete
                             </button>
-                            <a href="{% url 'edit_keyfeatures' feature.id %}" class="btn-edit font-weight-bold btn-rounded btn m-2">Edit</a>
+                            <a href="{% url 'edit_keyfeatures' feature.id %}" class="btn-edit font-weight-bold btn-rounded btn">Edit</a>
                             <a class="btn-view font-weight-bold btn-rounded btn m-2" href="{% url 'keyfeatures_detail' feature.id %}">View</a>
                             <div class="modal fade" id="delete-modal_{{ feature.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -75,7 +87,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-footer justify-content-between">
-                                        <a type="button" href="{% url 'delete_keyfeatures' feature.id %}" class="btn text-danger btn-rounded">Delete</a>
+                                        <a type="button" href="{% url 'delete_keyfeatures' feature.id %}" class="btn-delete font-weight-bold btn-rounded btn ">Delete</a>
                                         <button type="button" class="btn btn-rounded" data-dismiss="modal">Close</button>
                                     </div>
                                     </div>
@@ -109,16 +121,26 @@
                                 </div>
                                 <div id="collapse_{{ feature.id }}" class="collapse" aria-labelledby="heading_{{ feature.id }}" data-parent="#feature_{{ feature.id }}">
                                     <div class="card-body text-center">
-                                        <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_1_name }} - {{ feature.feature_1 }}</small></p>
-                                        <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_2_name }} - {{ feature.feature_2 }}</small></p>
-                                        <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_3_name }} - {{ feature.feature_3 }}</small></p>
-                                        <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_4_name }} - {{ feature.feature_4 }}</small></p>
-                                        <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_5_name }} - {{ feature.feature_5 }}</small></p>
+                                        {% if feature.feature_1_name %}
+                                            <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_1_name }} - {{ feature.feature_1 }}</small></p>
+                                        {% endif %}
+                                        {% if feature.feature_2_name %}
+                                            <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_2_name }} - {{ feature.feature_2 }}</small></p>
+                                        {% endif %}
+                                        {% if feature.feature_3_name %}
+                                            <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_3_name }} - {{ feature.feature_3 }}</small></p>
+                                        {% endif %}
+                                        {% if feature.feature_4_name %}
+                                            <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_4_name }} - {{ feature.feature_4 }}</small></p>
+                                        {% endif %}
+                                        {% if feature.feature_5_name %}
+                                            <p class="card-text mt-3"><small class="text-muted">{{ feature.feature_5_name }} - {{ feature.feature_5 }}</small></p>
+                                        {% endif %}
                                         <hr>
-                                        <button type="button" class="btn col-sm-6 col-md-4 col-lg-3 my-3 mx-2 text-danger btn-rounded" data-toggle="modal" data-target="#delete-modal2_{{ feature.id }}">
+                                        <button type="button" class="btn col-sm-6 col-md-4 col-lg-3 my-3 mx-2 btn-delete font-weight-bold btn-rounded" data-toggle="modal" data-target="#delete-modal2_{{ feature.id }}">
                                             Delete
                                         </button>
-                                        <a href="{% url 'edit_keyfeatures' feature.id %}" class="col-sm-6 col-md-4 col-lg-3 my-3 mx-2 btn text-warning btn-rounded">Edit</a>
+                                        <a href="{% url 'edit_keyfeatures' feature.id %}" class="col-sm-6 col-md-4 col-lg-3 my-3 mx-2 btn-edit font-weight-bold btn-rounded btn">Edit</a>
                                         <div class="modal fade" id="delete-modal2_{{ feature.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content">
@@ -132,7 +154,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-footer justify-content-between">
-                                                    <a type="button" href="{% url 'delete_keyfeatures' feature.id %}" class="btn text-danger btn-rounded">Delete</a>
+                                                    <a type="button" href="{% url 'delete_keyfeatures' feature.id %}" class="btn-delete font-weight-bold btn-rounded btn m-3">Delete</a>
                                                     <button type="button" class="btn btn-rounded" data-dismiss="modal">Close</button>
                                                 </div>
                                                 </div>
