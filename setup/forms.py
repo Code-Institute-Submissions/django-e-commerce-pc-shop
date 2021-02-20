@@ -1,6 +1,20 @@
 from django import forms
 from products.widgets import CustomClearableFileInput
-from .models import Brand, KeyFeatures, Feature, Specification, Spec
+from .models import Brand, KeyFeatures, Feature, Specification, Spec, Category
+
+
+class CategoryForm(forms.ModelForm):
+
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+    image = forms.ImageField(label='Category Image', required=False, widget=CustomClearableFileInput)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        categories = Category.objects.all()
+        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
 
 class BrandForm(forms.ModelForm):
@@ -61,3 +75,4 @@ class SpecForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         spec = Spec.objects.all()
+
