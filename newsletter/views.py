@@ -18,7 +18,7 @@ def newsletter_subscribe(request):
                 messages.error(request, "Your Email Already exists in our database")
             else:
                 instance.save()
-                messages.success(request, 'Successfully added Email!')
+                messages.success(request, 'Successfully subscribe to Tech Cloud Newsletter!')
                 subject = 'Welcome to Tech Cloud!'
                 html_message = render_to_string('email/mail_templates.html', {'context': 'values'})
                 plain_message = strip_tags(html_message)
@@ -44,6 +44,7 @@ def newsletter_unsubscribe(request):
             if NewsUsers.objects.filter(email=instance.email).exists():
                 NewsUsers.objects.filter(email=instance.email).delete()
                 messages.success(request, 'Successfully unsubscribe from Tech Cloud Newsletter!')
+                return redirect(reverse('home'))
             else:
                 messages.error(request, "Sorry but we did not find your email address in our database")
                 return redirect(reverse('newsletter:unsubscribe'))
