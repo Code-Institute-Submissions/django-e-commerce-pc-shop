@@ -1,8 +1,34 @@
 
 
+<!-- Deal Logo -->
+<!-- https://pixabay.com/illustrations/price-tag-icon-label-sale-sign-2389232/ -->
+
 <!-- Categories -->
 
 
+<div class="container main-rounded">
+    <div class="row justify-content-center">
+        {% for category in categories %}
+            {% if category %}
+                <div class="col-6 col-md-4 col-lg-3 text-center h-25 mt-3 mb-3 cat-hover">
+                    <a class="text-decoration-none text-secondary" href="{% url 'products' %}?category={{ category.name }}">
+                        {% if category.image %}
+                            <img class="h-25 w-25 mb-2 rounded-circle home-categories" src=" {{ MEDIA_URL }}{{ category.image }}"
+                                alt="{{ category.name }}">
+                        {% else %}
+                            <a href="{% url 'products' %}?category={{ category.name }}" class="text-decoration-none text-secondary">
+                                <img class="h-25 w-25 mb-2 rounded-circle home-categories" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
+                            </a>
+                        {% endif %}
+                        <h5 class="text-capitalize main-rounded-ns text-center">{{ category.friendly_name }}</h5>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<!-- 
 <div class="container main-rounded d-none d-md-block">
     <div class="row justify-content-center">
         <div class="col-6 col-md-4 col-lg-3 text-center h-25 mt-3 mb-3 cat-hover">
@@ -83,4 +109,4 @@
             </a>
         </div>
     </div>
-</div>
+</div> -->
