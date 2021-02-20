@@ -32,10 +32,18 @@
                         <a href="{% url 'add_product' %}" class="col-sm-5 col-md-5 col-lg-4 my-3 col-xl-3 btn btn-rounded mb-3">Product Management</a>
                     </div>
                 </div>
-            </div>            
+            </div>
+            <div class="col-sm-12 text-center">
+                <hr class="w-50">
+                <div class="switches">
+                    <button onclick="listLayout()" id="list-view" class="btn list-view"><i class="fa fa-bars"></i></button>
+                    <button onclick="gridLayout()" id="grid-view" class="btn grid-view active"><i class="fa fa-th"></i></button>
+                </div>
+                <hr class="w-50">
+            </div>             
         </div>
-        <!-- Brands -->
-        <div class="container">
+        <!-- Brands GridLayout-->
+        <div class="container gridLayout">
            <div class="row justify-content-center">
             {% for brand in brands %}
                 {% if brand %}
@@ -57,6 +65,31 @@
                 {% endif %}
             {% endfor %}
             </div>
+        </div>
+    </div>
+    <!-- Brands ListLayout-->
+    <div class="container listLayout hidden mt-4">
+        <div class="row justify-content-center">
+            {% for brand in brands %}
+                {% if brand %}
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                        <ul class="list-unstyled">
+                            <a class="brand-link main-text btn-rounded" href="{% url 'brand_detail' brand.id %}" >
+                                <li class="media main-rounded">
+                                    {% if brand.brand_logo %}
+                                        <img src="{{ brand.brand_logo.url }}" class="mr-3 category-list-img brand_tumb p-1" alt="{{ brand.name }}">
+                                    {% else %}
+                                        <img class="brand_thumb img-fluid my-auto p-1" src="{{ MEDIA_URL }}noimage.png" alt="noimage.png">
+                                    {% endif %}
+                                    <div class="media-body mt-1">
+                                        <h5 class="mt-3 text-center font-weight-bold">{{ brand.friendly_name }}</h5>
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
     <div class="scroll-button btn btn-rounded border border-black">
@@ -83,6 +116,7 @@
 		$('.scroll-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
-	</script>
+    </script>
+    <script src="{% static 'js/change_layout.js' %}"></script>
 {% endblock %}
 
