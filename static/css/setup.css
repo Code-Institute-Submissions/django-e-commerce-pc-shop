@@ -61,15 +61,6 @@
     width: 100px;
 }
 
-/* Brand logo size on admin */
-
-.brand_thumb {
-    height: 80px;
-    width: 80px;
-    border-radius: 1.5rem;
-    background-color: var(--main-white);
-}
-
 /* Banner size */
 
 .banner {
@@ -96,6 +87,13 @@
     transform:scale(1.1);
 }
 
+.brand-link:hover > .media > img {
+    background-color: white;
+    border-radius: 2.5rem;
+}
+
+
+
 /* To remove blue color from brand name and underline */
 
 a:hover {
@@ -106,7 +104,8 @@ a:hover {
 
 /* CATEGORY */
 
-/* Categories image radius on admin categories page */
+/* Categories and brands image radius on admin categories page */
+.brand_thumb,
 .category_thumb {
     height: 80px;
     width: 80px;
@@ -122,4 +121,5 @@ a:hover {
 .category-list-img {
     width: 64px;
     height: 64px;
+    border-radius: 2.5rem;
 }
