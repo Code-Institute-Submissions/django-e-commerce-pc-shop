@@ -32,3 +32,25 @@ def newsletter_subscribe(request):
 
     template = "newsletter/subscribe.html"
     return render(request, template, context)
+
+
+def newsletter_unsubscribe(request):
+
+    if request.method == 'POST':
+        form = NewsUserForm(request.POST)
+
+        if form.is_valid():
+            instance = form.save(commit=False)
+            if NewsUsers.objects.filter(email=instance.email).exists():
+                NewsUsers.objects.filter(email=instance.email).delete()
+                messages.success(request, 'Successfully unsubscribe from Tech Cloud Newsletter!')
+            else:
+                messages.error(request, "Sorry but we did not find your email address in our database")
+                return redirect(reverse('newsletter:unsubscribe'))
+    else:
+        form = NewsUserForm()
+
+    context = {'form': form}
+
+    template = "newsletter/unsubscribe.html"
+    return render(request, template, context)
