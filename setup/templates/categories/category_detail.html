@@ -53,7 +53,7 @@
                             <button type="button" class="btn-delete font-weight-bold btn-rounded btn m-3" data-toggle="modal" data-target="#delete-modal_{{ category.id }}">
                         Delete
                     </button>
-                    <a href="" class="btn-edit font-weight-bold btn-rounded btn m-3">Edit</a>
+                    <a href="{% url 'edit_category' category.id %}" class="btn-edit font-weight-bold btn-rounded btn m-3">Edit</a>
                     <div class="modal fade" id="delete-modal_{{ category.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
@@ -74,7 +74,7 @@
                                 {% endif %}
                             </div>
                             <div class="modal-footer justify-content-between">
-                                <a type="button" href="" class="btn-delete font-weight-bold btn-rounded btn m-3">Delete</a>
+                                <a type="button" href="{% url 'delete_category' category.id %}" class="btn-delete font-weight-bold btn-rounded btn m-3">Delete</a>
                                 <button type="button" class="btn-info font-weight-bold btn-rounded btn m-3" data-dismiss="modal">Close</button>
                             </div>
                             </div>
