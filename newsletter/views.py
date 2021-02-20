@@ -11,6 +11,7 @@ def newsletter_subscribe(request):
 
     if request.method == 'POST':
         form = NewsUserForm(request.POST)
+        name = NewsUserForm(request.POST)
 
         if form.is_valid():
             instance = form.save(commit=False)
@@ -18,7 +19,7 @@ def newsletter_subscribe(request):
                 messages.error(request, "Your Email Already exists in our database")
             else:
                 instance.save()
-                messages.success(request, 'Thank You for subscribe to Tech Cloud newletter!')
+                messages.success(request, 'Successfully added Email!')
                 subject = 'Welcome to Tech Cloud!'
                 html_message = render_to_string('email/mail_subscribe.html', {'context': 'values'})
                 plain_message = strip_tags(html_message)
@@ -32,5 +33,6 @@ def newsletter_subscribe(request):
 
     template = "newsletter/subscribe.html"
     return render(request, template, context)
+
 
 
