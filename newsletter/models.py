@@ -11,8 +11,5 @@ class NewsUsers(models.Model):
         verbose_name = "NewsUser"
         verbose_name_plural = "NewsUsers"
 
-        def __str__(self):
-            return self.email
-
     def __str__(self):
         return self.email
