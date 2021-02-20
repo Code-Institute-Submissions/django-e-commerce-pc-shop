@@ -36,11 +36,13 @@
             </div>
             <!-- Layout switch row -->
             <div class="col-sm-12 text-center">
+                <hr class="w-50">
                 <div class="switches">
                     <button onclick="listLayout()" id="list-view" class="btn list-view"><i class="fa fa-bars"></i></button>
                     <button onclick="gridLayout()" id="grid-view" class="btn grid-view active"><i class="fa fa-th"></i></button>
                 </div>
-            </div>           
+                <hr class="w-50">
+            </div>            
         </div>
         <!-- Grid Layout -->
         <div class="container gridLayout">
@@ -71,7 +73,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-footer justify-content-between">
-                                        <a type="button" href="{% url 'delete_specification' spec.id %}" class="btn text-danger btn-rounded">Delete</a>
+                                        <a type="button" href="{% url 'delete_specification' spec.id %}" class="btn-delete font-weight-bold btn-rounded btn m-2">Delete</a>
                                         <button type="button" class="btn btn-rounded" data-dismiss="modal">Close</button>
                                     </div>
                                     </div>
@@ -107,10 +109,10 @@
                                         <div class="card-body text-center">
                                                 {% include 'specifications/includes/specification.html' %} 
                                             <hr>
-                                            <button type="button" class="btn col-sm-6 col-md-4 col-lg-3 my-3 mx-2 text-danger btn-rounded" data-toggle="modal" data-target="#delete-modal2_{{ spec.id }}">
+                                            <button type="button" class="btn col-sm-6 col-md-4 col-lg-3 my-3 mx-2 btn-delete font-weight-bold btn-rounded btn" data-toggle="modal" data-target="#delete-modal2_{{ spec.id }}">
                                                 Delete
                                             </button>
-                                            <a href="{% url 'edit_specification' spec.id %}" class="col-sm-6 col-md-4 col-lg-3 my-3 mx-2 btn text-warning btn-rounded">Edit</a>
+                                            <a href="{% url 'edit_specification' spec.id %}" class="col-sm-6 col-md-4 col-lg-3 my-3 mx-2 btn-edit font-weight-bold btn-rounded btn">Edit</a>
                                             <div class="modal fade" id="delete-modal2_{{ spec.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
@@ -124,7 +126,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
-                                                        <a type="button" href="{% url 'delete_specification' spec.id %}" class="btn text-danger btn-rounded">Delete</a>
+                                                        <a type="button" href="{% url 'delete_specification' spec.id %}" class="btn-delete font-weight-bold btn-rounded btn">Delete</a>
                                                         <button type="button" class="btn btn-rounded" data-dismiss="modal">Close</button>
                                                     </div>
                                                     </div>
