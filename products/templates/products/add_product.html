@@ -28,6 +28,16 @@
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
+                        {% if field.name == 'brand' %}
+                            <div class="row justify-content-center">
+                                <div class="mb-5 mx-3">
+                                    <a class="btn btn-rounded " href="{% url 'add_category' %}">Add Category</a>
+                                </div>
+                                <div class="mb-5 mx-3">
+                                    <a class="btn btn-rounded" href="{% url 'categories' %}">View All Categories</a>
+                                </div>
+                            </div> 
+                        {% endif %}
                         {% if field.name == 'key_feature' %}
                             <div class="row justify-content-center">
                                 <div class="mb-5 mx-3">
