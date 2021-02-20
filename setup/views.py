@@ -1,12 +1,40 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Brand, KeyFeatures, Feature, Specification, Spec
+from .models import Brand, KeyFeatures, Feature, Specification, Spec, Category
 from .forms import (
-    BrandForm, KeyFeaturesForm, FeatureForm, SpecificationForm, SpecForm)
+    BrandForm, KeyFeaturesForm, FeatureForm,
+    SpecificationForm, SpecForm, CategoryForm)
 
 
-# Create your views here.
+# Categories ******************************************************************
+
+
+def all_categories(request):
+    """ A view to show all categories """
+
+    categories = Category.objects.all()
+
+    context = {
+        'categories': categories,
+    }
+
+    return render(request, 'categories/categories.html', context)
+
+
+def category_detail(request, category_id):
+    """ A view to show category details """
+
+    category = get_object_or_404(Category, pk=category_id)
+
+    context = {
+        'category': category,
+    }
+
+    return render(request, 'categories/category_detail.html', context)
+
+
+# Brands *********************************************************************
 
 
 def all_brands(request):
@@ -104,6 +132,9 @@ def delete_brand(request, brand_id):
     return redirect(reverse('brands'))
 
 
+# Key Features ****************************************************************
+
+
 def all_keyfeatures(request):
     """ A view to show all keyfeatures """
 
@@ -126,6 +157,7 @@ def keyfeatures_detail(request, keyfeatures_id):
     }
 
     return render(request, 'keyfeatures/keyfeatures_detail.html', context)
+
 
 @login_required
 def add_keyfeatures(request):
@@ -198,6 +230,9 @@ def delete_keyfeatures(request, keyfeatures_id):
     return redirect(reverse('keyfeatures'))
 
 
+# Features ********************************************************************
+
+
 def all_features(request):
     """ A view to show all features """
 
@@ -248,6 +283,9 @@ def delete_feature(request, feature_id):
     feature.delete()
     messages.success(request, 'Feature deleted!')
     return redirect(reverse('features'))
+
+
+# Specifications **************************************************************
 
 
 def all_specifications(request):
@@ -343,6 +381,9 @@ def delete_specification(request, specification_id):
     specification.delete()
     messages.success(request, 'Specification deleted!')
     return redirect(reverse('specifications'))
+
+
+# Specs *********************************************************************
 
 
 def all_specs(request):
