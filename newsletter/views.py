@@ -16,7 +16,6 @@ def newsletter_subscribe(request):
             instance = form.save(commit=False)
             if NewsUsers.objects.filter(email=instance.email).exists():
                 messages.error(request, "Your Email Already exists in our database")
-                return redirect(reverse('newsletter/subscribe.html'))
             else:
                 instance.save()
                 messages.success(request, 'Thank You for subscribe to Tech Cloud newletter!')
