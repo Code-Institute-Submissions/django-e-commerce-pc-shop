@@ -1,4 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/setup.css' %}">
+{% endblock %}
+
 
 {% block page_header %}
     <div class="container header-container">
@@ -8,19 +15,26 @@
     </div>
 {% endblock %}
 
+
 {% block content %}
-<div class="container mt-5">
-    <div class="row">
-        <div class="col">
-             <form action="{% url 'newsletter:subscribe' %}" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Unubscribe</button>
-            </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 text-center mt-4 mx-auto">
+                <h2 class="text-center main-rounded font-weight-bold p-3">Newsletter Unsubscribe</h2>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto main-rounded p-3 mt-5 mb-5">
+                <form action="{% url 'newsletter:unsubscribe' %}" method="post">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button class="btn btn-rounded" type="submit">Unsubscribe</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
+
 
 {% block page_bottom %}
     <div class="container bottom-container">
