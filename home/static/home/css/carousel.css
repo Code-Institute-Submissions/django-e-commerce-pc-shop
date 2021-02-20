@@ -63,10 +63,10 @@
 
 /* Carousel prev and next icons position */
 .carousel-control-next {
-    right: -40px;
+    right: -30px;
 }
 .carousel-control-prev {
-    left: -40px;
+    left: -30px;
 }
 
 
@@ -83,14 +83,10 @@
         height: 430px;
         background-repeat: no-repeat;
         background-size: contain;
-        /*  border: 1px solid red; */
     }
 
     .home-container {
         height: 450px;
     }
 
-
 }
-
-
