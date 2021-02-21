@@ -2,6 +2,11 @@
 {% load static %}
 
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/setup.css' %}">
+{% endblock %}
+
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -118,6 +123,11 @@
                                       </div>
                                 </div>
                             </div>
+                            {% else %}
+                                <div class="col-12 text-center">
+                                    <h5 class="mt-5 mb-3">Subscribe to our newsletter to receive up-to-date product availability news.</h5>
+                                    <a href="{% url 'newsletter:subscribe' %}" class="btn-sm btn btn-view text-uppercase mt-3 mb-5">Subscribe Here!</a>
+                                </div>
                             {% endif %}
                             <div class="col-12{% if s %}-12 mt-2{% endif %}">
                                 <a href="{% url 'products' %}" class="btn btn-rounded w-100 mt-3">
@@ -126,7 +136,6 @@
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
