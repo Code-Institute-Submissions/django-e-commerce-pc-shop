@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product
-from setup.models import Category, Brand
+from setup.models import Category
 from .forms import ProductForm
 # Create your views here.
 
@@ -28,8 +28,6 @@ def all_products(request):
                 products = products.annotate(lower_name=Lower('name'))
             if sortkey == 'category':
                 sortkey = 'category__name'
-            if sortkey == 'brand':
-                sortkey = 'brand__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -40,11 +38,6 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-
-        if 'brand' in request.GET:
-            brands = request.GET['brand'].split(',')
-            products = products.filter(brand__name__in=brands)
-            brands = Brand.objects.filter(name__in=brands)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -62,7 +55,6 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
-        'current_brands': brands,
     }
 
     return render(request, 'products/products.html', context)
