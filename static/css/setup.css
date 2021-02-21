@@ -124,31 +124,5 @@ a:hover {
     border-radius: 2.5rem;
 }
 
-.product-list-img {
-    width: 200px;
-}
-
-.product-grid-img {
-    width: 200px;
-    height: 150px;
-}
-
-.grid-product:hover > a > .product-name {
-    background: var(--main-color);
-    color: var(--app-color);
-    text-decoration: none;
-    border-radius: 2rem;
-    box-shadow: var(--second-shadow);
-    transform:scale(1.1);
-}
-
-.listLayout:hover > .row > .col-sm-4 > .row > .col-12 > a > p {
-    background: var(--main-color);
-    color: var(--app-color);
-    text-decoration: none;
-    border-radius: 2rem;
-    box-shadow: var(--second-shadow);
-    transform:scale(1.1);
-}
 
 
