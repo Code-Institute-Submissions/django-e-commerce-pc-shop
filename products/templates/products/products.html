@@ -27,7 +27,9 @@
                     <ol class="breadcrumb main-rounded m-0">
                         <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'products' %}">Product</a></li>
-                        <li class="breadcrumb-item" aria-current="page"></li>
+                        {% for c in current_categories %}
+                            <li class="breadcrumb-item" href="{% url 'products' %}?category={{ c.name }}" aria-current="page">{{ c.friendly_name }}</li>
+                        {% endfor %}
                     </ol>
                 </nav>
             </div>
@@ -66,7 +68,7 @@
             </div>
         </div>
         <!-- Layout switch row -->
-        <div class="col-sm-12 text-center">
+        <div class="col-sm-12 text-center d-none d-md-block d-lg-block">
             <hr class="w-75">
             <div class="switches">
                 <button onclick="listLayout()" id="list-view" class="btn list-view"><i class="fa fa-bars"></i></button>
