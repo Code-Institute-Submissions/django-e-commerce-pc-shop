@@ -61,7 +61,7 @@ h1 {
 /* Main nav dropdown */
 
 .dropdown-menu {
-    top: 90%;
+    top: 100%;
     left: -32px;
     border: none;
     border-bottom-left-radius: 2rem;
