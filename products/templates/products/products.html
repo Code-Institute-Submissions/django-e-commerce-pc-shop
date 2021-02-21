@@ -76,6 +76,7 @@
             </div>
             <hr class="w-75">
         </div>
+        <!-- Grid Layout -->
         <div class="container gridLayout" role="button">
             <div class="row text-center justify-content-center">
             {% for product in products %}
@@ -112,12 +113,39 @@
                             <lead class="text-danger font-weight-bold mt-2">Cooming Soon</lead>
                         {% endif %}
                         <hr>
+                        <!-- Delete Modal -->
                         <div class="col">
                             {% if request.user.is_superuser %}
-                                <small class="text-center">
-                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                </small>
+                                <button type="button" class="btn-delete font-weight-bold btn-rounded btn m-3" data-toggle="modal" data-target="#delete-modal_{{ product.id }}">
+                                Delete
+                                </button>
+                                <a href="{% url 'edit_product' product.id %}" class="btn-edit font-weight-bold btn-rounded btn m-3">Edit</a>
+                                <div class="modal fade" id="delete-modal_{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title mx-auto" id="exampleModalCenterTitle">
+                                                <p class="text-center">Are you sure you want to delete this product?</p>
+                                                <p class="text-danger font-weight-bold text-center ml-4">{{ product.name }}</p>
+                                            </h5>
+                                            <button type="button" class="close btn-rounded ml-0" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            {% if product.image %}
+                                                <img src="{{ product.image.url }}" class="h-50 w-50" alt="">
+                                            {% else %}
+                                                <img class="thumb-img img-fluid my-auto" src="{{ MEDIA_URL }}noimage.png" alt="noimage.png">
+                                            {% endif %}
+                                        </div>
+                                        <div class="modal-footer justify-content-between">
+                                            <a type="button" href="{% url 'delete_product' product.id %}" class="btn-delete font-weight-bold btn-rounded btn m-3">Delete</a>
+                                            <button type="button" class="btn-info font-weight-bold btn-rounded btn m-3" data-dismiss="modal">Close</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
                             {% endif %}
                         </div>
                     </div>
@@ -125,6 +153,7 @@
             {% endfor %}     
             </div>
         </div>
+        <!-- List Layout -->
         {% for product in products %}
             {% if product %}
                 <div class="container mt-4 main-rounded text-center p-3 listLayout hidden">
@@ -186,14 +215,39 @@
                                         </a>
                                     {% endif %}
                                 </div>
+                                <!-- Delete Modal -->
                                 {% if request.user.is_superuser %}
-                                    <div class="col-12">
-                                        <small class="text-center">
-                                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                        </small>
+                                <button type="button" class="btn-delete font-weight-bold btn-rounded btn m-3" data-toggle="modal" data-target="#delete-modal_2{{ product.id }}">
+                                Delete
+                                </button>
+                                <a href="{% url 'edit_product' product.id %}" class="btn-edit font-weight-bold btn-rounded btn m-3">Edit</a>
+                                <div class="modal fade" id="delete-modal_2{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title mx-auto" id="exampleModalCenterTitle">
+                                                <p class="text-center">Are you sure you want to delete this product?</p>
+                                                <p class="text-danger font-weight-bold text-center ml-4">{{ product.name }}</p>
+                                            </h5>
+                                            <button type="button" class="close btn-rounded ml-0" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            {% if product.image %}
+                                                <img src="{{ product.image.url }}" class="h-50 w-50" alt="">
+                                            {% else %}
+                                                <img class="thumb-img img-fluid my-auto" src="{{ MEDIA_URL }}noimage.png" alt="noimage.png">
+                                            {% endif %}
+                                        </div>
+                                        <div class="modal-footer justify-content-between">
+                                            <a type="button" href="{% url 'delete_product' product.id %}" class="btn-delete font-weight-bold btn-rounded btn m-3">Delete</a>
+                                            <button type="button" class="btn-info font-weight-bold btn-rounded btn m-3" data-dismiss="modal">Close</button>
+                                        </div>
+                                        </div>
                                     </div>
-                                {% endif %}
+                                </div>
+                            {% endif %}
                             </div>
                         </div>
                     </div>
