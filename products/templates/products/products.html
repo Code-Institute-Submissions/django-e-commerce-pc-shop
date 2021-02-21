@@ -2,6 +2,11 @@
 {% load static %}
 
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static '/css/products.css' %}">
+    <link rel="stylesheet" href="{% static 'css/setup.css' %}">
+{% endblock %}
+
 {% block page_header %}
 
     <div class="container header-container">
@@ -16,14 +21,14 @@
 
 {% block content %}
     
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
         <div class="row mt-3">
             <div class="mx-auto mt-4">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb main-rounded m-0">
                         <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'products' %}">Product</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"></li>
+                        <li class="breadcrumb-item" aria-current="page"></li>
                     </ol>
                 </nav>
             </div>
@@ -34,7 +39,7 @@
                     <hr class="d-sm-block d-md-none w-50">
                     <div class="count-wrapper mx-auto justify-content-sm-center justify-content-md-start">
                         <p class="text-muted mt-3 text-center">
-                            {% if search_term or current_categories or current_sorting != 'None_None' %}
+                            {% if search_term or current_categories or current_brands or current_sorting != 'None_None' %}
                                 <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
                             {% endif %}
                             {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
@@ -54,97 +59,146 @@
                             <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
                             <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
                             <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                            <option value="brand_asc" {% if current_sorting == 'brand_asc' %}selected{% endif %}>Brand (A-Z)</option>
+                            <option value="brand_desc" {% if current_sorting == 'brand_desc' %}selected{% endif %}>Brand (Z-A)</option>
                         </select>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="product-container col-10 mx-auto main-rounded w-75">
-                <div class="row mt-4"></div>
-                <div class="row ml-1 mr-1">
-                    {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                {% if product.image %}
+        <!-- Layout switch row -->
+        <div class="col-sm-12 text-center">
+            <hr class="w-75">
+            <div class="switches">
+                <button onclick="listLayout()" id="list-view" class="btn list-view"><i class="fa fa-bars"></i></button>
+                <button onclick="gridLayout()" id="grid-view" class="btn grid-view active"><i class="fa fa-th"></i></button>
+            </div>
+            <hr class="w-75">
+        </div>
+        <div class="container gridLayout" role="button">
+            <div class="row text-center justify-content-center">
+            {% for product in products %}
+                {% if product %}
+                    <div class="col-sm-12 col-md-4 col-lg-3 text-center main-rounded p-3 m-3 grid-product">
+                        {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="product-grid-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
+                        {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="product-grid-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            </a>
+                        {% endif %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <p class="text-decoration-none  font-weight-bold main-text mb-0 p-1 text-center product-name">{{ product.name }}</p>
+                        </a>
+                        {% if product.rating %}
+                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                        {% else %}
+                            <small class="text-muted">No Rating</small>
+                        {% endif %}
+                        <p class="small mt-3 mb-0">
+                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                            </a>
+                        </p>
+                        <div class="col-12 mt-3">
+                            <p class="lead text-center text-danger font-weight-bold">€{{ product.price }}</p>
+                        </div>
+                        {% if product.available %}
+                            <lead class="text-success font-weight-bold mt-2">Available</lead>
+                        {% else %}
+                            <lead class="text-danger font-weight-bold mt-2">Cooming Soon</lead>
+                        {% endif %}
+                        <hr>
+                        <div class="col">
+                            {% if request.user.is_superuser %}
+                                <small class="text-center">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </small>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}     
+            </div>
+        </div>
+        {% for product in products %}
+            {% if product %}
+                <div class="container mt-4 main-rounded text-center p-3 listLayout hidden">
+                    <div class="row">
+                        <div class="col-sm-5 col-lg-4 text-center align-self-center">
+                            {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="product-list-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid product-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    <img class="product-list-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
-                                {% endif %}
-                                <div class="row mt-3 mb-3"></div>
-                                <div class="card-body">
+                            {% endif %}
+                        </div>
+                        <div class="col-sm-4 col-lg-4 align-self-center">
+                            <div class="row">
+                                <div class="col-12 mb-2">
                                     <a href="{% url 'product_detail' product.id %}">
                                         <p class="text-decoration-none  font-weight-bold main-text mb-0 p-1 text-center">{{ product.name }}</p>
                                     </a>
                                 </div>
-                                <div class="card-footer main-white pt-0 border-0 text-center">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead text-center text-danger font-weight-bold">€{{ product.price }}</p>
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                            {% else %}
-                                                <small class="text-muted">No Rating</small>
-                                            {% endif %}
-                                            {% if product.category %}
-                                            <p class="small mt-3 mb-0">
-                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                                                </a>
-                                            </p>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col">
-                                            {% if product.available %}
-                                                <lead class="text-success font-weight-bold mt-2">Available</lead>
-                                            {% else %}
-                                                <lead class="text-danger font-weight-bold mt-2">Cooming Soon</lead>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col">
-                                            {% if request.user.is_superuser %}
-                                                <small class="text-center">
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                </small>
-                                            {% endif %}
-                                        </div>
-                                    </div>
+                                <div class="col-12">
+                                    {% if product.rating %}
+                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                    {% else %}
+                                        <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                </div>
+                                <div class="col-12 mt-1">
+                                    <p class="small mt-3 mb-0">
+                                        <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                            <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <p class="lead text-center text-danger font-weight-bold">€{{ product.price }}</p>
                                 </div>
                             </div>
                         </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5 mt-5">
-                                <hr>
+                        <div class="col-sm-2 col-lg-4 align-self-center">
+                            <div class="row">
+                                <div class="col-12 mb-4">
+                                    {% if product.available %}
+                                        <lead class="text-success font-weight-bold mt-2">Available</lead>
+                                    {% else %}
+                                        <lead class="text-danger font-weight-bold mt-2">Cooming Soon</lead>
+                                    {% endif %}
+                                </div>
+                                <div class="col-12">
+                                    {% if product.brand.brand_logo %}
+                                        <a href="{{ product.brand.website }}" target="_blank" data-toggle="tooltip" title="Visit {{ product.brand.friendly_name }} website">
+                                            <img class="brand-logo" src="{{ product.brand.brand_logo.url }}" alt="{{ product.brand.brand.name }}">
+                                        </a>
+                                        {% else %}
+                                        <a href="">
+                                            <img class="brand-logo" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                        </a>
+                                    {% endif %}
+                                </div>
+                                {% if request.user.is_superuser %}
+                                    <div class="col-12">
+                                        <small class="text-center">
+                                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                        </small>
+                                    </div>
+                                {% endif %}
                             </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5 mt-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5 mt-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5 mt-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            {% endif %}
+        {% endfor %}
     </div>
     <div class="scroll-button btn btn-rounded border border-black">
         <a class="scroll-link d-flex h-100">
@@ -155,7 +209,7 @@
 {% endblock %}
 
 {% block page_bottom %}
-    <div class="container bottom-container">
+    <div class="container bottom-container" style="height: 200px;">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -194,5 +248,6 @@
             }
         })
     </script>
+    <script src="{% static 'js/change_layout.js' %}"></script>
 {% endblock %}
 
