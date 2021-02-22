@@ -123,14 +123,137 @@ With its design, Tech Cloud tries to provide all its users with comfortable use 
 - As a business owner i want to be able to delete a record so that i can remove item that are no longer for sale.
 
 #### Design Choices
+
+After finishing the home page and using only the bootstrap color for the page,
+I was not satisfied with the look and feel that the page leaves on me as a developer,
+so I found inspiration in THIS article and the idea of ​​how to continue in THIS codepen 
+from which I extracted App color, main color with shadows and white as a background for texts and images.
+The site uses pronounced rounded edges, white backgrounds and shadows to get a clean and light look.
+The design of this site is simple but catchy. It ensures that the products are well represented,
+call to action buttons have consistency and it is easy to read and navigate as a whole.
+
+#### Colors
+
+- Main Site Colors
+    - ![Tech Cloud Main Colors](readme_files/img/Tech-Cloud-Main-Colors.png.png)
+
+- Helping bootstrap colors
+    - ![Bootstrap Colors](readme_files/img/Bootstrap-Colors.png.png)
+
+#### Typography
+
+- Logo Font
+    - I chose [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P?preview.text_type=custom#standard-styles) for the logo font because of the pixalization and it fits well with the theme of the page.
+
+- Main Font
+    - [Noto Sans JP](https://fonts.google.com/specimen/Press+Start+2P?preview.text_type=custom#standard-styles) chosen for the readability of the text especially on smaller screens.
+
+#### Icons
+
+- The icons used in this project are provided by [Font Awesome](https://fontawesome.com/).
+
+- All icons used were chosen for their obvious meaning and purpose so that they can be understood by everyone.
+
 #### Wireframes
+
+- These wireframes were created using [Balsamiq](https://balsamiq.com/) during the Scope Plane part of the design and planning process for this project.
+
+- Wireframes for this project can be found [here](readme_files/wireframes/wireframes.pdf).
+
 #### Diagrams
-#### Wireframes
+
+- Data diagram for this project can be found [here](readme_files/diagrams/tech-cloud-data.pdf).
 
 ## Features
 
 ### Existing Features
+
+- Navigation bar
+
+    - The Navbar is fixed and contain Search Bar, User Account and Shooping Bag so it is always available to the user.
+    - Allows all users to select the content they want to view by simply clicking them, this also collapses into a toggle on mobile devices to.
+
+- Home page
+
+    - Contain Carousel with three item links to navigate user to some additional features
+
+        - Shop How - which will display all products from the database when the button is pressed.
+
+        - Read More - which will transfer the user to the site blog.
+
+        - Subscribe - which will transfer the user to the newsletter subscription form.
+
+    - Categories
+
+        - Below Carousel are all product categories that rotate when the cursor hovers and
+          get a shadow letting the user know that something will happen when they click.
+
+- Big Buttons
+
+    - The site is adorned with large buttons on both small and large screens. Easy to spot and stand out against a white background. 
+      The same form is used throughout the page, except for the buttons for adding, editing and deleting content.
+
+- Hover effects
+
+    - All the clicking buttons on the hover change color and shadow, letting the user know that something will happen with their action.
+
+- Breadcrumb
+
+    - Breadcrumbs are located on the product pages, letting the user know exactly where they are on the site and by clicking on a specific link,
+      they search for and filter certain products.
+
+- Grid and List layout
+
+    - By pressing the button, the user can choose how the products will be displayed. 
+      The layout change buttons are located on the product pages and on the setup pages.
+
+    - Product list layout is available only for Medium screens and up.
+    - On setup pages is available for all screens.
+
+- Delete Modals
+
+    - For each delete button, there is a modal as a content protection that will ask the user for confirmation to delete when the button is pressed.
+
+- Sticky Product Image
+
+    - On the product detail page product image container have position sticky so that the image is available to the user while reading the content on the right.
+
+- Newsletter
+
+    - All users have the opportunity to subscribe to the newsletter and receive offers, promotions and the latest information from the site.
+
+- Blog
+
+    - Allows users to read published content and the latest news while allowing registered users to publish and like content and posts.
+
+- Scroll to top buttons
+
+    - It is found on all pages that require such a feature.
+
+- Footer with social links and contact information
+
+    - It is located on all pages at the bottom allowing the user contact information and social link.
+
+- Brands logos
+
+    - The brand logo is located on the product page, on product list layout and clicking on the brand takes the user to the official website of the manufacturer.
+
+- Left and right promotion banners
+
+    - The product details page on the left and right contains side banners that allow the business owner to promote a particular product.
+      Promotional banners and brand are linked and the owner can place side when adding a brand,
+      later if a particular product of the same brand has promotion or special offer side banners, it can be overwritten with labels offering the business owner to promote only one specific product. Later, when the promotion is over, all you have to do is remove the promotional labels from the product, and if the brand has a side label set, the side label will be returned.
+
+    - On product detail page left and right are side/promotion banners allowing the business owner to promote a particular product.
+      Promotion banners and brand side banners are linked and the owner can place side banners when adding a brand,
+      later if a certain product from the same brand has a promotion, side banners can be overwrite with promotion banners
+      offering the business owner opportunity to promote only one specific product.
+      Later when promotion is finish it is enough to just remove the promotional banners from the product and
+      if the brand has a side banner set the side banner will take place back or not if side banner is not set up.
+
 ### Features Left to Implement
+
+    
 
 ## Technologies Used
 
