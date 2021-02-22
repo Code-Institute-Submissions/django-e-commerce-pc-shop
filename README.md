@@ -135,10 +135,10 @@ call to action buttons have consistency and it is easy to read and navigate as a
 #### Colors
 
 - Main Site Colors
-    - ![Tech Cloud Main Colors](readme_files/img/Tech-Cloud-Main-Colors.png.png)
+    - ![Tech Cloud Main Colors](readme_files/img/Tech-Cloud-Main-Colors.png)
 
 - Helping bootstrap colors
-    - ![Bootstrap Colors](readme_files/img/Bootstrap-Colors.png.png)
+    - ![Bootstrap Colors](readme_files/img/Bootstrap-Colors.png)
 
 #### Typography
 
@@ -253,7 +253,7 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
 ### Features Left to Implement
 
-    
+
 
 ## Technologies Used
 
