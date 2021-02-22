@@ -240,10 +240,6 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
 - Left and right promotion banners
 
-    - The product details page on the left and right contains side banners that allow the business owner to promote a particular product.
-      Promotional banners and brand are linked and the owner can place side when adding a brand,
-      later if a particular product of the same brand has promotion or special offer side banners, it can be overwritten with labels offering the business owner to promote only one specific product. Later, when the promotion is over, all you have to do is remove the promotional labels from the product, and if the brand has a side label set, the side label will be returned.
-
     - On product detail page left and right are side/promotion banners allowing the business owner to promote a particular product.
       Promotion banners and brand side banners are linked and the owner can place side banners when adding a brand,
       later if a certain product from the same brand has a promotion, side banners can be overwrite with promotion banners
