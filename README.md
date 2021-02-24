@@ -319,7 +319,7 @@ call to action buttons have consistency and it is easy to read and navigate as a
     - Copy unpacked files to your Gitpod
 
     - Go [ here ](https://miniwebtool.com/django-secret-key-generator/) 
-      and create new django **SECRET_KEY** for your application, copy secret key.
+      and create new django `SECRET_KEY` for your application, copy secret key.
 
     - Now you need set up new variable in your **Gitpod**
         - Go back to your **Gitpod**
@@ -327,17 +327,17 @@ call to action buttons have consistency and it is easy to read and navigate as a
         - In Right top corner is your avatar image click on that and select **Settings**
         - Click on **Add Variable**
         - Under **Name** enter `SECRET_KEY`
-        - Under **Value** paste **YOUR_NEW_SECRET_KEY** generated from django-secret-key-generator.
-        - Under **Organization** enter **YOUR_GITHUB_USERNAME/**
-        - Click again on **Add Variable** and create new variable for **DEVELOPMENT**
-        - Under **Name** enter **DEVELOPMENT**
-        - Under **Value** enter **TRUE** 
-        - Under **Organization** enter **YOUR_GITHUB_USERNAME/**
+        - Under **Value** paste `YOUR_NEW_SECRET_KEY` generated from django-secret-key-generator.
+        - Under **Organization** enter `YOUR_GITHUB_USERNAME/`
+        - Click again on **Add Variable** and create new variable for `DEVELOPMENT`
+        - Under **Name** enter `DEVELOPMENT`
+        - Under **Value** enter `TRUE` 
+        - Under **Organization** enter `YOUR_GITHUB_USERNAME/`
 
     - Go Back to your workspace and install all requirements this project need to run 
 
     - Install all requirements
-        - In console type **pip install -r requirements.txt**
+        - In console type `**pip install -r requirements.txt**`
 
     - Apply migrations
         - Before migration, check whether the migration will go according to plan and without problems.
