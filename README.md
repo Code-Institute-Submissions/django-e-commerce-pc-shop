@@ -472,7 +472,7 @@ call to action buttons have consistency and it is easy to read and navigate as a
     
         - Find This Code and delete it
 
-        `
+        ```
         if 'DATABASE_URL' in os.environ:
             DATABASES = {
                 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -484,15 +484,14 @@ call to action buttons have consistency and it is easy to read and navigate as a
                     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
                 }
             }
-        `
+        ```
 
     - Type this code to use **`Heroku Postgress`** as **`Heroku`** database.
-        ```json
 
-            DATABASES = {
-                    'default': dj_database_url.parse('YOUR_DATABASE_URL')
-            }
-
+        ```
+        DATABASES = {
+                'default': dj_database_url.parse('YOUR_DATABASE_URL')
+        }
         ```
 
         - To get **`YOUR_DATABASE_URL`** is two way from your console or from heroku app settings tab.
