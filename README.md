@@ -326,7 +326,7 @@ call to action buttons have consistency and it is easy to read and navigate as a
         - On Left top corner click on blue Gitpod sign that will open your workspaces
         - In Right top corner is your avatar image click on that and select **Settings**
         - Click on **Add Variable**
-        - Under **Name** enter **SECRET_KEY**
+        - Under **Name** enter `SECRET_KEY`
         - Under **Value** paste **YOUR_NEW_SECRET_KEY** generated from django-secret-key-generator.
         - Under **Organization** enter **YOUR_GITHUB_USERNAME/**
         - Click again on **Add Variable** and create new variable for **DEVELOPMENT**
@@ -388,17 +388,17 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
         - Go to Bottom of settings file and find this code 
 
-        -   `**if 'DEVELOPMENT' in os.environ:**
-                **EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'**
-                **DEFAULT_FROM_EMAIL = 'techcloud@example.com'**
-            **else:**
-                **EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'**
-                **EMAIL_USE_TLS = True**
-                **EMAIL_PORT = 587**
-                **EMAIL_HOST = 'smtp.gmail.com'**
-                **EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')**
-                **EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')**
-                **DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')**`
+        -   `if 'DEVELOPMENT' in os.environ:
+                EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+                DEFAULT_FROM_EMAIL = 'techcloud@example.com'
+            else:
+                EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+                EMAIL_USE_TLS = True
+                EMAIL_PORT = 587
+                EMAIL_HOST = 'smtp.gmail.com'
+                EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+                EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+                DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')`
 
         - DELETE that code and replace with this one
 
