@@ -328,38 +328,38 @@ call to action buttons have consistency and it is easy to read and navigate as a
         - Click on **Add Variable**
         - Under **Name** enter `SECRET_KEY`
         - Under **Value** paste `YOUR_NEW_SECRET_KEY` generated from django-secret-key-generator.
-        - Under **Organization** enter `YOUR_GITHUB_USERNAME/`
+        - Under **Organization** enter `YOUR_GITHUB_USERNAME/*`
         - Click again on **Add Variable** and create new variable for `DEVELOPMENT`
         - Under **Name** enter `DEVELOPMENT`
         - Under **Value** enter `TRUE` 
-        - Under **Organization** enter `YOUR_GITHUB_USERNAME/`
+        - Under **Organization** enter `YOUR_GITHUB_USERNAME/*`
 
     - Go Back to your workspace and install all requirements this project need to run 
 
     - Install all requirements
-        - In console type `**pip install -r requirements.txt**`
+        - In console type `pip install -r requirements.txt`
 
     - Apply migrations
         - Before migration, check whether the migration will go according to plan and without problems.
-            - In console type **python3 manage.py migrate --plan**
+            - In console type `python3 manage.py migrate --plan`
         - If OK Migrate
-            - In console type **python3 manage.py migrate**
+            - In console type `python3 manage.py migrate`
 
-    - Install all data from fixtures in **THIS** order.
-        1. In console type **python3 manage.py loaddata specdata**
-        2. In console type **python3 manage.py loaddata featuredata**
-        3. In console type **python3 manage.py loaddata specificationdata**
-        4. In console type **python3 manage.py loaddata keyfeaturedata**
-        5. In console type **python3 manage.py loaddata branddata**
-        6. In console type **python3 manage.py loaddata categorydata**
-        7. In console type **python3 manage.py loaddata productdata**
+    - Install all data from fixtures in `THIS` order.
+        1. In console type `python3 manage.py loaddata specdata`
+        2. In console type `python3 manage.py loaddata featuredata`
+        3. In console type `python3 manage.py loaddata specificationdata`
+        4. In console type `python3 manage.py loaddata keyfeaturedata`
+        5. In console type `python3 manage.py loaddata branddata`
+        6. In console type `python3 manage.py loaddata categorydata`
+        7. In console type `python3 manage.py loaddata productdata`
 
-    - You need create **GITPOD_ADMIN** so that later you can access to **Django Administration**
-        - In console type **python3 manage.py createsuperuser** press Enter
-        - Enter **YOUR_GITPOD_ADMIN_USERNAME**
-        - Enter **YOUR_GITPOD_ADMIN_EMAIL_ADDRESS**
-        - Enter **YOUR_GITPOD_ADMIN_PASSWORD**
-        - Re-enter **YOUR_GITPOD_ADMIN_PASSWORD**
+    - You need create `GITPOD_ADMIN` so that later you can access to **Django Administration**
+        - In console type **`python3 manage.py createsuperuser`** press Enter
+        - Enter **`YOUR_GITPOD_ADMIN_USERNAME`**
+        - Enter **`YOUR_GITPOD_ADMIN_EMAIL_ADDRESS`**
+        - Enter **`YOUR_GITPOD_ADMIN_PASSWORD`**
+        - Re-enter **`YOUR_GITPOD_ADMIN_PASSWORD`**
 
     - At this moment you can run project from your **Gitpod**.
         - In console type **python3 manage.py runserver**
