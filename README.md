@@ -402,12 +402,12 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
         - `DELETE` that code and replace with this one
 
-        -   **`EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'`**
-            **`EMAIL_USE_TLS = True`**
-            **`EMAIL_PORT = 587`**
-            **`EMAIL_HOST = 'smtp.gmail.com'`**
-            **`EMAIL_HOST_USER = 'YOUR_HOST_EMAIL'`**
-            **`EMAIL_HOST_PASSWORD = 'YOUR_EMAIL_HOST_PASSWORD'`**
+        -  `EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+            EMAIL_USE_TLS = True
+            EMAIL_PORT = 587
+            EMAIL_HOST = 'smtp.gmail.com'
+            EMAIL_HOST_USER = 'YOUR_HOST_EMAIL'
+            EMAIL_HOST_PASSWORD = 'YOUR_EMAIL_HOST_PASSWORD'`
 
     - At this moment your Gitpod should send emails to **`New subscribed users`**
       and confirmation mail to **`New Registered Users`**.
@@ -581,7 +581,7 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
     - Copy and Paste this Code on same spot
 
-        -   `*f 'DEVELOPMENT' in os.environ:
+        -   `if 'DEVELOPMENT' in os.environ:
                 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
                 DEFAULT_FROM_EMAIL = 'techcloud@example.com'
             else:
