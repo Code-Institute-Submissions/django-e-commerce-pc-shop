@@ -402,8 +402,10 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
         - `DELETE` that code and replace with this one
 
-        -  `EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'`
+           `EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'`
+
            `EMAIL_USE_TLS = True`
+           
             `EMAIL_PORT = 587
             EMAIL_HOST = 'smtp.gmail.com'
             EMAIL_HOST_USER = 'YOUR_HOST_EMAIL'
