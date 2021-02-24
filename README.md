@@ -312,7 +312,7 @@ call to action buttons have consistency and it is easy to read and navigate as a
   and change the application settings.
 
     - Download Zip File from [ here ](https://github.com/IvanTepes/django-e-commerce-pc-shop) 
-        - From **CODE** menu select download zip.
+        - From `CODE` menu select download zip.
     
     - Save it to your pc and unpack it.
 
@@ -321,18 +321,18 @@ call to action buttons have consistency and it is easy to read and navigate as a
     - Go [ here ](https://miniwebtool.com/django-secret-key-generator/) 
       and create new django `SECRET_KEY` for your application, copy secret key.
 
-    - Now you need set up new variable in your **Gitpod**
-        - Go back to your **Gitpod**
+    - Now you need set up new variable in your `Gitpod`
+        - Go back to your `Gitpod`
         - On Left top corner click on blue Gitpod sign that will open your workspaces
-        - In Right top corner is your avatar image click on that and select **Settings**
-        - Click on **Add Variable**
-        - Under **Name** enter `SECRET_KEY`
-        - Under **Value** paste `YOUR_NEW_SECRET_KEY` generated from django-secret-key-generator.
-        - Under **Organization** enter `YOUR_GITHUB_USERNAME/*`
-        - Click again on **Add Variable** and create new variable for `DEVELOPMENT`
-        - Under **Name** enter `DEVELOPMENT`
-        - Under **Value** enter `TRUE` 
-        - Under **Organization** enter `YOUR_GITHUB_USERNAME/*`
+        - In Right top corner is your avatar image click on that and select `Settings`
+        - Click on `Add Variable`
+        - Under `Name` enter `SECRET_KEY`
+        - Under `Value` paste `YOUR_NEW_SECRET_KEY` generated from django-secret-key-generator.
+        - Under `Organization` enter `YOUR_GITHUB_USERNAME/*`
+        - Click again on `Add Variable` and create new variable for `DEVELOPMENT`
+        - Under `Name` enter `DEVELOPMENT`
+        - Under `Value` enter `TRUE` 
+        - Under `Organization` enter `YOUR_GITHUB_USERNAME/*`
 
     - Go Back to your workspace and install all requirements this project need to run 
 
@@ -354,41 +354,41 @@ call to action buttons have consistency and it is easy to read and navigate as a
         6. In console type `python3 manage.py loaddata categorydata`
         7. In console type `python3 manage.py loaddata productdata`
 
-    - You need create `GITPOD_ADMIN` so that later you can access to **Django Administration**
+    - You need create `GITPOD_ADMIN` so that later you can access to **`Django Administration`**
         - In console type **`python3 manage.py createsuperuser`** press Enter
         - Enter **`YOUR_GITPOD_ADMIN_USERNAME`**
         - Enter **`YOUR_GITPOD_ADMIN_EMAIL_ADDRESS`**
         - Enter **`YOUR_GITPOD_ADMIN_PASSWORD`**
         - Re-enter **`YOUR_GITPOD_ADMIN_PASSWORD`**
 
-    - At this moment you can run project from your **Gitpod**.
-        - In console type **python3 manage.py runserver**
-        - **NOTE!** Not all features will work in this moment.
+    - At this moment you can run project from your **`Gitpod`**.
+        - In console type **`python3 manage.py runserver`**
+        - **`NOTE!`** Not all features will work in this moment.
 
-    - To use newsletter feature and sending confirmations mails from your gitpod you will need **Gmail** account and set up variable in **settings.py**
+    - To use newsletter feature and sending confirmations mails from your gitpod you will need **`Gmail`** account and set up variable in **`settings.py`**
         - Go to your [Gmail](https://accounts.google.com/) email account
-        - From upper right corner click on **Settings Icon** and click on **See all settings**
-        - From tab menu click on **Accounts and Import** 
-        - From **Change account settings** click on **Other Google Account settings** 
+        - From upper right corner click on **`Settings Icon`** and click on **`See all settings`**
+        - From tab menu click on **`Accounts and Import`** 
+        - From **`Change account settings`** click on **`Other Google Account settings`** 
         - From left menu click on **Security**
-        - From **Signing in to Google** click on **2-step Verification** and Click **Get Started**
+        - From **`Signing in to Google`** click on **`2-step Verification`** and Click **`Get Started`**
         - Verify your account
-        - Go Back to **Security** tab
-        - From **Signing in to Google** click on **App passwords**
-        - From **Select app** choose **Mail**
-        - From **Select device** choose **Other** and enter **Django** 
-        - Click **Generate**
+        - Go Back to **`Security`** tab
+        - From **`Signing in to Google`** click on **`App passwords`**
+        - From **`Select app`** choose **`Mail`**
+        - From **`Select device`** choose **`Other`** and enter **`Django`** 
+        - Click **`Generate`**
         - Copy 16 character app password
-        - This 16 Character app password will be **YOUR_EMAIL_HOST_PASSWORD**
-        - Your gmail email address will be **YOUR_EMAIL_HOST_USER**
+        - This 16 Character app password will be **`YOUR_EMAIL_HOST_PASSWORD`**
+        - Your gmail email address will be **`YOUR_EMAIL_HOST_USER`**
 
-        - Go Back to **Gitpod**
+        - Go Back to **`Gitpod`**
 
-        - Choose tech_cloud folder from **Gitpod** explorer and open **settings.py**.
+        - Choose tech_cloud folder from **`Gitpod`** explorer and open **`settings.py`**.
 
         - Go to Bottom of settings file and find this code 
 
-        -   `if 'DEVELOPMENT' in os.environ:
+            `if 'DEVELOPMENT' in os.environ:
                 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
                 DEFAULT_FROM_EMAIL = 'techcloud@example.com'
             else:
@@ -400,72 +400,72 @@ call to action buttons have consistency and it is easy to read and navigate as a
                 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
                 DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')`
 
-        - DELETE that code and replace with this one
+        - `DELETE` that code and replace with this one
 
-        -   **EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'**
-            **EMAIL_USE_TLS = True**
-            **EMAIL_PORT = 587**
-            **EMAIL_HOST = 'smtp.gmail.com'**
-            **EMAIL_HOST_USER = 'YOUR_HOST_EMAIL'**
-            **EMAIL_HOST_PASSWORD = 'YOUR_EMAIL_HOST_PASSWORD'**
+        -   **`EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'`**
+            **`EMAIL_USE_TLS = True`**
+            **`EMAIL_PORT = 587`**
+            **`EMAIL_HOST = 'smtp.gmail.com'`**
+            **`EMAIL_HOST_USER = 'YOUR_HOST_EMAIL'`**
+            **`EMAIL_HOST_PASSWORD = 'YOUR_EMAIL_HOST_PASSWORD'`**
 
-    - At this moment your Gitpod should send emails to **New subscribed users**
-      and confirmation mail to **New Registered Users**.
+    - At this moment your Gitpod should send emails to **`New subscribed users`**
+      and confirmation mail to **`New Registered Users`**.
 
-    - To test stripe payment functions you will need **Stripe** payment account and set up variable i your **Gitpod**
+    - To test stripe payment functions you will need **`Stripe`** payment account and set up variable i your **`Gitpod`**
         - Go to your [Stripe](https://stripe.com/) account
-        - From **HOME** click on **Get your API keys**
-        - **Publishable key** is **YOUR_STRIPE_PUBLIC_KEY**
-        - **Secret key** is **YOUR_STRIPE_SECRET_KEY**
-        - From left menu select **Developers** and then **Webhooks**
-        - On right top corner click on **Add endpoint**
-        - On **Add a webhook endpoint** form
-            - Under **Endpoint URL** paste your running app URL and add **/checkout/wh/** on end
+        - From **`HOME`** click on **`Get your API keys`**
+        - **`Publishable key`** is **`YOUR_STRIPE_PUBLIC_KEY`**
+        - **`Secret key`** is **`YOUR_STRIPE_SECRET_KEY`**
+        - From left menu select **`Developers`** and then **`Webhooks`**
+        - On right top corner click on **`Add endpoint`**
+        - On **`Add a webhook endpoint`** form
+            - Under **`Endpoint URL`** paste your running app URL and add **`/checkout/wh/`** on end
             - It should look something like this
-                - **https://8000-b4ce1f3e-5647-et674-87g-2239ae892c02.ws-eu03.gitpod.io/checkout/wh/**
-            - On bottom of form click on **receive all events**
-            - And click **Add endpoint**
-            - On **Signing secret** click on **Click to reveal**
-            - This **Signing secret** key is **YOUR_STRIPE_WH_SECRET**
+                - **`https://8000-b4ce1f3e-5647-et674-87g-2239ae892c02.ws-eu03.gitpod.io/checkout/wh/`**
+            - On bottom of form click on **`receive all events`**
+            - And click **`Add endpoint`**
+            - On **`Signing secret`** click on **`Click to reveal`**
+            - This **`Signing secret`** key is **`YOUR_STRIPE_WH_SECRET`**
 
-        - Now you need set up new variable in your **Gitpod**
+        - Now you need set up new variable in your **`Gitpod`**
             - On Left top corner click on blue Gitpod sign that will open your workspaces
-            - In Right top corner is your avatar image click on that and select **Settings**
-            - Click on **Add Variable**
-            - Under **Name** enter **STRIPE_PUBLIC_KEY**
-            - Under **Value** paste **YOUR_STRIPE_PUBLIC_KEY**
-            - Under **Organization** enter **YOUR_GITHUB_USERNAME/**
-            - Click **Add Variable** and create new variable
-            - Under **Name** enter **STRIPE_SECRET_KEY**
-            - Under **Value** paste **YOUR_STRIPE_SECRET_KEY** 
-            - Under **Organization** enter **YOUR_GITHUB_USERNAME/**
-            - Click **Add Variable** and create new variable
-            - Under **Name** enter **STRIPE_WH_SECRET**
-            - Under **Value** paste **YOUR_STRIPE_WH_SECRET** 
-            - Under **Organization** enter **YOUR_GITHUB_USERNAME/**
+            - In Right top corner is your avatar image click on that and select **`Settings`**
+            - Click on **`Add Variable`**
+            - Under **`Name`** enter **`STRIPE_PUBLIC_KEY`**
+            - Under **`Value`** paste **`YOUR_STRIPE_PUBLIC_KEY`**
+            - Under **`Organization`** enter **`YOUR_GITHUB_USERNAME/*`**
+            - Click **`Add Variable`** and create new variable
+            - Under **`Name`** enter **`STRIPE_SECRET_KEY`**
+            - Under **`Value`** paste **`YOUR_STRIPE_SECRET_KEY`** 
+            - Under **`Organization`** enter **`YOUR_GITHUB_USERNAME/*`**
+            - Click **`Add Variable`** and create new variable
+            - Under **`Name`** enter **`STRIPE_WH_SECRET`**
+            - Under **`Value`** paste **`YOUR_STRIPE_WH_SECRET`** 
+            - Under **`Organization`** enter **`YOUR_GITHUB_USERNAME/*`**
 
-        - Run Project and set it to **Public**
-            - In console type **python3 manage.py runserver**
-            - In Your Console tabs click on **Open Ports**
-            - Find Port **8000** and click **Make Public**
+        - Run Project and set it to **`Public`**
+            - In console type **`python3 manage.py runserver`**
+            - In Your Console tabs click on **`Open Ports`**
+            - Find Port **`8000`** and click **`Make Public`**
 
         - At this point you can test webhooks and payment 
 
-    - To Deploy this application using Herouku, save application code on **their** database and save static files and images using Amazon S3 this steps will need to be taken.
+    - To Deploy this application using Herouku, save application code on **`their`** database and save static files and images using Amazon S3 this steps will need to be taken.
 
-    - First you need **Heroku** Account
+    - First you need **`Heroku`** Account
     - Go to your [Heroku](https://www.heroku.com/home) account. 
-        - On account navigate to personal tab, on right top corner click on **NEW**
-        - From dropdown menu select **Create new app**
-        - Enter **YOUR_HEROKU_APP_NAME** and select region closest to you.
-        - After Creating Your App select **Resources** tab
-        - In **Add-ons** type **Heroku Postgres**
-        - From add-ons search filter click on **Heroku Postgres**
+        - On account navigate to personal tab, on right top corner click on **`NEW`**
+        - From dropdown menu select **`Create new app`**
+        - Enter **`YOUR_HEROKU_APP_NAME`** and select region closest to you.
+        - After Creating Your App select **`Resources`** tab
+        - In **`Add-ons`** type **`Heroku Postgres`**
+        - From add-ons search filter click on **`Heroku Postgres`**
         - Choose Plan Name (Hobby Dev - Free) for start. 
 
-    - Go Back to your **Gitpod** and open tech_cloud folder and open **settings.py**
+    - Go Back to your **`Gitpod`** and open tech_cloud folder and open **`settings.py`**
 
-    - Scroll through settings.py and find **DATABASES**
+    - Scroll through settings.py and find **`DATABASES`**
     
         - Find This Code and delete it
 
@@ -481,59 +481,59 @@ call to action buttons have consistency and it is easy to read and navigate as a
                 }
             }`
 
-    - Type this code to use **Heroku Postgress** as **Heroku** database.
+    - Type this code to use **`Heroku Postgress`** as **`Heroku`** database.
 
-        -  **DATABASES = {**
-                **'default': dj_database_url.parse('YOUR_DATABASE_URL')**
-           **}** 
+        -  `DATABASES = {
+                'default': dj_database_url.parse('YOUR_DATABASE_URL')
+           }` 
 
-        - To get **YOUR_DATABASE_URL** is two way from your console or from heroku app settings tab.
-            - Login to **Heroku** using **console**
-                - Type **heroku login -i** in console
-                - Enter **YOUR_HEROKU_EMAIL_ADDRESS**
-                - Enter **YOUR_HEROKU_PASSWORD**
-                - Type **heroku config** in console
-                - Copy **DATABASE_URL** string and paste it to **('YOUR _DATABASE_URL')**     
-            - Or over App settings tab from **Heroku**
-                - Go back to your **Heroku** account
-                - Open your aplication and choose **Settings**
-                - Click on **Reveal Config Vars**
-                - Copy **DATABASE_URL** from config and paste it to **('YOUR _DATABASE_URL')**
+        - To get **`YOUR_DATABASE_URL`** is two way from your console or from heroku app settings tab.
+            - Login to **`Heroku`** using **`console`**
+                - Type **`heroku login -i`** in console
+                - Enter **`YOUR_HEROKU_EMAIL_ADDRESS`**
+                - Enter **`YOUR_HEROKU_PASSWORD`**
+                - Type **`heroku config`** in console
+                - Copy **`DATABASE_URL`** string and paste it to **`('YOUR_DATABASE_URL')`**     
+            - Or over App settings tab from **`Heroku`**
+                - Go back to your **`Heroku`** account
+                - Open your aplication and choose **`Settings`**
+                - Click on **`Reveal Config Vars`**
+                - Copy **`DATABASE_URL`** from config and paste it to **`('YOUR_DATABASE_URL')`**
     
     - After save settings.py database configuration, because we are using Postgres Heroku database,
       now we need apply migrations and load data in new database.
 
         - To apply migrations
-            - Type **python3 manage.py migrate** in console.
+            - Type **`python3 manage.py migrate`** in console.
         
         - To Load data in new database
             - Install all data from fixtures in **THIS** order.
-                1. In console type **python3 manage.py loaddata specdata**
-                2. In console type **python3 manage.py loaddata featuredata**
-                3. In console type **python3 manage.py loaddata specificationdata**
-                4. In console type **python3 manage.py loaddata keyfeaturedata**
-                5. In console type **python3 manage.py loaddata branddata**
-                6. In console type **python3 manage.py loaddata categorydata**
-                7. In console type **python3 manage.py loaddata productdata**
+                1. In console type **`python3 manage.py loaddata specdata`**
+                2. In console type **`python3 manage.py loaddata featuredata`**
+                3. In console type **`python3 manage.py loaddata specificationdata`**
+                4. In console type **`python3 manage.py loaddata keyfeaturedata`**
+                5. In console type **`python3 manage.py loaddata branddata`**
+                6. In console type **`python3 manage.py loaddata categorydata`**
+                7. In console type **`python3 manage.py loaddata productdata`**
 
-    - To Access Django Admin and because you will disconnect from **Heroku Postgress** database
-    - You need create **Super User**
-        - In console type **python3 manage.py createsuperuser** press Enter
-        - Enter **YOUR_HEROKU_ADMIN_USERNAME**
-        - Enter **YOUR_HEROKU_EMAIL_ADDRESS**
-        - Enter **YOUR_HEROKU_ADMIN_PASSWORD**
-        - Re-enter **YOUR_HEROKU_ADMIN_PASSWORD**
+    - To Access Django Admin and because you will disconnect from **`Heroku Postgress`** database
+    - You need create **`Super User`**
+        - In console type **`python3 manage.py createsuperuser`** press Enter
+        - Enter **`YOUR_HEROKU_ADMIN_USERNAME`**
+        - Enter **`YOUR_HEROKU_EMAIL_ADDRESS`**
+        - Enter **`YOUR_HEROKU_ADMIN_PASSWORD`**
+        - Re-enter **`YOUR_HEROKU_ADMIN_PASSWORD`**
         
     - To Use both databases 
-        - **sqlite3 default django** database in your IDE 
-        - and **Heroku Postgress** on Heroku 
+        - **`sqlite3 default django`** database in your IDE 
+        - and **`Heroku Postgress`** on Heroku 
 
-    - Find **Heroku Postgress** database code
+    - Find **`Heroku Postgress`** database code
 
     - This code / delete it
-        -  **DATABASES = {**
-                **'default': dj_database_url.parse('YOUR_DATABASE_URL')**
-           **}** 
+        -  `DATABASES = {
+                'default': dj_database_url.parse('YOUR_DATABASE_URL')
+           }`
 
     - On Same spot Paste This code
 
@@ -550,20 +550,20 @@ call to action buttons have consistency and it is easy to read and navigate as a
             }`
     
     - Now You need to login to heroku and temporarily disable collectstatic
-      so that **Heroku** won try to collect static files when you deploy.
+      so that **`Heroku`** won try to collect static files when you deploy.
 
-      - Login to **Heroku** using **console**
-                - Type **heroku login -i** in console
-                - Enter **YOUR_HEROKU_EMAIL_ADDRESS**
-                - Enter **YOUR_HEROKU_PASSWORD**
-                - Type **heroku config:set DISABLE_COLLECTSTATIC=1 --app YOUR_HEROUKU_APP_NAME** in console
+      - Login to **`Heroku`** using **`console`**
+                - Type **`heroku login -i`** in console
+                - Enter **`YOUR_HEROKU_EMAIL_ADDRESS`**
+                - Enter **`YOUR_HEROKU_PASSWORD`**
+                - Type **`heroku config:set DISABLE_COLLECTSTATIC=1 --app YOUR_HEROUKU_APP_NAME`** in console
     
-    - Now you need add the hostname of your **Heroku** app to **ALLOWED_HOSTS** in tech_cloud folder **settings.py**
+    - Now you need add the hostname of your **`Heroku`** app to **`ALLOWED_HOSTS`** in tech_cloud folder **`settings.py`**
 
-    - Open **setting.py** and on top find this line of code
-        - **ALLOWED_HOSTS = ['tech-cloud-e-shop.herokuapp.com', 'localhost']**
+    - Open **`setting.py`** and on top find this line of code
+        - **`ALLOWED_HOSTS = ['tech-cloud-e-shop.herokuapp.com', 'localhost']`**
         - Replace that code with this one
-        - **ALLOWED_HOSTS = ['YOUR_HEROKU_APP_NAME.herokuapp.com', 'localhost']**
+        - **`ALLOWED_HOSTS = ['YOUR_HEROKU_APP_NAME.herokuapp.com', 'localhost']`**
     
     - Now you need to save your configuration on your Local storage(Github)
       and push code to Remote Storage (Heroku)
@@ -572,101 +572,101 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
     - Find this code in setting.py and delete it
 
-        -   **EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'**
-            **EMAIL_USE_TLS = True**
-            **EMAIL_PORT = 587**
-            **EMAIL_HOST = 'smtp.gmail.com'**
-            **EMAIL_HOST_USER = 'YOUR_HOST_EMAIL'**
-            **EMAIL_HOST_PASSWORD = 'YOUR_EMAIL_HOST_PASSWORD'**
+        -   **`EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'`**
+            **`EMAIL_USE_TLS = True`**
+            **`EMAIL_PORT = 587`**
+            **`EMAIL_HOST = 'smtp.gmail.com'`**
+            **`EMAIL_HOST_USER = 'YOUR_HOST_EMAIL'`**
+            **`EMAIL_HOST_PASSWORD = 'YOUR_EMAIL_HOST_PASSWORD'`**
 
     - Copy and Paste this Code on same spot
 
-        -   **if 'DEVELOPMENT' in os.environ:**
-                **EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'**
-                **DEFAULT_FROM_EMAIL = 'techcloud@example.com'**
-            **else:**
-                **EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'**
-                **EMAIL_USE_TLS = True**
-                **EMAIL_PORT = 587**
-                **EMAIL_HOST = 'smtp.gmail.com'**
-                **EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')**
-                **EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')**
-                **DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')**
+        -   `*f 'DEVELOPMENT' in os.environ:
+                EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+                DEFAULT_FROM_EMAIL = 'techcloud@example.com'
+            else:
+                EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+                EMAIL_USE_TLS = True
+                EMAIL_PORT = 587
+                EMAIL_HOST = 'smtp.gmail.com'
+                EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+                EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+                *DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')`
 
     - Now you can try to deploy to Heroku
-        - Type in Console **git add .**
-        - Type in Console **git commit -m "Deployment"**
-        - First push to **Github**
-            - Type in Console **git push**
-        - Now try to push to **Heroku**
-            - Type in Console **git push heroku master**
-        - You may need to initialize your **heroku git remote** 
-            - Type in Console **heroku git:remote -a YOUR_HEROKU_APP_NAME**
+        - Type in Console **`git add .`**
+        - Type in Console **`git commit -m "Deployment"`**
+        - First push to **`Github`**
+            - Type in Console **`git push`**
+        - Now try to push to **`Heroku`**
+            - Type in Console **`git push heroku master`**
+        - You may need to initialize your **`heroku git remote`** 
+            - Type in Console **`heroku git:remote -a YOUR_HEROKU_APP_NAME`**
             - And try again
-                - Type in Console **git push heroku master**
+                - Type in Console **`git push heroku master`**
 
     - Code is now on Heroku if you try to run apliccation now is not be pretty
-      because you disable collection of static files which will host on **Amazon Aws S3**
+      because you disable collection of static files which will host on **`Amazon Aws S3`**
 
-    - Now set up **Automatic** deployment to Heroku when you push to your Local Storage (Guthub)
+    - Now set up **`Automatic`** deployment to Heroku when you push to your Local Storage (Guthub)
 
     - Go to your [Heroku](https://www.heroku.com/home) account.
-        - On your **Personal** tab select your app
-        - Click on **Deploy**
-        - Under **Deployment method** click on **GitHub**
-        - Under **Connect to GitHub** search for your **Gitpod** repository
-        - And then click **Connect**
-        - Under **Automatic deploys** click on **Enable Automatic Deploys**
+        - On your **`Personal`** tab select your app
+        - Click on **`Deploy`**
+        - Under **`Deployment method`** click on **`GitHub`**
+        - Under **`Connect to GitHub`** search for your **`Gitpod`** repository
+        - And then click **`Connect`**
+        - Under **`Automatic deploys`** click on **`Enable Automatic Deploys`**
     
-    - Now you need **NEW_SECRET_KEY** for **Heroku Application**
-    - On same way how you create **SECRET_KEY** for **Gitpod** you need Create one for **Heroku**
+    - Now you need **`NEW_SECRET_KEY`** for **`Heroku Application`**
+    - On same way how you create **`SECRET_KEY`** for **`Gitpod`** you need Create one for **`Heroku`**
         - Go [ here ](https://miniwebtool.com/django-secret-key-generator/) 
-          and create **NEW_SECRET_KEY** for your application hosted on **Heroku**.
+          and create **`NEW_SECRET_KEY`** for your application hosted on **`Heroku`**.
 
-    - After Creating **NEW_SECRET_KEY**
+    - After Creating **`NEW_SECRET_KEY`**
 
-    - Go to **Personal** tab on **Heroku**
-        - From Tab Menu Select **Settings**
-        - Under **Config Vars** click on **Reveal Config Vars**
+    - Go to **`Personal`** tab on **`Heroku`**
+        - From Tab Menu Select **`Settings`**
+        - Under **`Config Vars`** click on **`Reveal Config Vars`**
 
         - Now you need create few Variables and because you are already here
           you will create variables for email service.(You will need it later)
-            - Under **KEY** enter **SECRET_KEY**
-            - Under **VALUE** paste **YOUR_NEW_SECRET_KEY** generated from django-secret-key-generator.
-            - Click **Add**
-            - Under **KEY** enter **EMAIL_HOST_USER**
-            - Under **VALUE** enter **YOUR_HOST_EMAIL** 
-            - Click **Add**
-            - Under **KEY** enter **EMAIL_HOST_PASS**
-            - Under **VALUE** enter **YOUR_EMAIL_HOST_PASSWORD**
-            - Click **Add**
+            - Under **`KEY`** enter **`SECRET_KEY`**
+            - Under **`VALUE`** paste **`YOUR_NEW_SECRET_KEY`** generated from django-secret-key-generator.
+            - Click **`Add`**
+            - Under **`KEY`** enter **`EMAIL_HOST_USER`**
+            - Under **`VALUE`** enter **`YOUR_HOST_EMAIL`** 
+            - Click **`Add`**
+            - Under **`KEY`** enter **`EMAIL_HOST_PASS`**
+            - Under **`VALUE`** enter **`YOUR_EMAIL_HOST_PASSWORD`**
+            - Click **`Add`**
     
-    - Next step is to configure **Amazon Aws S3** and connect everything together.
+    - Next step is to configure **`Amazon Aws S3`** and connect everything together.
 
     - Go to [AWS S3 Bucket](https://aws.amazon.com/) and login to your account.
-    - You should land on **AWS Management Console**
-    - On **Find Services** search enter **S3**
-    - Open **S3**
-    - On Right top corner click on **Create bucket** for your static and media files
-    - Under **Name** enter **YOUR_AMAZON_BUCKET_NAME** try to match **YOUR_HEROKU_APP_NAME**
-    - Under **Region** select closest to you.
-    - Uncheck all **Block all public access**
-    - And check **Acknowledge** that this bucket will be public
-    - Click on **Create Bucket**
+    - You should land on **`AWS Management Console`**
+    - On **`Find Services`** search enter **`S3`**
+    - Open **`S3`**
+    - On Right top corner click on **`Create bucket`** for your static and media files
+    - Under **`Name`** enter **`YOUR_AMAZON_BUCKET_NAME`** try to match **`YOUR_HEROKU_APP_NAME`**
+    - Under **`Region`** select closest to you.
+    - Uncheck all **`Block all public access**
+    - And check **`Acknowledge`** that this b`ucket will be public
+    - Click on **`Create Bucket`**
 
-    - Now you need to configure your **Amazon Bucket**
-    - Click on **YOUR_AMAZON_BUCKET_NAME**
-    - From menu click on **Properties** tab
-    - Find **Static website hosting** and click **EDIT**
-    - Click on **Enable**
-    - Under **Index document** enter **index.html**
-    - Under **Error document - optional** enter **error.html**
-    - Click on **Save Changes**
+    - Now you need to configure your **`Amazon Bucket`**
+    - Click on **`YOUR_AMAZON_BUCKET_NAME`**
+    - From menu click on **`Properties`** tab
+    - Find **`Static website hosting`** and click **`EDIT`**
+    - Click on **`Enable`**
+    - Under **`Index document`** enter **`index.html`**
+    - Under **`Error document - optional`** enter **`error.html`**
+    - Click on **`Save Changes`**
 
-    - Now click on **Permissions** tab
+    - Now click on **`Permissions`** tab
     - Here you will make three changes
-        - Find **Cross-origin resource sharing (CORS)**
-        - Click on **Edit** and Paste this code inside
+        - Find **`Cross-origin resource sharing (CORS)`**
+        - Click on **`Edit`** and Paste this code inside
 
             -   `[
                     {
@@ -683,8 +683,8 @@ call to action buttons have consistency and it is easy to read and navigate as a
                     }
                 ]`
         
-        - Click **Save Changes**
-
+        - Click **`Save Changes`**
+`
         - Now Find **Bucket policy** and click **Edit**
         - Under **Edit bucket policy** find **Policy generator** and click it(New Window will open)
         - On New opened window is **Policy generator**
