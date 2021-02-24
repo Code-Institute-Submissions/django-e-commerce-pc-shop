@@ -126,7 +126,8 @@ With its design, Tech Cloud tries to provide all its users with comfortable use 
 
 After finishing the home page and using only the bootstrap color for the page,
 I was not satisfied with the look and feel that the page leaves on me as a developer,
-so I found inspiration in THIS article and the idea of ​​how to continue in THIS codepen 
+so I found inspiration in [this](https://uxplanet.org/top-ui-ux-design-inspiration-138-90703cf88472 ) article 
+and the idea of ​​how to continue in [this](https://codepen.io/aybukeceylan/pen/OJRNbZp) codepen 
 from which I extracted App color, main color with shadows and white as a background for texts and images.
 The site uses pronounced rounded edges, white backgrounds and shadows to get a clean and light look.
 The design of this site is simple but catchy. It ensures that the products are well represented,
@@ -299,7 +300,7 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
 ## Deployment
 
-- This development tutorial will work with the assumption that:
+- This deployment tutorial will work with the assumption that:
   - [Gitpod](https://www.gitpod.io/) will be used as a local IDE,
   - [GitHub](https://github.com/) as local storage for your code,
   - [Gmail](https://accounts.google.com/) as email service provider,
@@ -1007,61 +1008,21 @@ call to action buttons have consistency and it is easy to read and navigate as a
     - You using **`Stripe`** as your payment provider
     - And **`Gmail`** as you email provider for newsletter and registration confirmation emails.
 
-
-
-
-
-    
-
-
-
-    
-    
-    
-
-    
-
-
-
-
-
-
-
-
-    
-    
-    
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-    
-
-
-    
-
-
-
-
-
 ## Credit
 
+- Major inspiration and quite a bit of code was taken from Code Institute's Boutique Ado project by Chris.
+  Where code was used fully or used partly has been written down in comments in the code.
+
+- 
 
 ### Content
-
+- All content for this website are download from [Amazon](https://amazon.com/).
 
 ### Media
+- Product Media Files are download from [Amazon](https://amazon.com/).
+- Categories images are download from [Flaticon](https://www.flaticon.com/packs/computer-hardware-57?word=computer%20hardware).
+    - <div>Icons made by <a href="https://www.flaticon.com/authors/dighital" title="Dighital">Dighital</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+- All Brand Images are download from [BrandEPS](https://brandeps.com/logo/Computer-and-IT).
 
 
 ### Acknowledgements
