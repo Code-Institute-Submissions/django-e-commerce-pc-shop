@@ -403,14 +403,14 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
         - `DELETE` that code and replace with this one
 
-           `EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'`
-
-           `EMAIL_USE_TLS = True`
-
-            `EMAIL_PORT = 587
+            ```json
+            EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+            EMAIL_USE_TLS = True
+            EMAIL_PORT = 587
             EMAIL_HOST = 'smtp.gmail.com'
             EMAIL_HOST_USER = 'YOUR_HOST_EMAIL'
-            EMAIL_HOST_PASSWORD = 'YOUR_EMAIL_HOST_PASSWORD'`
+            EMAIL_HOST_PASSWORD = 'YOUR_EMAIL_HOST_PASSWORD'
+            ```
 
     - At this moment your Gitpod should send emails to **`New subscribed users`**
       and confirmation mail to **`New Registered Users`**.
@@ -472,7 +472,8 @@ call to action buttons have consistency and it is easy to read and navigate as a
     
         - Find This Code and delete it
 
-        `if 'DATABASE_URL' in os.environ:
+        ``` json
+        if 'DATABASE_URL' in os.environ:
             DATABASES = {
                 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
             }
@@ -482,13 +483,16 @@ call to action buttons have consistency and it is easy to read and navigate as a
                     'ENGINE': 'django.db.backends.sqlite3',
                     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
                 }
-            }`
+            }
+        ```
 
     - Type this code to use **`Heroku Postgress`** as **`Heroku`** database.
 
-        -  `DATABASES = {
+        ```json
+        -  DATABASES = {
                 'default': dj_database_url.parse('YOUR_DATABASE_URL')
-           }` 
+           }
+        ```
 
         - To get **`YOUR_DATABASE_URL`** is two way from your console or from heroku app settings tab.
             - Login to **`Heroku`** using **`console`**
