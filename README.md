@@ -388,7 +388,7 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
         - Go to Bottom of settings file and find this code 
 
-        -   **if 'DEVELOPMENT' in os.environ:**
+        -   `**if 'DEVELOPMENT' in os.environ:**
                 **EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'**
                 **DEFAULT_FROM_EMAIL = 'techcloud@example.com'**
             **else:**
@@ -398,7 +398,7 @@ call to action buttons have consistency and it is easy to read and navigate as a
                 **EMAIL_HOST = 'smtp.gmail.com'**
                 **EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')**
                 **EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')**
-                **DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')**
+                **DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')**`
 
         - DELETE that code and replace with this one
 
