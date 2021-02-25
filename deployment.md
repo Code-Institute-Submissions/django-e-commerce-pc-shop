@@ -464,7 +464,7 @@
                                     "s3:GetObject"
                                 ],
                                 "Effect": "Allow",
-                                "Resource": "arn:aws:s3:::**YOUR_AMAZON_BUCKET_NAME**/*",
+                                "Resource": "arn:aws:s3:::YOUR_AMAZON_BUCKET_NAME/*",
                                 "Principal": "*"
                                 }
                             ]
@@ -644,7 +644,7 @@
         - Choose **`Settings`** from tab menu 
         - Click on **`Reveal Config Vars`**
             - Under **`KEY`** enter **`STRIPE_PUBLIC_KEY`**
-            - Under **`VALUE`** paste **YOUR_STRIPE_PUBLIC_KEY**
+            - Under **`VALUE`** paste **`YOUR_STRIPE_PUBLIC_KEY`**
             - Click **`Add`**
             - Under **`KEY`** enter **`STRIPE_SECRET_KEY`**
             - Under **`VALUE`** enter **`YOUR_STRIPE_SECRET_KEY`**

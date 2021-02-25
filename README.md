@@ -1,5 +1,7 @@
 # Tech Cloud
 
+![Tech Cloud](readme_files/img/tc_mockup.png)
+
 Welcome to Tech Cloud.
 
 Tech Cloud is a fully responsive, custom website full stack-website, designed and built according to the wishes and needs of the users.
@@ -7,6 +9,38 @@ Tech Cloud is a fully responsive, custom website full stack-website, designed an
 It allows all users to purchase products, subscribe to the newsletter and access the blog,
 allows registered users to post and like the posts of other users, 
 while giving the business owner complete control over the content of the site and advertising and promoting a particular product.
+
+
+## Table Of Contents
+
+- [Tech Cloud](#tech-cloud)
+  * [Website Purpose:](#website-purpose-)
+  * [UX](#ux)
+    + [Goals](#goals)
+      - [Shooper Goals](#shooper-goals)
+      - [User Goals](#user-goals)
+      - [Bussines Goals](#bussines-goals)
+    + [User Stories](#user-stories)
+      - [Shopper Stories](#shopper-stories)
+      - [User Stories](#user-stories-1)
+      - [Bussines Stories](#bussines-stories)
+    + [Design Choices](#design-choices)
+      - [Colors](#colors)
+      - [Typography](#typography)
+      - [Icons](#icons)
+      - [Wireframes](#wireframes)
+      - [Diagrams](#diagrams)
+  * [Features](#features)
+    + [Existing Features](#existing-features)
+    + [Features Left to Implement](#features-left-to-implement)
+  * [Technologies Used](#technologies-used)
+  * [Testing](#testing)
+  * [Deployment](#deployment)
+  * [Credit](#credit)
+    + [Content](#content)
+    + [Media](#media)
+  * [Disclaimer](#disclaimer)
+    + [Acknowledgements](#acknowledgements)
 
 ## Website Purpose:
 
@@ -48,7 +82,7 @@ With its design, Tech Cloud tries to provide all its users with comfortable use 
 
 - As a shopper i want to be able to change layout od displayed items so that i can get different view on products.
 
-- As a shopper i want to be able to visit the manufacter website so that i can read more about product.
+- As a shopper i want to be able to visit the manufacturer website so that i can read more about product.
 
 - As a shopper i want to be able to quickly identify deals, special offers and promotions so that i can take advantage of special savings on products i'd like to purchase.
 
@@ -122,7 +156,7 @@ With its design, Tech Cloud tries to provide all its users with comfortable use 
 
 - As a business owner i want to be able to delete a record so that i can remove item that are no longer for sale.
 
-#### Design Choices
+### Design Choices
 
 After finishing the home page and using only the bootstrap color for the page,
 I was not satisfied with the look and feel that the page leaves on me as a developer,
@@ -297,6 +331,7 @@ call to action buttons have consistency and it is easy to read and navigate as a
 
 ## Testing
 
+- Testing of site can be find [here](testing.md).
 
 ## Deployment
 
