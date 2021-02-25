@@ -343,20 +343,31 @@ call to action buttons have consistency and it is easy to read and navigate as a
   Where code was used fully or used partly has been written down in comments in the code.
 
 ### Content
+
 - All content for this website are download from [Amazon](https://amazon.com/).
 
 ### Media
+
 - Product Media Files are download from [Amazon](https://amazon.com/).
 - Categories images are download from [Flaticon](https://www.flaticon.com/packs/computer-hardware-57?word=computer%20hardware).
     - <div>Icons made by <a href="https://www.flaticon.com/authors/dighital" title="Dighital">Dighital</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 - All Brand Images are download from [BrandEPS](https://brandeps.com/logo/Computer-and-IT).
 
 ## Disclaimer
+
 - I do not own any of the photos or logos used across the site. Please contact me immediately in case of any copyright issue and I will happily remove anything.
 
 - This project is for educational purposes only.
 
 ### Acknowledgements
+
+To my girlfriend who was my biggest helper, the biggest critic, the voice of common sense in some difficult moments during the making of this project.
+
+I'd like to thank my mentor in Code Institute Precious Ijege who had helping me through this whole year.
+
+All people, including family, friends, and colleagues who have tested the application on their real devices, reporting to me about any usability issues and giving improvement tips to improve the usability.
+
+To all of the Code Institute Slack community for the help and answers for my issues.
 
 
 - Go [Back to Top](#).
